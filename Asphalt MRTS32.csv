@@ -1,1 +1,4 @@
-12
+topic,material,property,layer_or_class,applies_to,value_min,value_max,tolerance_avg,tolerance_individual,units,notes,reference_doc,reference_date,reference_table,reference_clause
+Thickness,EME,Nomimated thickness,EME,Structural layer (not wearing course),70,130,,,mm,"EME is not a wearing course. Project spec may override.",MRTS 32,March 2024,Table 8.2,
+Tolerance,EME2,Thickness tolerance,EME2,Average (lot average),,,5,,mm,"Average thickness tolerance for lot mean. Not a nominated thickness.",MRTS 32,March 2024,,
+Tolerance,EME2,Thickness tolerance,EME2,Individual result,,,,10,mm,"Individual thickness tolerance for single results.",MRTS 32,March 2024,,
