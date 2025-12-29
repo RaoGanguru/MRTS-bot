@@ -1,0 +1,8 @@
+
+streamlit
+faiss-cpu
+pymupdf
+python-dotenv
+requests
+reportlab
+rapidfuzz
