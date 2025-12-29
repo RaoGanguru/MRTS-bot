@@ -1,136 +1,64 @@
+
 import streamlit as st
 import pandas as pd
 
-# Page setup
-st.set_page_config(
-    page_title="TMR MRTS Asphalt Reference",
-    layout="centered"
-)
+st.set_page_config(page_title="TMR MRTS 32 Asphalt Reference", layout="centered")
 
-st.title("TMR MRTS Asphalt Reference")
-st.subheader("Minimum Thickness for EME Asphalt")
+st.title("TMR MRTS 32 Asphalt Reference (QLD)")
+st.caption("Structured reference tool — presents MRTS values with notes and references. No compliance decisions.")
 
-# --- Short Answer ---
-st.markdown("### 🔹 Answer")
-st.write(
-    "Under **TMR MRTS 32 (March 2024)**, the **nominated thickness** for "
-    "**EME asphalt** must be within the range specified in Table 8.2. "
-    "EME asphalt is **not a wearing course**."
-)
+# Load data
+DATA_FILE = "asphalt_mrts32.csv"
 
-# --- Table Data (Authoritative) ---
-data = {
-    "Asphalt Type": [
-        "EME Asphalt"
-    ],
-    "Layer Function": [
-        "Structural asphalt layer (not wearing course)"
-    ],
-    "Minimum Nominated Thickness (mm)": [
-        70
-    ],
-    "Maximum Nominated Thickness (mm)": [
-        130
-    ],
-    "Reference": [
-        "MRTS 32 – March 2024, Table 8.2"
-    ]
-}
+try:
+    df = pd.read_csv(DATA_FILE)
+except Exception as e:
+    st.error(f"Could not load data file: {DATA_FILE}")
+    st.code(str(e))
+    st.stop()
 
-df = pd.DataFrame(data)
+# Basic cleanup for display
+df = df.fillna("")
 
-# --- Display Table ---
-st.markdown("### 🔹 Nominated Thickness – EME Asphalt (TMR QLD)")
-st.dataframe(df, use_container_width=True)
+# Filters (mobile-friendly)
+topic_options = ["All"] + sorted([t for t in df["topic"].unique() if t])
+material_options = ["All"] + sorted([m for m in df["material"].unique() if m])
 
-# --- Notes ---
-st.markdown("### 🔹 Notes")
-st.markdown(
-    """
-- EME asphalt is used as a **structural layer** and is **not a wearing course**.
-- Thickness values shown are **nominated thicknesses**, not construction tolerances.
-- Project-specific specifications may **override MRTS requirements**.
-- Thickness tolerances are specified separately within **MRTS 32**.
-"""
-)
+topic = st.selectbox("Topic", topic_options, index=0)
+material = st.selectbox("Material / Mix", material_options, index=0)
 
-# --- Reference ---
-st.markdown("### 🔹 Reference")
-st.markdown(
-    """
-- **Transport and Main Roads (QLD)**  
-- **MRTS 32 – Asphalt**  
-- **March 2024**  
-- **Table 8.2 – Nominated Thickness**
-"""
-)
+filtered = df.copy()
+if topic != "All":
+    filtered = filtered[filtered["topic"] == topic]
+if material != "All":
+    filtered = filtered[filtered["material"] == material]
 
-# --- Deep Reading Option ---
-with st.expander("📄 View full MRTS section (Table 8.2)"):
-    st.write(
-        "This section will provide access to the full MRTS 32 clause and "
-        "Table 8.2 showing nominated thickness requirements for EME asphalt."
-)
+st.markdown("### Results")
+st.dataframe(filtered, use_container_width=True)
 
-# ===============================
-# EME2 Thickness Tolerance
-# ===============================
+# Friendly “Answer-style” view for common items
+st.markdown("### Quick view")
+for _, row in filtered.iterrows():
+    st.markdown(f"**{row['topic']} — {row['material']} — {row['property']} ({row['layer_or_class']})**")
 
-st.subheader("Thickness Tolerance for EME2 Asphalt")
+    # Thickness range
+    if row["value_min"] != "" or row["value_max"] != "":
+        st.write(f"- Range: **{row['value_min']}–{row['value_max']} {row['units']}**")
 
-# --- Short Answer ---
-st.markdown("### 🔹 Answer")
-st.write(
-    "For **EME2 asphalt**, thickness tolerances are specified separately for "
-    "average values and individual test results under **TMR MRTS 32**."
-)
+    # Tolerances
+    if row["tolerance_avg"] != "":
+        st.write(f"- Tolerance (average): **± {row['tolerance_avg']} {row['units']}**")
+    if row["tolerance_individual"] != "":
+        st.write(f"- Tolerance (individual): **± {row['tolerance_individual']} {row['units']}**")
 
-# --- Tolerance Table ---
-tolerance_data = {
-    "Asphalt Type": [
-        "EME2 Asphalt",
-        "EME2 Asphalt"
-    ],
-    "Assessment Basis": [
-        "Average thickness (lot average)",
-        "Individual thickness result"
-    ],
-    "Tolerance (mm)": [
-        "± 5",
-        "± 10"
-    ],
-    "Reference": [
-        "MRTS 32 – March 2024",
-        "MRTS 32 – March 2024"
-    ]
-}
+    # Notes + Reference
+    if row["notes"] != "":
+        st.write(f"- Notes: {row['notes']}")
+    ref_bits = [row["reference_doc"], row["reference_date"], row["reference_table"], row["reference_clause"]]
+    ref = ", ".join([b for b in ref_bits if b])
+    if ref:
+        st.write(f"- Reference: {ref}")
 
-tolerance_df = pd.DataFrame(tolerance_data)
-
-st.markdown("### 🔹 Thickness Tolerance – EME2 Asphalt")
-st.dataframe(tolerance_df, use_container_width=True)
-
-# --- Notes ---
-st.markdown("### 🔹 Notes")
-st.markdown(
-    """
-- Average thickness tolerance applies to the **mean value for a lot**.
-- Individual thickness tolerance applies to **single test results**.
-- Tolerances do **not replace nominated thickness requirements**.
-- Project-specific specifications may impose **stricter limits**.
-"""
-)
-
-# --- Reference ---
-st.markdown("### 🔹 Reference")
-st.markdown(
-    """
-- **Transport and Main Roads (QLD)**  
-- **MRTS 32 – Asphalt**  
-- **March 2024**  
-- Thickness tolerance requirements for **EME2**
-"""
-)
-
+    st.divider()
 
 
