@@ -1,6 +1,6 @@
 
 import streamlit as st
-import pymupdf as fitz  # modern import; keeps any existing 'fitz.' calls working
+import pymupdf as fitz  # keeps existing code that uses "fitz" working
 from io import BytesIO
 
 # --- Streamlit page setup ---
