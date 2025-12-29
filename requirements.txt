@@ -1,4 +1,5 @@
 
-# requirements.txt
+
 streamlit
 PyMuPDF==1.26.7
+
