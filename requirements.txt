@@ -1,13 +1,8 @@
-
-
 streamlit
 python-dotenv
-PyMuPDF==1.26.7            # PDF extraction (fitz / pymupdf) [1](https://pymupdftest.readthedocs.io/en/stable/app1.html)
-pymupdf4llm                # robust PDF→Markdown / page chunks (optional) [3](https://pypi.org/project/pymupdf4llm/)
-faiss-cpu                  # vector search; use faiss-gpu on CUDA hosts [4](https://faiss.ai/)
-sentence-transformers      # embeddings (or use bge/FlagEmbedding if you prefer) [12](https://www.aitude.com/the-ultimate-guide-to-faiss-indexing-with-sentence-transformers-for-semantic-search/)
-ollama                     # Python client for local LLMs (or use REST with `requests`) [6](https://github.com/ollama/ollama-python)
-# Optional convenience layer:
-langchain-community        # FAISS vectorstore helpers + docstore utilities [10](https://docs.langchain.com/oss/python/integrations/vectorstores/faiss)
-
-
+PyMuPDF==1.26.7
+pymupdf4llm
+faiss-cpu
+sentence-transformers
+ollama
+langchain-community
