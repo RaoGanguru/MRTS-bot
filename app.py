@@ -1,156 +1,102 @@
 
-
-
 import streamlit as st
 import pymupdf as fitz  # PyMuPDF
+from pathlib import Path
 import re
 
-st.set_page_config(page_title="MRTS Bot – Reliable PDF Search", layout="wide")
-st.title("MRTS Bot – Reliable PDF Search")
+st.set_page_config(page_title="MRTS Bot – Repo PDFs Search", layout="wide")
+st.title("MRTS Bot – Search standards (no uploads)")
 
-# -------------------- Upload PDFs --------------------
-uploaded_files = st.file_uploader(
-    "Upload one or more PDFs",
-    type=["pdf"],
-    accept_multiple_files=True,
-)
-
-if not uploaded_files:
-    st.info("Upload PDFs to enable search.")
+# ---------- Locate PDFs in repo ----------
+# On Streamlit Cloud, your repo is copied under /mount/src, and your app runs from repo root.
+# We'll look under mrts-bot/pdfs/ for *.pdf files. [1](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/file-organization)
+PDF_DIR = Path("/mount/src/mrts-bot/pdfs")
+if not PDF_DIR.exists():
+    st.error(f"Folder not found: {PDF_DIR}. Create it and add your PDFs.")
     st.stop()
 
-# -------------------- Caching helpers --------------------
-@st.cache_data(show_spinner=True)
-def open_doc(bytes_):
-    return fitz.open(stream=bytes_, filetype="pdf")
+pdf_paths = sorted(PDF_DIR.glob("*.pdf"))
+if not pdf_paths:
+    st.warning(f"No PDFs found under {PDF_DIR}.")
+    st.stop()
 
-@st.cache_data(show_spinner=True)
-def get_page_text(bytes_, pno: int, sort: bool = True) -> str:
-    """Plain text per page; sort=True improves reading order in many files."""
-    doc = open_doc(bytes_)
+# ---------- Cache resources (Documents) & data (text/image) ----------
+# Use cache_resource for PyMuPDF Document objects (unserializable singletons). [2](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/app-dependencies)
+@st.cache_resource(show_spinner=True)
+def open_doc(path: Path) -> fitz.Document:
+    return fitz.open(path.as_posix())
+
+# Use cache_data for serializable outputs (text strings, PNG bytes). [3](https://pymupdftest.readthedocs.io/en/stable/installation.html)
+@st.cache_data(show_spinner=False)
+def get_page_text(path: Path, pno: int, sort: bool = True) -> str:
+    doc = fitz.open(path.as_posix())
     return doc[pno].get_text("text", sort=sort) or ""
 
 @st.cache_data(show_spinner=False)
-def render_preview(bytes_, pno: int, dpi: int = 150) -> bytes:
-    """PNG preview of a page."""
-    doc = open_doc(bytes_)
+def render_preview(path: Path, pno: int, dpi: int = 150) -> bytes:
+    doc = fitz.open(path.as_posix())
     return doc[pno].get_pixmap(dpi=dpi).tobytes("png")
 
-# Build in-memory list of documents
-docs = [{"name": uf.name, "bytes": uf.getvalue(), "doc": open_doc(uf.getvalue())} for uf in uploaded_files]
+# ---------- UI: pick files & search ----------
+left, right = st.columns([2, 3])
+with left:
+    chosen_files = st.multiselect(
+        "Choose PDFs to search",
+        options=[p.name for p in pdf_paths],
+        default=[p.name for p in pdf_paths],  # all by default
+    )
+with right:
+    query = st.text_input("Search term", "", placeholder="e.g., standard, clause 5.3, AS/NZS 1234")
+    find_rotated = st.checkbox("Find rotated/tilted text (quads=True)", value=False)
 
-st.success(f"Loaded {len(docs)} file(s).")
-
-# -------------------- Search UI --------------------
-st.subheader("Search")
-q = st.text_input("Enter word/phrase", "", placeholder="e.g., standard, clause 5.3, AS/NZS 1234")
-advanced = st.checkbox("Show advanced options", value=False)
-use_fallback = st.checkbox("Use fallback (regex on extracted text) if native search finds nothing", value=True)
-find_rotated = st.checkbox("Find rotated/tilted text (use quadrilaterals)", value=False) if advanced else False
-
-if not q:
-    st.info("Type a search term above and press Enter.")
+if not chosen_files or not query:
+    st.info("Select at least one PDF and enter a search term.")
     st.stop()
 
-# Compile fallback regex only if needed
-rx = None
-if use_fallback:
-    # Case-insensitive regex for fallback search; escapes user text by default
-    pattern = re.escape(q)
-    rx = re.compile(pattern, flags=re.IGNORECASE)
+selected_paths = [p for p in pdf_paths if p.name in chosen_files]
 
-# -------------------- Do the search --------------------
-def make_snippet(page, rect_or_quad, ctx_chars=80) -> str:
-    """
-    Extract a readable snippet around the hit using a clip.
-    For quads, use bounding rect; for rects, use as-is.
-    """
-    clip = rect_or_quad.rect if hasattr(rect_or_quad, "rect") else rect_or_quad
-    snippet = page.get_text("text", clip=clip) or ""
-    # Compact whitespace and emphasize the query visually
-    snippet = re.sub(r"\s+", " ", snippet).strip()
-    # Try to bold the first occurrence; case-insensitive replacement
-    try:
-        i = re.search(re.escape(q), snippet, flags=re.IGNORECASE)
-        if i:
-            start, end = i.span()
-            snippet = snippet[:start] + "**" + snippet[start:end] + "**" + snippet[end:]
-    except Exception:
-        pass
-    return snippet[:ctx_chars] + ("…" if len(snippet) > ctx_chars else "")
-
+# ---------- Run robust native search across all selected PDFs ----------
 results = []
-for d in docs:
-    name, bytes_, doc = d["name"], d["bytes"], d["doc"]
+for path in selected_paths:
+    doc = open_doc(path)  # cached resource
     for pno in range(doc.page_count):
         page = doc[pno]
-
-        # --- Primary: MuPDF native search (robust to hyphenation/ligatures; case-insensitive by default) ---
-        # Tip: search_for returns rectangles; quads=True returns quadrilaterals for rotated text. [1](https://artifex.com/blog/explore-text-searching-with-pymupdf)
-        hits = page.search_for(q, quads=find_rotated)
-        if not hits and use_fallback:
-            # --- Fallback: regex on extracted plain text ---
-            text = get_page_text(bytes_, pno, sort=True)  # sort=True tends to help reading order. [4](https://pymupdftest.readthedocs.io/en/stable/app1.html)
-            if rx and rx.search(text):
-                # Build a pseudo-hit: use entire page as clip for snippet
-                results.append({
-                    "file": name,
-                    "page": pno + 1,
-                    "count": len(rx.findall(text)) if rx else 1,
-                    "snippet": (re.sub(r"\s+", " ", text)[:120] + "…") if text else "",
-                    "mode": "fallback",
-                    "preview_bytes": render_preview(bytes_, pno),
-                })
-            continue
-
+        hits = page.search_for(query, quads=find_rotated)
+        # Native search: case-insensitive by default; handles hyphenation/ligatures. [12](https://stackabuse.com/bytes/python-how-to-specify-a-github-repo-in-requirements-txt/)[13](https://www.geeksforgeeks.org/python/overview-of-requirementstxt-and-direct-github-sources/)
         if hits:
-            # Generate one row per page (show first snippet; count = #hits)
-            snippet = make_snippet(page, hits[0])
+            # Make snippet by clipping around first hit
+            clip = hits[0].rect if hasattr(hits[0], "rect") else hits[0]
+            snippet = page.get_text("text", clip=clip) or ""
+            snippet = re.sub(r"\s+", " ", snippet).strip()
             results.append({
-                "file": name,
+                "file": path.name,
                 "page": pno + 1,
-                "count": len(hits),
-                "snippet": snippet,
-                "mode": "native",
-                "preview_bytes": render_preview(bytes_, pno),
+                "matches": len(hits),
+                "snippet": snippet[:120] + ("…" if len(snippet) > 120 else ""),
             })
 
-# -------------------- Show results --------------------
 st.subheader("Results")
 if not results:
     st.warning("No matches found.")
     st.stop()
 
-# Summary table
-st.dataframe(
-    [{"file": r["file"], "page": r["page"], "matches": r["count"], "snippet": r["snippet"], "mode": r["mode"]} for r in results],
-    use_container_width=True,
-    hide_index=True,
-)
+st.dataframe(results, use_container_width=True, hide_index=True)
 
-# Preview selector
-choice = st.selectbox(
+sel = st.selectbox(
     "Preview a matched page",
-    options=[f"{r['file']} – page {r['page']} ({r['count']} match/es; {r['mode']})" for r in results],
+    options=[f"{r['file']} – page {r['page']} ({r['matches']} match/es)" for r in results],
     index=0,
 )
-chosen = next(r for r in results if f"{r['file']} – page {r['page']} ({r['count']} match/es; {r['mode']})" == choice)
 
+chosen = next(r for r in results if f"{r['file']} – page {r['page']} ({r['matches']} match/es)" == sel)
+p = next(p for p in selected_paths if p.name == chosen["file"])
+png = render_preview(p, chosen["page"] - 1, dpi=150)
 col_img, col_text = st.columns([2, 3])
 with col_img:
-    st.image(chosen["preview_bytes"], caption=f"{chosen['file']} – page {chosen['page']}", use_column_width=True)
+    st.image(png, caption=f"{chosen['file']} – page {chosen['page']}", use_column_width=True)
 with col_text:
-    # Show full page text when fallback found it; otherwise re-extract for context
-    page_text = get_page_text(next(d["bytes"] for d in docs if d["name"] == chosen["file"]), chosen["page"] - 1, sort=True)
-    st.text_area("Full page text", page_text, height=400)
+    full_text = get_page_text(p, chosen["page"] - 1, sort=True)  # reading order often improves with sort=True [14](https://github.com/RaoGanguru/MRTS-Compliance-tool)
+    st.text_area("Full page text", full_text, height=400)
 
-st.download_button(
-    "Download results (CSV)",
-    data="file,page,count,mode,snippet\n" + "\n".join(
-        f"{r['file']},{r['page']},{r['count']},{r['mode']},{r['snippet'].replace(',', ' ').replace('\n',' ')}" for r in results
-    ),
-    file_name="search_results.csv",
-    mime="text/csv",
-)
 
 
