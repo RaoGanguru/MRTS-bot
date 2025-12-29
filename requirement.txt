@@ -1,7 +1,7 @@
 
 streamlit
 faiss-cpu
-pymupdf
+PyMuPDF==1.26.7
 python-dotenv
 requests
 reportlab
