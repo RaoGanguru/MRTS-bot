@@ -1,37 +1,76 @@
 import streamlit as st
-import pymupdf as fitz
+import pandas as pd
 
-st.set_page_config(page_title="MRTS Bot – Multi‑PDF Test", layout="wide")
-st.title("MRTS Bot – Multi‑PDF Test")
+# Page setup
+st.set_page_config(
+    page_title="TMR MRTS Asphalt Reference",
+    layout="centered"
+)
 
-uploaded_files = st.file_uploader("Upload one or more PDFs", type=["pdf"], accept_multiple_files=True)
+st.title("TMR MRTS Asphalt Reference")
+st.subheader("Minimum Thickness for EME Asphalt")
 
-if not uploaded_files:
-    st.info("Upload PDFs to extract and preview their content.")
-    st.stop()
+# --- Short Answer ---
+st.markdown("### 🔹 Answer")
+st.write(
+    "Under **TMR MRTS 32 (March 2024)**, the **nominated thickness** for "
+    "**EME asphalt** must be within the range specified in Table 8.2. "
+    "EME asphalt is **not a wearing course**."
+)
 
-for uf in uploaded_files:
-    st.header(f"File: {uf.name}")
-    try:
-        doc = fitz.open(stream=uf.read(), filetype="pdf")
-    except Exception as e:
-        st.error(f"Could not open {uf.name}: {e}")
-        continue
+# --- Table Data (Authoritative) ---
+data = {
+    "Asphalt Type": [
+        "EME Asphalt"
+    ],
+    "Layer Function": [
+        "Structural asphalt layer (not wearing course)"
+    ],
+    "Minimum Nominated Thickness (mm)": [
+        70
+    ],
+    "Maximum Nominated Thickness (mm)": [
+        130
+    ],
+    "Reference": [
+        "MRTS 32 – March 2024, Table 8.2"
+    ]
+}
 
-    st.write({"pages": doc.page_count})
-    page = doc[0]
+df = pd.DataFrame(data)
 
-    # Text extraction
-    text = page.get_text()
-    st.text_area(f"Text from {uf.name} – page 1", text, height=240)
+# --- Display Table ---
+st.markdown("### 🔹 Nominated Thickness – EME Asphalt (TMR QLD)")
+st.dataframe(df, use_container_width=True)
 
-    # Preview
-    try:
-        pix = page.get_pixmap(dpi=150)
-        st.image(pix.tobytes("png"), caption=f"{uf.name} – page 1 preview", use_column_width=True)
-    except Exception as e:
-        st.warning(f"Preview failed for {uf.name}: {e}")
+# --- Notes ---
+st.markdown("### 🔹 Notes")
+st.markdown(
+    """
+- EME asphalt is used as a **structural layer** and is **not a wearing course**.
+- Thickness values shown are **nominated thicknesses**, not construction tolerances.
+- Project-specific specifications may **override MRTS requirements**.
+- Thickness tolerances are specified separately within **MRTS 32**.
+"""
+)
 
+# --- Reference ---
+st.markdown("### 🔹 Reference")
+st.markdown(
+    """
+- **Transport and Main Roads (QLD)**  
+- **MRTS 32 – Asphalt**  
+- **March 2024**  
+- **Table 8.2 – Nominated Thickness**
+"""
+)
+
+# --- Deep Reading Option ---
+with st.expander("📄 View full MRTS section (Table 8.2)"):
+    st.write(
+        "This section will provide access to the full MRTS 32 clause and "
+        "Table 8.2 showing nominated thickness requirements for EME asphalt."
+)
 
 
 
