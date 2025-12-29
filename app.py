@@ -1,25 +1,38 @@
-
-
 import streamlit as st
-from rag.retrieval import qa
+import pymupdf as fitz
 
-st.set_page_config(page_title="TMR MRTS Bot", layout="wide")
-st.title("TMR MRTS Bot – RAG over MRTS specs & drawings")
+st.set_page_config(page_title="MRTS Bot – Multi‑PDF Test", layout="wide")
+st.title("MRTS Bot – Multi‑PDF Test")
 
-query = st.text_input("Ask a question (e.g., permissible tolerances, clause references, drawing details):")
-run = st.button("Search & Answer")
+uploaded_files = st.file_uploader("Upload one or more PDFs", type=["pdf"], accept_multiple_files=True)
 
-if run and query:
-    with st.spinner("Retrieving…"):
-        ans, hits = qa(query)
+if not uploaded_files:
+    st.info("Upload PDFs to extract and preview their content.")
+    st.stop()
 
-    st.subheader("Answer")
-    st.write(ans)
+for uf in uploaded_files:
+    st.header(f"File: {uf.name}")
+    try:
+        doc = fitz.open(stream=uf.read(), filetype="pdf")
+    except Exception as e:
+        st.error(f"Could not open {uf.name}: {e}")
+        continue
 
-    st.subheader("Top matches")
-    for i, h in enumerate(hits, 1):
-        with st.expander(f"{i}. {h['spec']} — page {h['page']} (score={h['score']:.3f})"):
-            st.write(h["text"])
+    st.write({"pages": doc.page_count})
+    page = doc[0]
+
+    # Text extraction
+    text = page.get_text()
+    st.text_area(f"Text from {uf.name} – page 1", text, height=240)
+
+    # Preview
+    try:
+        pix = page.get_pixmap(dpi=150)
+        st.image(pix.tobytes("png"), caption=f"{uf.name} – page 1 preview", use_column_width=True)
+    except Exception as e:
+        st.warning(f"Preview failed for {uf.name}: {e}")
+
+
 
 
 
