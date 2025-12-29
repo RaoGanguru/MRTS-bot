@@ -1,9 +1,4 @@
 
-# Streamlit app dependencies
+# requirements.txt
 streamlit
-
-# PyMuPDF provides the 'pymupdf' module (and the legacy 'fitz' alias)
-# Latest release as of Dec 11, 2025
 PyMuPDF==1.26.7
-
-
