@@ -12,6 +12,7 @@ if not os.path.exists(DATA_FOLDER):
     st.error("Folder not found: mrts_data. Create it in GitHub and upload CSVs into it.")
     st.stop()
 
+# -------------------- Load CSVs --------------------
 def load_csvs(endswith: str) -> pd.DataFrame:
     frames = []
     for f in os.listdir(DATA_FOLDER):
@@ -26,7 +27,7 @@ def load_csvs(endswith: str) -> pd.DataFrame:
 clauses_df = load_csvs("_structured_clauses.csv")
 tables_df  = load_csvs("_tables_ocr.csv")
 
-# Build MRTS list
+# -------------------- MRTS list --------------------
 mrts_set = set()
 if not clauses_df.empty and "mrts" in clauses_df.columns:
     mrts_set |= set(clauses_df["mrts"].astype(str).unique())
@@ -34,15 +35,16 @@ if not tables_df.empty and "mrts" in tables_df.columns:
     mrts_set |= set(tables_df["mrts"].astype(str).unique())
 all_mrts = sorted([m for m in mrts_set if m.strip()])
 
-# UI controls
+# -------------------- UI controls --------------------
 selected_mrts = st.selectbox("Select MRTS", ["All MRTS"] + all_mrts)
-search_text = st.text_input("Search (try: thickness tolerance, compaction tolerance, stabilised layer, moisture, bitumen)")
+search_text = st.text_input("Search (try: asphalt thickness tolerance, compaction tolerance, stabilised layer, moisture, bitumen)")
 
-# Do not dump everything
+# Don’t dump everything
 if not search_text.strip():
-    st.info("Type a keyword to search. Example: thickness tolerance, stabilised layer tolerance, compaction, moisture, bitumen.")
+    st.info("Type a keyword to search. Example: asphalt thickness tolerance, stabilised layer tolerance, compaction, moisture, bitumen.")
     st.stop()
 
+# -------------------- Helpers --------------------
 STOP_WORDS = set(["the", "and", "for", "with", "from", "into", "that", "this", "shall", "must", "may", "than", "then", "any"])
 NOISE_TITLE_PATTERNS = [
     "introduction",
@@ -57,13 +59,12 @@ NOISE_TITLE_PATTERNS = [
     "milestones",
 ]
 
-# Simple intent → suggested MRTS (based on your current loaded docs)
-# (Heuristic only; user can override.)
-SUGGEST = [
-    (["asphalt", "seal", "bitumen", "sprayed", "binder"], ["MRTS30", "MRTS11", "MRTS10", "MRTS12"]),
-    (["stabilised", "stabilised", "stabilisation", "lime", "cement"], ["MRTS07B", "MRTS07C"]),
-    (["unbound", "granular", "subbase", "basecourse"], ["MRTS05"]),
-]
+# Generic titles to penalise (reduce junk results)
+GENERIC_TITLE_PENALTY = ["general", "geometrics", "submission", "test results", "time for submission"]
+
+def generic_penalty(title: str) -> int:
+    t = str(title).lower()
+    return 6 if any(g in t for g in GENERIC_TITLE_PENALTY) else 0
 
 def normalize_words(q: str):
     parts = re.findall(r"[a-zA-Z0-9\.]+", q.lower())
@@ -73,6 +74,13 @@ def normalize_words(q: str):
 def is_noise_title(title: str) -> bool:
     t = str(title).lower()
     return any(p in t for p in NOISE_TITLE_PATTERNS)
+
+# Simple intent → suggested MRTS (heuristic only)
+SUGGEST = [
+    (["asphalt", "seal", "bitumen", "sprayed", "binder"], ["MRTS30", "MRTS11", "MRTS10", "MRTS12"]),
+    (["stabilised", "stabilisation", "lime", "cement"], ["MRTS07B", "MRTS07C"]),
+    (["unbound", "granular", "subbase", "basecourse"], ["MRTS05"]),
+]
 
 words = normalize_words(search_text)
 phrase = " ".join(words) if len(words) >= 2 else ""
@@ -94,16 +102,22 @@ def suggested_mrts_from_query(q: str):
 
 suggested = suggested_mrts_from_query(search_text)
 
-# If user selected All MRTS, offer a smart narrowing
+# Offer a smart narrowing when All MRTS is selected
 if selected_mrts == "All MRTS" and suggested:
     st.warning(f"Your search looks like it belongs to: {', '.join(suggested)}. "
                f"Tip: filtering will remove unrelated MRTS results.")
-    # Optional one-click narrowing
     if st.button("Filter to suggested MRTS (recommended)"):
-        # Set first suggestion as scope for this run (soft scope)
         selected_mrts = suggested[0]
 
 def score_clause_row(row, words, phrase):
+    """
+    Weighted scoring:
+    - clause_id match: +6
+    - title match: +4
+    - text match: +1
+    - phrase match in title/text: +8 to +10
+    - penalise generic titles
+    """
     score = 0
     cid   = str(row.get("clause_id","")).lower()
     title = str(row.get("title","")).lower()
@@ -121,6 +135,8 @@ def score_clause_row(row, words, phrase):
             score += 4
         if w in text:
             score += 1
+
+    score -= generic_penalty(title)
     return score
 
 def score_table_row(row, words, phrase):
@@ -163,18 +179,28 @@ def filter_and_rank_clauses(df: pd.DataFrame) -> pd.DataFrame:
     if "title" in out.columns:
         out = out[~out["title"].apply(is_noise_title)]
 
+    qlower = search_text.lower()
+
+    # ✅ If query contains "asphalt", require asphalt in title or text
+    if "asphalt" in qlower and "title" in out.columns and "text" in out.columns:
+        out = out[
+            out["title"].str.contains("asphalt", case=False, na=False) |
+            out["text"].str.contains("asphalt", case=False, na=False)
+        ]
+
     # If tolerance query, force tolerance presence (big relevance boost)
-    if "toler" in search_text.lower() and "text" in out.columns:
+    if "toler" in qlower and "text" in out.columns:
         out = out[out["text"].str.contains(r"toler", case=False, na=False)]
 
-    # Require at least 2 keyword hits in combined fields to avoid 1-word matches
+    # Require at least 2 keyword hits for longer queries to avoid 1-word matches
     if not out.empty:
         combined = (
             out.get("clause_id","").astype(str) + " " +
             out.get("title","").astype(str) + " " +
             out.get("text","").astype(str)
         )
-        out = out[combined.apply(lambda s: min_match_filter_row(s, words, min_hits=2 if len(words) >= 3 else 1))]
+        min_hits = 2 if len(words) >= 3 else 1
+        out = out[combined.apply(lambda s: min_match_filter_row(s, words, min_hits=min_hits))]
 
     # Score + sort
     out["score"] = out.apply(lambda r: score_clause_row(r, words, phrase), axis=1)
@@ -189,13 +215,26 @@ def filter_and_rank_tables(df: pd.DataFrame) -> pd.DataFrame:
     if selected_mrts != "All MRTS" and "mrts" in out.columns:
         out = out[out["mrts"].astype(str) == selected_mrts]
 
+    qlower = search_text.lower()
+
+    # If query contains "asphalt", require asphalt somewhere in table fields
+    if "asphalt" in qlower:
+        combined_a = (
+            out.get("table_id","").astype(str) + " " +
+            out.get("parameter","").astype(str) + " " +
+            out.get("value_text","").astype(str) + " " +
+            out.get("notes","").astype(str)
+        )
+        out = out[combined_a.str.contains("asphalt", case=False, na=False)]
+
     combined = (
         out.get("table_id","").astype(str) + " " +
         out.get("parameter","").astype(str) + " " +
         out.get("value_text","").astype(str) + " " +
         out.get("notes","").astype(str)
     )
-    out = out[combined.apply(lambda s: min_match_filter_row(s, words, min_hits=2 if len(words) >= 3 else 1))]
+    min_hits = 2 if len(words) >= 3 else 1
+    out = out[combined.apply(lambda s: min_match_filter_row(s, words, min_hits=min_hits))]
 
     out["score"] = out.apply(lambda r: score_table_row(r, words, phrase), axis=1)
     out = out[out["score"] > 0].sort_values("score", ascending=False)
@@ -204,6 +243,7 @@ def filter_and_rank_tables(df: pd.DataFrame) -> pd.DataFrame:
 clauses_f = filter_and_rank_clauses(clauses_df)
 tables_f  = filter_and_rank_tables(tables_df)
 
+# -------------------- UI output --------------------
 tab1, tab2 = st.tabs(["🟦 Clauses (ranked)", "🟩 Tables / OCR (ranked)"])
 
 with tab1:
@@ -250,7 +290,3 @@ with tab2:
                     st.caption(notes)
                 st.text(vtext if vtext else "(No OCR text in value_text)")
                 st.caption("OCR extracted – verify against official MRTS.")
-
-
-
-
