@@ -25,6 +25,17 @@ def load_csvs(endswith: str) -> pd.DataFrame:
 
 clauses_df = load_csvs("_structured_clauses.csv")
 tables_df  = load_csvs("_tables_ocr.csv")
+st.sidebar.header("Debug")
+st.sidebar.write("DATA_FOLDER:", DATA_FOLDER)
+st.sidebar.write("Folder exists:", os.path.exists(DATA_FOLDER))
+
+if os.path.exists(DATA_FOLDER):
+    st.sidebar.write("Files in folder:")
+    st.sidebar.write(os.listdir(DATA_FOLDER))
+
+st.sidebar.write("Clauses rows:", 0 if clauses_df.empty else len(clauses_df))
+st.sidebar.write("Tables/OCR rows:", 0 if tables_df.empty else len(tables_df))
+
 
 # MRTS list
 mrts_set = set()
