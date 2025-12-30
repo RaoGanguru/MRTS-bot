@@ -1,0 +1,1183 @@
+mrts,clause_id,title,page_start,page_end,text
+MRTS10,1,Introduction,5,6,"This Technical Specification applies to the construction of road pavements using plant-mixed lightly
+bound pavement layers. The intent of this Technical Specification is to produce a lightly bound
+granular material with an unconfined compressive strength (UCS) of 1.0 to 2.0 MPa. This Technical
+Specification is applicable to lightly bound bases, subbases and improved layers.
+This Technical Specification shall be read in conjunction with MRTS01 Introduction to Technical
+Specifications, MRTS50 Specific Quality System Requirements and other Technical Specifications as
+appropriate.
+This Technical Specification forms part of the Transport and Main Roads Specifications Manual.
+General
+Lightly bound pavement materials are specified with an upper UCS limit of 2.0 MPa to manage the
+risk of cracking and a lower limit of 1.0 MPa to ensure sufficient strength is developed in the
+material to meet the load capacity intended through the pavement design.
+To achieve compliance with the requirements of this Technical Specification and deliver these
+materials at the standard required to meet their design intent, a higher level of control over material
+constituents and batching may be required compared to what would normally be adopted for
+traditional unbound and stabilised pavement materials.
+To achieve the requirements of this Technical Specification, collaboration is required between
+Contractors and Suppliers.
+Lightly Bound Base
+Lightly bound base layers have previously been known as “cement modified base” or “CMB” in
+Queensland. The term ‘lightly bound base’ has been chosen to align with Austroads terminology.
+Lightly bound base layers are typically covered with either a thin asphalt or sprayed bituminous
+treatment, with the lightly bound pavement material forming the main structural pavement layer.
+These pavements would typically be specified in moderately trafficked pavement applications or
+where moisture control is required during construction or throughout the service life of the
+pavement.
+Lightly Bound Subbase
+Lightly bound subbase would typically be specified where additional moisture control is required in
+the subbase course.
+Improved Layer
+Lightly bound improved layers have previously been known as “working platform” layers in
+Queensland. The term ‘lightly bound improved layer’ has been chosen to align with Austroads
+terminology.
+In this application the requirements of this Technical Specification are intended to provide adequate
+support conditions beneath a pavement during its design life. These requirements may not be
+sufficient for construction traffic or construction activities themselves, and the Contractor may need
+to adopt a higher standard to satisfy these requirements.
+Where a pavement design includes an unbound granular improved layer, this Technical
+Specification is not relevant and reference should be made to MRTS05 Unbound Pavements."
+MRTS10,2,Definition of terms,6,7,"The terms used in this Technical Specification shall be as defined in Clause 2 of MRTS01 Introduction
+to Technical Specifications. Further definitions are as defined in Table 2.
+Table 2 – Definition of terms
+Term Definition
+Actual content of The content of stabilising agent in the production mix
+stabilising agent
+Allowable working time The time within which compaction and trimming of each lightly bound
+pavement layer shall be completed, measured from the commencement
+of the incorporation of the stabilising agent (i.e. mixing of the stabilising
+agent into the material) to completion of compaction and trimming.
+The following activities are not required to be completed in the allowable
+working time:
+• hard-cut of the surface prior to placing another lightly bound
+pavement layer
+• static rolling to prepare the surface for sealing, and
+• proof rolling.
+At the completion of the allowable working time, the layer must comply
+with the specified requirements for surface level (excluding
+hard-cutting), deviation from a straight edge and surface evenness. That
+is, rolling (static or vibratory) or other construction processes are not
+permitted after the allowable working time to correct poor geometrics.
+APHA American Public Health Association
+Cement Slurry A semi-liquid mixture of stabilising agent (either a blended cement or a
+cementitious blend) and water.
+Control Charts A graph used to show how a material property changes over time. Test
+results are plotted chronologically.
+Course A layer or multiple layers of a particular pavement material as reflected
+in the pavement design. For example, surfacing course, base course,
+sub-base course or improved layer.
+Intelligent Construction A roller that incorporates equipment to measure the stiffness of
+(IC) Roller compacted layers while simultaneously tracking the position and
+number of passes using a global positioning system (GPS). Stiffness,
+position and coverage results are displayed in real time to the plant
+operator and the data can be exported to provide a complete record of
+compaction and undertake further analysis with Veta.
+Layer A thickness of material placed in a single continuous pass. A single or
+multiple layers may make up a course.
+Lightly Bound Base A course principally intended to directly support the traffic loads,
+constructed from a mixture of unbound granular pavement materials,
+cementitious stabilising agent and water.
+Term Definition
+Lightly Bound Improved A layer which provides:
+Layer
+• access for construction
+• a platform on which to construct the overlying pavement layers,
+and
+• protection to the underlying materials
+Constructed from a mixture of unbound granular pavement materials,
+cementitious stabilising agent and water.
+Lightly Bound Subbase A lightly bound course constructed beneath a base course, from a
+mixture of unbound granular pavement materials, cementitious
+stabilising agent and water.
+Mixture The plant-mixed lightly bound pavement material after incorporation and
+mixing of the stabilising agent.
+Mixing Plant Variability The Mixing Plant Variability (MPV) is an estimate of the likely variability
+in stabilising agent content during production from the actual mixing
+plant to be used in the Works.
+The MPV shall be expressed as a percentage, by dry mass, of unbound
+pavement material.
+Quarry A site from which construction materials are won by blasting, ripping or
+other excavation means for use in their natural state or after processing
+such as by crushing, screening or combining with other materials. The
+term quarry also includes pits and natural deposits such as sand
+sources.
+When used in relation to Transport and Main Roads quarry registration
+system, a quarry may also include a material recycler.
+Target Content (of The content of stabilising agent nominated by the Contractor based on
+stabilising agent) the 'acceptable range for target content of stabilising agent' shown on
+the Stabilised Mix Design Certificate.
+UCS The 7 day UCS corresponding to a 28 day UCS of 1.0 MPa.
+7-lower
+UCS The 7 day UCS corresponding to a 28 day UCS of 2.0 MPa.
+7-upper
+Veta A map-based software tool for Contractors and Administrators to
+standardise, display, analyse and report data collected by intelligent
+compaction (IC) and paver‐mounted thermal profiling (PMTP)
+technologies during construction. Veta can import data from various IC
+machines and PMTP to perform editing, filtering, spot test correlation,
+and statistical analysis as a post-processing tool.
+Work Shift The time period during which work is undertaken. Work would typically
+be undertaken as either day or night shift with each being a separate
+work shift."
+MRTS10,3,Referenced documents,8,8,"The requirements of the referenced documents listed in Table 3 below apply to this Technical
+Specification. Where there are inconsistencies between this Technical Specification and the
+referenced documents, the requirements specified in this Technical Specification shall take
+precedence.
+Table 3 – Referenced documents
+Reference Title
+AS 1141.3.1 Methods for sampling and testing aggregates, Sampling – Aggregates
+AS 1289.1.4.2 Methods of testing soils for engineering purposes, Sampling and
+preparation of soils – Selection of sampling or test sites – Stratified
+random number method
+AS 1289.2.1.1 Methods of testing soils for engineering purposes Soil moisture content
+tests – Determination of the moisture content of a soil – Oven drying
+method (standard method)
+AS 1289.2.1.4 Methods of testing soils for engineering purposes Soil moisture content
+tests – Determination of the moisture content of a soil – Microwave-oven
+drying method (subsidiary method)
+AS 1289.2.1.6 Methods of testing soils for engineering purposes Soil moisture content
+tests – Determination of the moisture content of a soil – Hotplate drying
+method
+AS 1289.2.3.1 Methods of testing soils for engineering purposes – Soil moisture
+content tests – Establishment of correlation – Subsidiary method and
+the standard method
+AS 1289.4.2.1 Methods of testing soils for engineering purposes Soil chemical tests –
+Determination of the sulfate content of a natural soil and the sulfate
+content of the groundwater – Normal method
+AS 1478.1 Chemical admixtures for concrete, mortar and grout – Admixtures for
+concrete
+AS 3582.2 Supplementary cementitious materials – Slag – Ground granulated
+blast-furnace
+AS 3972 General purpose and blended cements
+AS/NZS 3582.1 Supplementary cementitious materials – Flyash
+MRTS01 Introduction to Technical Specifications
+MRTS05 Unbound Pavements
+MRTS23 Supply and Delivery of Quicklime and Hydrated Lime for Road
+Stabilisation
+MRTS50 Specific Quality System Requirements
+MRTS56 Construction Surveying
+TN204 Mix Design Registration of plant-mixed cementitiously stabilised
+pavement material
+- Pavement Design Supplement, Transport and Main Roads"
+MRTS10,4,Standard test methods,9,9,"The standard test methods specified in Table 4 will be used in this Technical Specification.
+Further details of test numbers and test descriptions are specified in Clause 4 of MRTS01 Introduction
+to Technical Specifications.
+Table 4 – Standard test methods
+Property to be Tested Test Method No.
+Addition of stabilising agents Q135A
+Ball penetration AG:PT/T251
+Calculation of characteristic value of a lot Q020
+Conductivity (water) APHA 2510-B
+Curing of moulded specimens Q135B
+Deviation from a three metre straight edge Q712
+Moisture content AS 1289.2.1.1,
+AS 1289.2.1.4,
+AS 1289.2.1.6
+Moisture content test - Establishment of correlation for AS 1289.2.3.1
+subsidiary methods (AS 1289.2.1.4 or AS 1289.2.1.6)
+Particle Size Distribution (Segregation) Q103A
+pH (water) APHA 4500-H B
+Proof Rolling Test Q723
+Relative compaction Q140A
+Road Roughness (Surface Evenness) Q708B, Q708C, Q708D
+Sampling – aggregates AS 1141.3.1
+Selection of sampling or test sites AS 1289.1.4.2
+Spot Sampling of soils, crushed rock and aggregates Q061
+Stabilising Agent Content – Heat of Neutralisation Q134
+Sulfate content AS 1289.4.2.1, other published or
+validated classical chemistry
+technique or instrumentation
+technique#
+Unconfined compressive strength (UCS) Q115
+Working time of stabilised materials Q136A
+Note
+# Instrumentation techniques may include Ion Chromatography / Inductively Coupled Plasma / Discrete
+Analyser and so on. NATA endorsed test results are evidence of a validated technique."
+MRTS10,4.1,"Supplementary requirements for Test Method AS 1289.2.1.1, AS 1289.2.1.4 and",9,10,"AS 1289.2.1.6
+Moisture Content determinations during production shall be undertaken in accordance with Test
+Method AS 1289.2.1.1, AS 1289.2.1.4 or AS 1289.2.1.6. If one of the subsidiary methods
+(AS 1289.2.1.4 or AS 1289.2.1.6) are used, a correlation using AS 1289.2.3.1 must be applied.
+Testing to determine the moisture content of the material at the point of production shall be started as
+soon as possible after the commencement of incorporation of stabilising agent into the unbound
+pavement material. The maximum time between incorporation of stabilising agent into the unbound
+pavement material and the commencement of weighting samples as required by these test methods
+shall be 30 minutes."
+MRTS10,4.2,Supplementary requirements for Test Method Q115,10,10,"The sample from which production UCS specimens are taken shall also be tested for stabilising agent
+content and moisture content and the results reported together. These results shall be traceable to
+one another.
+With the exception of testing for mix design purposes (as specified in TN204 Mix Design Registration
+of plant-mixed cementitiously stabilised pavement material) UCS testing shall be carried out at the
+sampled moisture content with the specimen compacted to 100% of (standard) maximum dry
+density (MDD).
+To achieve compaction of UCS specimens to 100% MDD, the Contractor will need to determine the
+mass of material to add to the mould and compact the material using the standard compaction
+rammer (2.7 kg) in layers until the material fills the mould.
+Where the material is not produced at Optimum Moisture Content (OMC), the Contractor may need
+to apply more blows with the standard rammer (that is more than 25 blows per layer) to achieve the
+required density (100% MDD).
+To calculate the mass of material to be added to the mould the Contractor will need to determine
+the moisture content at which the material has been produced at – this may not be OMC."
+MRTS10,5.1,"Hold Points, Witness Points and Milestones",10,10,"General requirements for Hold Points, Witness Points and Milestones are specified in Clause 5.2 of
+MRTS01 Introduction to Technical Specifications.
+The Hold Points, Witness Points and Milestones applicable to this Technical Specification are
+summarised in Table 5.1.
+Table 5.1 – Hold Points, Witness Points and Milestones
+Clause Hold Point Witness Point Milestone"
+MRTS10,5.2.1,Submit Construction,10,10,"Procedure for lightly
+bound pavement
+construction (14 days)"
+MRTS10,5.2,Construction procedures,11,11,"The Contractor shall prepare documented procedures for all construction processes as defined in
+Clause 6 of MRTS50 Specific Quality System Requirements.
+No lightly bound pavement works shall commence until all relevant construction procedures have
+been accepted by the Administrator Hold Point 1"
+MRTS10,5.2.1,Lightly bound pavement construction procedure,11,12,"For lightly bound pavement materials, the Contactor shall prepare a Construction Procedure, which
+details at least the following:
+a) details of all plant associated with the works
+b) procedures to demonstrate the accuracy of the mixing plant (including calibration procedures
+for load cells where applicable)
+c) details for all aspects of the pavement works, including:
+i. location of and management processes for stockpiles
+ii. location of the mixing plant, and logistics for the operation of the plant in that location
+iii. the lengths and widths of each paving run
+iv. the location and type of joints required between each paving run
+v. procedures for the transport, placement, compaction and trimming of the pavement
+material
+vi. the proposed rolling pattern and number of passes needed to achieve the specified
+compaction standard for each layer thickness and support condition (to be validated
+during the placement trial)
+vii. procedures and equipment to prepare joints (refer Clause 8.2.10) prior to placing an
+adjacent layer of lightly bound material
+viii. procedures and equipment to hard-cut the surface (refer Clause 8.2.8.2) prior to placing
+an overlying layer of lightly bound material
+ix. slurrying procedures, including details of how the slurry will be mixed and spread evenly
+and safely to the cut-back joint edges and the hard-cut surfaces
+x. details for working up to or against structures, kerbs, road safety barriers, access
+chambers, drainage gullies and other fixed infrastructure within or adjacent to the
+pavement, including how the material will be placed and compacted to meet the minimum
+requirements of this Technical Specification
+xi. procedure and equipment proposed for proof rolling pavement layers
+xii. curing procedures, and
+xiii. procedure and equipment to prepare the surface prior to sealing (refer Clause 8.2.8.1)
+d) proposed upper and lower moisture content limits for lightly bound pavement construction
+(refer Clause 8.2.5)
+e) proposed methodology for verifying the accuracy of the system used to dispense stabilising
+agent in the mixing plant (refer Clause 9.4.7)
+f) process to provide traceability of unbound pavement materials from stockpiles through to
+material incorporated into the final pavement.
+Where more than one type of plant-mixed lightly bound material is to be incorporated into the works,
+the Contractor may prepare a single procedure provided that any differences in construction process
+are clearly noted.
+The Lightly Bound Pavement Construction Procedure shall be submitted to the Administrator at least"
+MRTS10,6.1,Unbound pavement material,12,12,"The nominated Stabilised Mix Design Certificate [refer Hold Point 3] shall state the standard of
+unbound pavement material to be incorporated into the lightly bound material.
+The Contractor shall not incorporate unbound pavement material into the works unless it has been
+demonstrated that the unbound pavement material lot conforms fully to the requirements of
+MRTS05 Unbound Pavements. Hold Point 2 Such conformance results shall be no more than
+six months old.
+The unbound pavement material to be stabilised shall be provided by a supplier registered and
+operated in accordance with the Transport and Main Roads Quarry Registration System requirements
+as per the Stabilised Mix Design Certificate."
+MRTS10,6.2,Stabilising agent,12,13,"The constituents incorporated into the stabilising agent (binder) to be used in the works shall comply
+with the requirements of Table 6.2. The stabilising agent type, the proportion of each constituent and
+the supplier to be used shall be in accordance with the nominated Stabilised Mix Design Certificate
+[refer Hold Point 3].
+Table 6.2 – Stabilising agent constituents
+Constituent Type Specification
+Cement GP or GB AS 3972
+Fly Ash Special Grade or Grade 1 AS/NZS 3582.1
+Ground granulated blast-
+- AS 3582.2
+furnace slag (GGBFS)
+MRTS23 Supply and Delivery
+Hydrated Lime - of Quicklime and Hydrated
+Lime for Road Stabilisation
+All of the components of the stabilising agent shall be completely, homogeneously and accurately
+blended before they are incorporated into the unbound pavement material. At the time of mixing the
+stabilising agent with the unbound pavement material, each component of the stabilising agent shall
+not be more than three months old, measured from its date of manufacture to the time of blending,
+unless it has been retested for conformance within one month of use.
+Bagged stabilising agent sourced from retailers (such as hardware stores) shall not be used."
+MRTS10,6.3,Chemical admixtures,13,13,"Where stated on the nominated Stabilised Mix Design Certificate [refer Hold Point 3] chemical
+admixtures are to be incorporated into the lightly bound material.
+Admixtures shall comply with and be used in accordance with AS 1478.1."
+MRTS10,6.4,Cement slurry,13,13,"Where required under Clause 8 of this Technical Specification a cement slurry shall be applied
+between plant-mixed lightly bound pavement layers. In these applications, the slurry shall be as
+follows:
+• the slurry shall have a water / cement ratio of between 0.6 and 0.7, and
+• the application rate shall be approximately equivalent to 2 kg/m² of cement (stabilising agent).
+Lightly bound pavement material shall be placed onto the slurry immediately after it has been placed,
+but before the slurry has set. If the slurry sets before placement of the next lightly bound pavement
+layer, additional slurries shall be placed at the Contractor’s expense, until the requirements of this
+clause are met.
+The maximum time between mixing the slurry and covering the slurry with lightly bound material shall
+be:
+• three hours, or
+• the working time determined for the lightly bound material using Test Method Q136A without
+the use of a set retarder, where the same stabilised agent is used in the slurry as in the lightly
+bound material."
+MRTS10,6.5,Water quality,14,14,"Water used in lightly bound pavement manufacture and construction shall be free from oil, acids,
+organic matter and other matter which could be deleterious to the mixture. Unless otherwise accepted
+by the Administrator, the water shall satisfy the following requirements:
+a) have a pH within the range of 6 to 10, when tested using Test Method APHA 4500-H B or
+equivalent
+b) have an electrical conductivity not more than 3500 µS/cm when tested using Test Method
+APHA 2510-B or equivalent, and
+c) have a Sulfate Content of not more than 1.9 grams of sulfate (expressed as SO ) per litre,
+4
+when tested in accordance with AS 1289.4.2.1.
+Unless otherwise accepted by the Administrator, water sources shall be tested at a maximum of"
+MRTS10,12,monthly intervals during the course of supply or when the nature of the water source has changed.,14,14,"Water sources classified by the relevant water authority as ‘potable water’ shall be exempt from
+testing.
+Electrical conductivity is an indirect measurement of the concentration of salts dissolved in the
+water.
+pH measures the acidity or basicity of the water to assess its corrosiveness.
+Where the Contractor can demonstrate a proven history or conformance from a specific water
+source, such as might be required for ongoing environmental monitoring purposes, the
+Administrator may waive the requirement for water quality testing of non-potable water sources."
+MRTS10,7.1,Nomination of Registered Mix Design,14,16,"Mix design registration is required to supply plant-mixed cementitiously stabilised materials to
+Transport and Main Roads projects, including plant-mixed lightly bound materials. Only current (i.e.
+those not expired or suspended) registered mix designs shall be used in the works in accordance with
+this Technical Specification.
+For each lightly bound pavement material to be incorporated into the Works, the Contractor shall be
+responsible for nominating a mix design that consistently conforms with this Technical Specification
+and ensuring that the mix design is registered in accordance with TN204 Mix Design Registration of
+plant-mixed cementitiously stabilised pavement material.
+Where a Lightly Bound Subbase material is specified, the Contractor may nominate a registered
+mix design of Lightly Bound Base material to be used in its place.
+The Contractor shall nominate the registered mix design, and nominated target content of stabilisation
+agent (refer Clause 7.2) to be used and provide the following certificates to the Administrator prior to
+the commencement of works. Hold Point 3
+1. Stabilised Mix Design Certificate, and
+2. Quarry Registration Certificate.
+Where there are any changes to the constituent materials used in the production of the nominated
+lightly bound pavement materials, including changes to the unbound pavement materials, stabilising
+agent, and/or chemical admixtures, the Contractor shall cease using the mix design immediately and
+resubmit the mix design application in accordance with TN204 Mix Design Registration of plant-mixed
+cementitiously stabilised pavement material, or nominate an alternative registered mix design. Use of
+the mix design, or an alternative mix design shall not continue until [Hold Point 3] has been re-
+released.
+Mix designs that incorporate recycled materials in lightly bound bases may be used when:
+• the average daily traffic in the design lane in year of opening is less than 500 Equivalent
+Standard Axles (ESAs), (the average daily traffic in the design lane in year of opening is given
+in Clause 1 of Annexure MRTS10.1), and
+• an asphalt surfacing is provided over the lightly bound base.
+There is no restriction on the use of recycled materials in lightly bound subbase or improved layers.
+Lightly bound materials may be registered as either 'Quarry' or 'Contractor' mix designs.
+'Quarry mix designs' are undertaken directly by the Transport and Main Roads registered quarry
+supplying the material. In this instance the mix design remains the property of the quarry and the
+Contractor will need to request the relevant certificates be provided by the Quarry. The quarry can
+supply the mix design for use by any Contractor undertaking work in accordance with this Technical
+Specification.
+'Contractor mix designs' are undertaken directly by the Contractor engaged to undertake work in
+accordance with this Technical Specification, however, will be applicable only to materials sourced
+from a specific Transport and Main Roads registered quarry. In this instance the mix design
+remains the property of the Contractor. The Contractor can supply the mix design for use on any
+project they are undertaking in accordance with this Technical Specification. Contractor mix
+designs cannot be used by other Contractors without the express written permission of the
+Contractor who owns the mix design.
+When tendering and programming works, Contractors need to be aware of the timeframes needed
+to complete and register mix designs. Refer to TN204 Mix Design Registration of plant-mixed
+cementitiously stabilised pavement material for further details.
+The registration of a mix design does not attest to the Quarry or Contractor's ability to manufacture
+or construct a pavement which consistently complies with the requirement of this Technical
+Specification. The use of registered mix designs does not reduce or negate the need for testing and
+compliance of material on a lot basis as required in the relevant Technical Specification. Where
+nonconformances are identified they are to be addressed and rectified in accordance with the
+relevant Specification and Technical Specification."
+MRTS10,7.2,Nominating target content of stabilising agent,16,16,"Registered mix designs have an 'acceptable range for target content of stabilising agent' determined
+through UCS testing.
+To allow the release of [Hold Point 3], the Contractor shall nominate a specific Target Content of
+Stabilising Agent to be adopted in the production of each lightly bound pavement material, expressed
+as a percentage (by dry mass) of unbound pavement material. The nominated target content shall be
+within the 'acceptable range for target content of stabilising agent' shown on the Stabilised Mix Design
+Certificate.
+During construction, the Contractor may adjust the Target Content of Stabilising Agent within the
+acceptable target content range. A written notification (including the revised Target Content of
+Stabilising Agent) shall be provided to the Administrator prior to producing lightly bound material with
+the revised Target Content of Stabilising Agent.
+The Contractor shall not nominate a target content of stabilising agent outside of the acceptable range
+for target content of stabilising agent' shown on the Stabilised Mix Design Certificate."
+MRTS10,8.1,Trial pavement,16,17,"Unless otherwise agreed by the Administrator, a trial of the manufacturing and laying operations is
+required for each different plant-mixed lightly bound pavement material prior to commencement of the
+work involving that material. Witness Point 1
+The trial shall not commence until the Administrator has accepted the lightly bound pavement
+construction procedure and released Hold Point 1 as specified in Clause 5.2.
+Unless otherwise approved by the Administrator, the trial pavement must be more than 1000 m².
+Subject to the Administrator’s approval, the trial may be incorporated into the permanent works.
+The purpose of the trial is to determine:
+a) the suitability of the Contractor’s nominated upper and lower moisture content limits and the
+ability of the lightly bound pavement layer to comply with the requirements of Clause 8.2.5
+b) based on the characteristics of the material, its ability to be handled, spread, and compacted
+to achieve the surface finish requirements of Clause 8.2.8.1
+c) the adequacy of the joint and surface preparation procedures (including slurrying and the
+ability to hard-cut the surface as specified in Clause 8.2.8.2)
+d) the rolling pattern and the number of passes of the rollers required to produce an acceptable
+compacted layer, and
+e) the adequacy or otherwise of the manufacturing and construction plant proposed for the work.
+The Contractor shall carry out material and construction compliance tests in accordance with Clause 9
+to confirm the trial complies with the requirements of this Technical Specification. Prior to continuing
+works after completion of the trial, the Contractor shall submit to the Administrator, for their
+acceptance, records which demonstrate this compliance. Hold Point 4 If the trial does not conform in
+full to the requirements of this Technical Specification, the Contractor shall review their construction
+procedure and mix design and a further trial shall be undertaken.
+Where minor nonconformances occur in a trial, and the Administrator accepts to incorporate the lot
+into the permanent works (either at a reduced level of service or otherwise), the Administrator, at
+their sole discretion may elect to waive the requirement for a further trial to be undertaken.
+However, where more significant nonconformances occur, and these or other nonconformances
+occur again after a further trial, the Contractor should substantially review their construction
+procedure and/or mix design prior to undertaking a subsequent trial."
+MRTS10,8.2.1.1,"Equipment used to transport, transfer and store stabilising agent",17,17,"The stabilising agent shall be transported, transferred and stored in a way that is both waterproof and
+watertight. These vessels and the associated apparatus shall be emptied and cleaned prior to the
+introduction of each type of material to be used in the Works to ensure no contamination occurs."
+MRTS10,8.2.1.2,Mixing equipment,17,17,"Mixing shall be carried out using a mechanically driven pugmill.
+The mixing equipment shall:
+1. have a control system with a metered and variable feed rate for each mix constituent
+2. have displays that allow continuous monitoring of each mix constituent
+3. produce plant-mixed lightly bound pavement materials complying with this Technical
+Specification
+4. uniformly incorporate the stabilising agent and water into the unbound pavement materials
+5. produce a consistent material that is free from segregation, and
+6. be capable of continuously producing plant-mixed lightly bound pavement materials complying
+with this Technical Specification at a rate of 150 tonnes per hour or the Contractor’s placing
+rate, whichever is the greater."
+MRTS10,8.2.1.3,Delivery equipment,17,18,"Vehicles used for the delivery of the mix shall be open-body trucks, or equivalent, equipped with
+adequate covers. These vehicles shall be capable of transporting and discharging the mixture without
+segregation. If discharging into the hopper of a self-propelled spreading machine, the vehicles shall be
+designed or equipped with the capacity to efficiently discharge into the hopper directly and without
+spillage.
+Sufficient delivery vehicles shall be made available so that the mixture can be continuously delivered
+to ensure placement is essentially continuous throughout a construction lot."
+MRTS10,8.2.1.4,Paving equipment,18,18,"Irrespective of what equipment is used, the mix shall be placed and spread such that there is no
+segregation of the mixture.
+Lightly Bound Base
+Unless nominated otherwise in Clause 2.1 of Annexure MRTS10.1, plant-mixed lightly bound base
+shall be constructed using a self-propelled spreading machine purpose-built for this work (that is, a
+paver). Such machines have the capacity to either:
+a) receive the material in a hopper and place and spread the mixture on the prepared surface to
+the required uncompacted layer thickness, width and shape in one pass, or
+b) spread previously placed windrows of the mixture to the required uncompacted layer
+thickness, width and shape in one pass.
+Where the lightly bound material is being placed adjacent to a fixed edge or the width of the layer
+varies, the paver shall be fitted with a variable width screed.
+The Administrator may approve other methods of paving (for example, using a grader) in areas where
+the pavement width is such that the use of a paver is not practical. In these instances, the Contractor
+shall document the paving equipment to be used and the proposed construction methodology in their
+Construction Procedure.
+Where a paver is not required as per Clause 2.1 of Annexure MRTS10.1, the plant-mixed lightly bound
+base shall be constructed using a grader.
+Lightly Bound Subbase
+Lightly bound subbase shall be constructed by either using a paver (in accordance with the paving
+equipment requirements for lightly bound base) or with a grader, unless specified plant is nominated in
+Clause 2.2 of Annexure MRTS10.1.
+Lightly Bound Improved Layers
+The Contractor may choose to construct lightly bound improved layers using either a paver (in
+accordance with the paving equipment requirements for lightly bound base) or with a grader.
+General
+The Administrator may approve other methods of paving (for example, using small plant) in areas
+where the use of a paver or grader is not practical (for example, at turnouts or other isolated areas). In
+these instances, the Contractor shall document the paving equipment to be used and the proposed
+construction methodology in their Construction Procedure."
+MRTS10,8.2.1.5,Equipment for water curing,18,18,"The equipment used for water curing shall be able to discharge water in a fine and even mist over the
+layer being cured in a manner that avoids slurrying of the surface and does not result in pavement
+instability, erosion, or leeching of the stabilising agent."
+MRTS10,8.2.1.6,Equipment for preparation of surfaces,19,19,"The equipment used for the preparation of the surface prior to placing another layer of lightly bound
+layer shall include:
+• a machine capable of hard-cutting the surface of the layer (refer Clause 8.2.7.2)
+• a machine capable of sweeping the surface, and
+• equipment capable of evenly distributing the cement slurry (where required) at the specified
+rate on the layer’s surface and edges (refer Clause 8.2.7.2).
+The equipment used for the preparation of the surface prior to covering with a sprayed bituminous
+treatment shall include:
+• a static three-point roller or pneumatic (multi-tyred) roller, and
+• a machine capable of sweeping the surface.
+The use of a drag broom in conjunction with the three-point or multi-tyred roller is recommended."
+MRTS10,8.2.1.7,Intelligent Construction Rollers,19,19,"Intelligent Construction (IC) rollers shall be used to compact lightly bound pavement material where
+specified in Clause 2.3 of Annexure MRTS10.1.
+The IC rollers shall meet the following requirements:
+a) IC rollers shall be self-propelled vibratory rollers equipped to measure the stiffness of the layer
+being compacted.
+b) IC rollers shall be capable of recording and displaying:
+i. real-time colour-coded maps of the roller position, coverage and stiffness of the
+compacted layer
+ii. number of roller passes
+iii. roller speeds, and
+iv. vibration frequency and amplitude of the roller drums.
+c) The data output from the IC roller shall be compatible with Veta.
+To comply with this clause, all vibrating rollers shall be IC rollers."
+MRTS10,8.2.2,Stockpiling of lightly bound pavement material,19,20,"Lightly bound pavement material shall not be stockpiled unless otherwise approved by the
+Administrator.
+In general, lightly bound pavement material should not be stockpiled unless there are specific
+construction requirements. An example of this might be when lightly bound pavement materials are
+required to be produced in the afternoon for use during night works (such as in an urban area when
+a pug mill is unable to operate at night). In this circumstance the Administrator may approve the
+material to be stockpiled provided the mix incorporated a set-retarder to provide a suitable increase
+in working time (refer Clause 8.2.3 for further information)."
+MRTS10,8.2.3,Allowable working time,20,20,"The time between the commencement of mixing the stabilising agent into the unbound pavement
+material and the completion of compaction of a single layer shall be less than the allowable working
+time.
+The following activities are not required to be completed in the allowable working time:
+• hard-cut of the surface prior to placing another lightly bound layer
+• static rolling to prepare the surface for sealing, and
+• proof rolling.
+At the completion of the allowable working time, the layer must comply with the specified requirements
+for surface level (excluding hard-cutting), deviation from a straight edge and surface evenness. That
+is, rolling (static or vibratory) or other construction processes are not permitted after the allowable
+working time to correct geometrics.
+Unless otherwise approved by the Administrator following consultation with the Mix Design Registrar,
+the allowable working time for each plant-mixed lightly bound pavement material shall be the lesser of:
+a) the tested working time shown on the Stabilised Mix Design Certificate, and
+b) four hours.
+Increasing the allowable working time beyond four hours would not generally be approved unless
+significant constraints exist. Such examples might include:
+• night works in urban areas requiring the mixing of materials at times when the pug mill is
+unable to operate (for example, due to noise restrictions), or
+• where no suppliers are available locally, and extended travel times would significantly
+restrict the ability to construct the pavement within the working time.
+In these circumstances, the Contractor should provide justification as to the reason for any
+proposed increase in allowable working time. In no circumstance should the allowable working time
+be extended beyond the tested working time shown on the Stabilised Mix Design Certificate.
+Allowing extended working times where they are not warranted encourages poor construction
+practice and lead to variability in moisture content during construction."
+MRTS10,8.2.4,Weather conditions for construction,21,21,"Lightly bound pavements shall not be manufactured (by blended the stabilising agent with the
+unbound pavement material) or constructed:
+a) when the air temperature is less than 10ºC or greater than 40ºC, unless otherwise approved
+by the Administrator
+b) during rain or when rain is likely to fall during placement, or
+c) when the evaporation rate due to the combined effect of air temperature, wind and relative
+humidity may result in excessive drying of the lightly bound pavement layers surface.
+The default temperature requirements specified represent the preferred conditions to place lightly
+bound materials. When assessing a proposal to place lightly bound materials outside of these
+requirements the Administrator should consider the following:
+• When the air temperature is greater than 40ºC, the allowable working time may need to be
+reduced below the normal specification requirements.
+• When the air temperature is less than 10ºC, the material may take significantly longer to
+set-up requiring an extended time prior to being trafficked."
+MRTS10,8.2.5,Moisture content of the mixture,21,21,"The Contractor shall nominate upper and lower moisture content limits as part of their construction
+procedures that will ensure:
+a) there is adequate moisture to achieve the specified compaction standard
+b) the constructed lightly bound pavement layer is trafficked in accordance with requirements of
+Clause 8.2.11, and
+c) the lightly bound pavement material does not exceed the optimum moisture content (OMC),
+determined in accordance with Test Method Q142A.
+Moisture must be uniformly distributed within each layer. At all times the moisture content of the
+material must be within the Contractor’s nominated upper and lower moisture content limits.
+During placement and compaction of the lightly bound pavement material, where permitted by the
+Administrator, water may be added onsite as a fine mist (with no run off), to compensate for drying out
+of the surface of the layer. Water shall not be added onsite to re-moisture condition the material for
+compaction.
+It is recommended that prior to the commencement of construction that the Contractor and
+Administrator agree the circumstances under which the Contractor would be allowed to add water
+onsite. Typically this would be based on environmental factors such as temperate and wind drying
+the surface of the pavement.
+Adding water onsite should not be used to compensate for inadequate moisture being added during
+production or poor handling and placement techniques delaying works onsite."
+MRTS10,8.2.6,Paving,22,22,"Lightly bound pavements shall be constructed such that each individual layer is laid in one pass that
+meets the requirements of this Technical Specification without the addition of extra material except as
+detailed below.
+The material laid ready for compaction shall not have any visible areas of segregation. Any
+segregated areas are to be removed and replaced with fresh mix prior to the commencement of
+compaction of the lot. Material removed for this reason shall be disposed of in accordance with
+Clause 10 of MRTS01 Introduction to Technical Specifications and shall trigger a nonconformance,
+under which the Contractor must identify the cause of the segregation and propose preventative action
+to prevent reoccurrence. Nonconformance"
+MRTS10,8.2.7.1,Layer thickness,22,22,"Individual compacted layer thicknesses shall be chosen to suit the construction process and the
+requirements of the Contract. Unless otherwise approved by the Administrator, the completed layer
+thicknesses (after compaction and surface preparation) shall be in accordance with Table 8.2.7.1.
+Table 8.2.7.1 – Layer thickness requirements
+Material Minimum Value Maximum Value
+Lightly Bound Pavement
+125 mm 250 mm
+Materials
+Except in batters, each layer shall be constructed in a uniform thickness unless otherwise approved by
+the Administrator.
+Where multiple layers of the same lightly bound pavement material are placed together in a single
+course each layer shall be of equal thickness, unless otherwise approved by the Administrator.
+Constructing multiple layers in a single course to the same thickness is intended to promote
+uniformity of each layer. However, there may be circumstances where this requirement is not able
+to be satisfied, such as where kerb and channel is being constructed. In such instances the
+Administrator may allow this requirement to be relaxed.
+To achieve the minimum compaction standard specified, the Contractor may need to employ larger
+rollers than may normally be used. Particularly where layer thicknesses are towards the maximum
+allowable limit, not less than one 21 tonne (minimum weight) vibrating steel drum roller should be
+used to compact plant-mixed lightly bound pavements, unless the Contractor can demonstrate that
+the required standards can be achieved with a smaller roller.
+Additional rollers, including pneumatic (multi-tyred) rollers, may also be used."
+MRTS10,8.2.7.2,Preparation of a lightly bound layer prior to placing the next lightly bound layer,23,24,"Where a lightly bound pavement layer is to be overlaid directly with another lightly bound pavement
+layer (within the same course or not), the finished surface shall be hard-cut:
+• after the completion of compaction, and
+• within the same work shift as the material was placed unless otherwise approved by the
+Administrator.
+Hard-cutting the surface shall uniformly roughen the surface across the full width of the layer.
+Scratching or marking the surface is not sufficient.
+The Contractor will nominate in their Construction Procedure the proposed methodology to hard-cut
+the pavement. The hard-cut may be undertaken using a grader (with a straight blade, serrated
+blade or toothed blade), by heavy brooming or with other plant. The nominated hard-cut process
+should be assessed as part of the paving trial.
+Where the construction process does not allow the lightly bound pavement layer to be hard-cut
+within the same work shift as the material was placed, the Administrator may approve the
+Contractor to delay the hard-cut process provided the Contractor can demonstrate that their
+nominated process will achieve an acceptable surface. The longer a lightly bound material is left
+prior to hard-cut, the more effort will be needed to hard-cut the surface and the more chance there
+is of damaging the pavement if inappropriate equipment is chosen (e.g. using a grader with straight
+blade to hard-cut cured lightly bound pavement).
+Figure 8.2.7.2 – Example of acceptable hard-cut surface
+Unless the overlying layer is being constructed in the same work shift, a cement slurry (refer
+Clause 6.4) shall be applied to the hard-cut surface prior to placing the next lightly bound pavement
+layer.
+The surface shall be thoroughly swept with a road broom immediately prior to placement of the slurry
+or overlying layer. All foreign and loose material, including lenses of pavement material, shall be
+removed from the surface.
+Success has been achieved on many projects using basic and readily available equipment to pump
+and spray the slurry onto the surface. This method also allows slurry application rates to be
+achieved accurately and significantly reduces wastage and excess run-off.
+All hard-cut material shall be disposed of in accordance with Clause 10 of MRTS01 Introduction to
+Technical Specifications."
+MRTS10,8.2.7.3,Placing multiple layers,24,24,"Multiple layers shall not be placed over one another within the same work shift unless otherwise
+approved by the Administrator.
+Where the Administrator permits multiple layers to be placed in the same work shift, the requirements
+of Clause 8.2.7.2 shall apply – that is:
+• The underlying layer shall be hard-cut, and
+• A cement slurry is not required between the layers.
+This clause is intended to be used in circumstances where there are significant benefits to the
+Principal from placing multiple layers in a single shift, and should not be applied to general
+construction. Accepting multiple layers to be placed in a single shift places increased risk on the
+Principal.
+This provision would mainly be considered where road closures require accelerated construction
+and the Principal wishes to utilise lightly bound pavement material (as opposed to an alternative
+material such as asphalt).
+For an Administrator to permit placing multiple layers in the same work shift, the Principal may need
+to relax the requirements of Hold Point 5 (refer Clause 9.5.1) with regards to proof rolling and time
+of compaction testing (not compaction conformance). Note that:
+• As specified in Table A1 of Appendix A, a lot of lightly bound pavement material is a
+continuous single layer constructed in one days production.
+• As specified in Clause 9.5.1, each lot shall be conformed prior to being covered with the
+subsequent layer of pavement.
+Where a Contractor wishes to utilise this provision, this should be specifically agreed during the
+tender process."
+MRTS10,8.2.8,Surface finish,25,25,"Notwithstanding the requirements for hard-cutting – from when the layer is presented to the
+Administrator for inspection (refer Hold Point 5), until immediately prior to covering, the finished
+surface of any lightly bound pavement layer shall:
+• be hard and homogenous in appearance
+• not be friable when subject to mechanical brooming
+• not have transverse shrinkage cracks
+• not have any loose, segregated or contaminated areas
+• have the course particles slightly exposed
+• not be affected by delamination
+• not show signs of water pumping, and
+• not visibly deflect under load when proof rolled in accordance with Clause 9.4.10.
+For layers that are to be covered by a sprayed bituminous treatment, the surface shall have a
+maximum ball penetration value that complies with Clause 8.3.8.
+Where a lightly bound pavement layer is required to be covered by a sprayed bituminous treatment,
+particular attention needs to be given to the surface finish of the lightly bound pavement layer in
+order to ensure good adhesion. This is particularly relevant when the treatment includes polymer
+modified bitumen.
+The following factors are important to ensure the successful adhesion of a sprayed bituminous
+treatment:
+• All dust must be removed from the pavement immediately before spraying
+• Compaction of the lightly bound pavement material may form a thin lens of dried slurry on
+the surface of the pavement. This can appear hard, however may be prone to ‘shattering’
+or delamination and should be removed before spraying, and
+• Variation in the surface ‘tightness’ may warrant the specification of either an AMC0 or
+AMC00 prime (or an equivalent emulsion prime accepted by the Administrator). The
+effectiveness of any prime should be assessed in field trials.
+Inadequate curing can lead to an excessively dusty surface, which may be difficult to prepare. To
+address this, curing should be undertaken to ensure the pavement remains continuously damp."
+MRTS10,8.2.9,Curing and covering of constructed layers,25,26,"Unless otherwise approved by the Administrator, each layer of lightly bound pavement shall be
+covered with the next layer and/or a bituminous surfacing within seven days of placement.
+Unless otherwise approved by the Administrator, lightly bound layers must not be covered with a
+sprayed seal (including a prime) within 48 hours of placement or rainfall.
+At the completion of its construction, the surface of any layer shall be water cured until placement of
+the next layer of lightly bound pavement or the first layer of a bituminous surfacing is applied.
+Unless otherwise approved by the Administrator, water curing shall be completed in accordance with
+Clause 8.2.1.5.
+The number of applications of water shall be such that the surface remains continuously damp.
+Water curing will need to cease to allow dry back of the surface prior to covering a lightly bound
+layer with either asphalt or a sprayed bituminous treatment. The timeframe for this dry back should
+be agreed between the Contractor and Administrator taking into consideration material and
+environmental conditions at the time, however the period of time that the layer is not being cured
+should be minimised to the greatest extent possible."
+MRTS10,8.2.10,Construction joints between adjacent paving runs,26,26,"To the extent practical, the Contractor shall spread the lightly bound pavement material in a manner
+that minimises the number of joints.
+Joints shall be constructed such that the material at the joints complies in all ways with the
+requirements of this Technical Specification.
+Longitudinal joints must comply with the following requirements unless otherwise approved by the
+Administrator:
+a) joints shall be offset by a minimum of 150 mm from joints in the underlying layers, except
+where required otherwise to achieve the design shape (for example to construct a crowned
+pavement)
+b) joints shall be located away from trafficked wheel paths, and
+c) joints in the final (uppermost) layer of lightly bound bases shall coincide with the final traffic
+lane markings and/or line of change in crossfall (for example, crown of the pavement).
+Transverse joints must be offset by a minimum of 2.0 m from a joint in any underlying layer, unless
+otherwise approved by the Administrator.
+The Administrator may approve longitudinal joints in the final (uppermost) layer of the base course
+to be constructed away from lane markings where this represents the best outcome to achieve the
+pavement design intent. For example, when paving a single lane ramp with wide shoulders, the
+Administrator may allow the Contractor to form a single longitudinal joint along the centre of the
+ramp rather than paving the ramp lane between the edge line markings and the subsequently
+paving shoulders on either side."
+MRTS10,8.2.10.1,Fresh joints,26,27,"A construction joint shall be deemed ‘fresh’ when the material on each side of the joint has been
+stabilised, placed and compacted within the allowable working time (refer Clause 8.2.2) of the material
+that was laid first.
+To construct a fresh joint between adjoining or adjacent runs, the outside 300 mm of material from the
+first run shall be left uncompacted until the adjacent material is ready for compaction.
+When compacting the fresh mix against the face of the existing layer, the roller shall be partly
+supported on the previously compacted portion of the layer that was laid first."
+MRTS10,8.2.10.2,Other joints,27,27,"Joints that are not fresh shall have the edge of the existing layer cut back to form a neat, clean,
+vertical face. The cut back distance shall be the greater of:
+a) the distance required to cut back into the area of existing material that is compacted to the
+standard specified in Clause 8.3.4, or
+b) 150 mm.
+Unless otherwise approved by the Administrator, immediately before placing an adjoining or adjacent
+layer, the cut back edge of the existing layer shall have a cement slurry applied (refer Clause 6.4).
+All cut back material shall be disposed of in accordance with Clause 10 of MRTS01 Introduction to
+Technical Specifications."
+MRTS10,8.2.11,Trafficking during construction,27,27,"Unless otherwise specified in Clause 3 of Annexure MRTS10.1 or approved otherwise by the
+Administrator, lightly bound pavement layers shall not be opened to either construction traffic (other
+than needed to construct the lot) or general traffic until the lot has been tested for, and passes proof
+rolling in accordance with Clause 9.4.10.
+Where the lightly bound base is permitted to be traffic, the requirements for curing as per this
+Technical Specification must still be complied with."
+MRTS10,8.2.12,Contractor's responsibilities,27,27,"The Contractor shall maintain each layer such that it complies with all aspects of this Technical
+Specification until it has been overlaid with another pavement layer or surfaced with the final wearing
+surface, and then until the end of the defect liability period or as otherwise required under the
+Contract."
+MRTS10,8.3.1,Segregation,27,27,"Segregation is the uneven distribution of particle sizes. The construction process shall control
+segregation so that the particle size distribution of the lightly bound pavement material complies with
+the particle size distribution requirements of the specified unbound pavement material prior to the
+commencement of compaction.
+Where there are visible signs of segregation in any lot prior to the commencement of compaction, the
+Administrator may direct the area to be tested for conformance with the above requirements.
+As the addition of stabilising agents is intended to bind unbound pavement materials, care needs to
+be taken in determining if a mix has in fact segregated. Typically, if segregation testing is
+undertaken for lightly bound pavement materials, the proportion of the grading passing the 2.36 mm
+sieve would be disregarded."
+MRTS10,8.3.2,Actual content of stabilising agent,28,28,"The actual content of stabilising agent during production (determined using Test Method Q134) shall
+comply with the requirements specified in Table 8.3.2.
+The 'target content of stabilising agent' shall be as per Clause 7.2.
+Table 8.3.2 – Stabilising agent content requirements
+Property Minimum Value Maximum Value
+Actual stabilising agent content target content minus MPV target content plus MPV"
+MRTS10,8.3.3,Unconfined compressive strength (Report Only),28,28,"The Contractor shall undertake testing to determine the UCS of lightly bound pavement materials
+during production, with the results reported to the Administrator for each lot.
+Target production UCS requirements for the production of lightly bound pavement materials are
+specified in Table 8.3.3.
+Table 8.3.3 – UCS reporting requirements
+Target Production UCS
+Time for Compliance
+Pavement Type
+Minimum Maximum UCS Test Requirement
+Value Value
+Lightly Bound Improved Layer 1.0 MPa 2.0 MPa 7 days
+Lightly Bound Base
+UCS 7-lower * UCS 7-upper * 7 days Report Only
+&
+Lightly Bound Subbase 1.0 MPa 2.0 MPa 28 days
+* Refer to Stabilised Mix Design Certificate
+UCS test results are to be reported for each lot as follows:
+• 7 day UCS for Lightly Bound Improved Layers, and
+• 7 and 28 day UCSs for Lightly Bound Bases and Subbases
+As shown in Table 8.3.3, the conformance requirement for UCS is report only – that is individual
+UCS results are not assessed on their own for conformance. Clauses 9.5.2 and 9.5.3 set out the
+requirements to assess UCS on a process control basis, where by multiple UCS results outside of
+the target range may constitute a mix design review or resubmission of the mix design."
+MRTS10,8.3.4,Compaction standard,28,29,"The characteristic value of relative compaction must comply with the requirements specified in
+Table 8.3.4(a).
+Table 8.3.4(a) – Compaction requirements
+Material Minimum Value
+Upper most layer of lightly bound base 102% (Standard Compaction)
+All other cases 100% (Standard Compaction)
+Where the use of IC Rollers is specified in Clause 2.3 of Annexure MRTS10.1, the lot coverage must
+comply with the requirements specified in Table 8.3.4(b).
+Coverage shall be calculated as:
+1. The area of the lot (that is to be incorporated into the Works) which has achieved the minimum
+number of roller passes nominated in the Lightly Bound Pavement Construction Procedure,
+divided by
+2. the total area of the lot that is to be incorporated into the Works.
+Table 8.3.4(b) – IC Roller Coverage
+Property Minimum Value
+IC Roller coverage 90%"
+MRTS10,8.3.5.1,General,29,29,"The pavement shall be constructed so as not to depart from the widths, length, height and shape
+specified in the design documentation by more than the tolerances stated in this clause.
+The widths and heights of the surface of layers other than the final layer shall be calculated by the
+Contractor using the widths, heights and shapes for the completed pavement, and the depth to the
+surface of the particular layer within the pavement as described in the design documentation.
+The location of longitudinal joints in paving runs must also comply with the requirements of
+Clause 8.2.10."
+MRTS10,8.3.5.2,"Geometrics, horizontal tolerances",29,29,"The horizontal location of any point on the pavement shall not differ from the corresponding point
+shown in the design documentation, or the point calculated as described in Clause 8.3.5.1, by more
+than ± 50 mm except for the following situations:
+a) For pavement edges not adjacent to any other part of the pavement and not adjacent to any
+fixed infrastructure or adjoining road, the transverse tolerance shall be – 50 mm, + 250 mm
+(where the + tolerance is in the direction which increases the width of the pavement), and
+b) where alignment of the pavement with an existing pavement or piece of fixed infrastructure is
+necessary, the new work shall be joined neatly to the existing work in a smooth manner as
+shown on the drawings, or if this is not shown, in a manner approved by the Administrator."
+MRTS10,8.3.5.3,"Geometrics, vertical tolerances",29,30,"The vertical tolerances specified in Table 8.3.5.3 shall apply for:
+• The surface level (height) measured at any point on the surface of any layer, and
+• The average total thickness of the constructed course (which may comprise multiple layers of
+the same lightly bound pavement material) compared to the specified (designed) total
+thickness.
+Table 8.3.5.3 – Primary geometric tolerances
+Property Value
+Where the layer
+has been hard-cut
+± 15 mm*
+Surface level / height in accordance with
+(individual) Clause 8.2.8.2
+All other layers ± 10 mm
+Total thickness (average) - 20 mm / + unspecified
+* Where the pavement is required to be hard-cut as specified in Clause 8.2.7.2, these tolerances shall
+apply after the pavement has been hard-cut and prepared ready for construction of the overlying layer.
+At all times the Contractor shall target construction at the mid-point of the surface level tolerances."
+MRTS10,8.3.5.4,Crossfall,30,30,"For the final (uppermost) layer of a lightly bound base to be constructed under the Contract, the
+crossfall shall not depart from the design crossfall by more than 0.5% absolute.
+The crossfall shall be measured:
+a) between any two points more than two metres apart (excluding where the overall width of a
+single crossfall is less than two metres wide). For crossfalls less than two metres wide, the
+measurement shall be made between the extreme edges of the crossfall as shown in the
+design documentation
+b) transverse to the centre line, and
+c) within the boundaries of a cross-section element which has a constant crossfall as shown in
+the design documentation."
+MRTS10,8.3.6,Deviation from a straight-edge,30,30,"The deviation from a three metre long straight-edge placed anywhere on the surface of the final
+(uppermost) layer of a lightly bound base to be constructed under the Contract, shall be in accordance
+with the requirements of Table 8.3.6 with due allowance being made for design shape, where relevant.
+Table 8.3.6 – Requirements for deviation from a straight-edge
+Property Maximum Value
+Deviation from a straight edge 5 mm"
+MRTS10,8.3.7,Road roughness (surface evenness),30,31,"Unless otherwise specified in Clause 2.4 of Annexure MRTS10.1, for lightly bound bases the road
+roughness of the final (uppermost) layer to be constructed under the Contract, shall be in accordance
+with the requirements of Table 8.3.7.
+Surface evenness testing is not required to be undertaken on lightly bound subbases and improved
+layers.
+Table 8.3.7 – Road roughness requirements for lightly bound bases
+Property Maximum Value
+Road roughness (Rs) (m/km) 2.31
+The roughness of the following features is required to be reported during roughness testing, but shall
+be excluded from the ride quality assessment:
+• roundabouts
+• railway crossing and grids
+• bridge joints, and
+• inspection pit covers (for example, drainage access chambers).
+The Contractor shall nominate a methodology and provide calculations on ride quality for the
+Administrators acceptance, showing how each feature has been excluded from the assessment and
+the subsequent lot structure.
+Pavement features (including joints) or signalised / unsignalised intersections (other than
+roundabouts) shall not be excluded from the ride quality assessment unless agreed by the
+Administrator.
+The Administrator may waive the requirement for roughness testing of the lightly bound base when
+the lightly bound base will be overlaid with asphalt or another pavement material within the same
+contract, and there is a roughness requirement specified elsewhere in the contract for the overlying
+layer."
+MRTS10,8.3.8,Ball penetration,31,31,"For lightly bound pavement layers that are to be covered be a sprayed bituminous treatment, the
+surface shall have a maximum ball penetration value that complies with the requirements specified in
+Table 8.3.8.
+Table 8.3.8 – Ball penetration requirements for lightly bound pavements
+Property Maximum Value
+Ball Penetration 3 mm"
+MRTS10,9.1,General,31,32,"Compliance testing of plant-mixed lightly bound pavements shall be undertaken on a lot basis in
+accordance with MRTS01 Introduction to Technical Specifications.
+For each lot, the Contractor is responsible for performing sufficient tests to ensure that the pavement
+complies in all regards with the requirements of this Technical Specification. As a minimum the
+Contractor's testing program shall not be less than that specified in this clause.
+The Contractor shall ensure that sufficient, clearly documented construction compliance records are
+provided to the Administrator to ensure that traceability of unbound pavement materials is provided
+from their source (for example, quarry face) to the constructed pavement.
+Maximum lot sizes, minimum test frequencies and the minimum number of tests required are specified
+in Appendix A.
+Where testing frequencies are specified as a number of tests per a quantity, the tests should be
+representative of the quantity of materials nominated, or part thereof.
+For example, if a frequency of 1 test per 1000 m² is nominated, and a lot includes 2500 m² of that
+material a minimum of 3 tests would be required."
+MRTS10,9.2,Test locations,32,32,"Locations for compliance testing shall be selected by random stratified sampling as specified in
+AS 1289.1.4.2. Representative sampling shall be undertaken as detailed in AS 1141.3.1. Spot
+sampling shall be undertaken as detailed in Test Method Q061."
+MRTS10,9.3,Maximum lot sizes,32,32,"The maximum lot sizes for plant-mixed lightly bound pavement works shall be as specified in Table A1
+of Appendix A."
+MRTS10,9.4.1,Segregation,32,32,"Minimum testing frequencies for segregation shall be as specified in Table A3 of Appendix A.
+The Administrator may direct additional testing of any areas which show visible signs of segregation
+during construction."
+MRTS10,9.4.2,Compaction,32,32,"Minimum testing frequencies for compaction shall be as specified in Table A3 of Appendix A.
+The compaction standard for each lot shall be represented by the minimum characteristic value of
+relative compaction. The characteristic value shall be calculated in accordance with
+Test Method Q020 using the individual relative compaction results reported for each lot.
+For each lot where IC is used, the Contractor shall use Veta to analyse the IC data for coverage.
+The Contractor shall provide to the Administrator all input files necessary to analyse the data in Veta
+and a report of the Veta analysis (which has been output directly from Veta). The Veta report shall
+include the locations and values of all individual compaction compliance test results.
+All data and files must be clearly linked to the construction lot which they relate to.
+The Veta software is freely available on the website https://www.intelligentconstruction.com/"
+MRTS10,9.4.3,Unbound pavement material,33,33,"Minimum testing frequencies for unbound pavement materials shall be as specified in
+MRTS05 Unbound Pavements.
+For each lightly bound pavement lot, the Contractor shall provide the unbound pavement material
+source and product test results to confirm that the unbound material conforms to the requirements of
+MRTS05 Unbound Pavements."
+MRTS10,9.4.4,Stabilising agent & chemical admixture certification,33,33,"For each lightly bound pavement lot, the Contractor shall provide written certification from the
+stabilising agent and chemical admixture supplier, with supporting test results, confirming that the
+material delivered conforms to the requirements of the Stabilised Mix Design Certificate as well as
+Clause 6.2 and Clause 6.3.
+Where the stabilising agent is a blend, the Contractor shall also certify for each lightly bound
+pavement lot that the proportions of the blend comply with that nominated in the Stabilised Mix Design
+Certificate."
+MRTS10,9.4.5,Cement slurry,33,33,"For each lot where a cement slurry is incorporated into the works, the Contractor shall report the
+average spread rate of the slurry by reconciling the amount of slurry spread (measured my mass) over
+the area treated."
+MRTS10,9.4.6,Stabilising agent content,33,33,"Minimum testing frequencies for stabilising agent content shall be as specified in Table A2 of
+Appendix A.
+The actual content of stabilising agent determined using Test Method Q134 for each lot shall be
+represented by both the:
+a) minimum characteristic value of the actual content of stabilising agent, and
+b) maximum characteristic value of the actual content of stabilising agent."
+MRTS10,9.4.7,Mixing plant variability,33,34,"Minimum testing frequencies for mixing plant variability shall be as specified in Table A2 of
+Appendix A.
+For each lot, the accuracy of the system used to dispense stabilising agent shall be verified by
+reconciliation between:
+a) The stabilising agent used
+The actual (measured) amount of stabilising agent added to the pug mill (refer Clause 8.2.1.2)
+to produce the lot, and
+b) The amount of unbound pavement material used
+The amount of unbound pavement material used in the lightly bound pavement material shall
+be established based on the wet mass of mixture, as shown on weighbridge records, adjusted
+to a dry mass (using the average measured moisture content of the mixture for the Lot), minus
+the mass of stabilising agent used.
+The average stabilising agent content can then be calculated as a percentage by dry mass of the
+unbound pavement material.
+Alternatively, for assessment of the accuracy of the system, the Contractor may propose an alternative
+compliance method, such as one that includes a continuous (real time) data collection system of the
+throughput mass of all constituent materials. Any proposed alternative must be approved by the
+Administrator prior to use.
+Example of approach to calculate average stabilising agent content:
+The stabilising agent used
+• production records shown 3 tonnes of stabilising agent was added to the pug-mill to
+produce a lot
+The amount of lightly bound pavement material produced
+• weight bridge records show a total of 200 tonnes of lightly bound pavement materials was
+produced in the same lot
+• moisture content testing for the lot returned an average result of 7.5%
+• the equivalent dry tonnage of the mixture would therefore be calculated as 186 tonnes
+• the equivalent dry tonnage of unbound pavement material used would be 183 tonnes
+• the average stabilising agent content is therefore 1.64%
+Testing for mixing plant variability is not intended to assess the plant performance during
+production against the MPV nominated in the mix design process.
+While there is no specific specification limit for this property, excessive variation in the actual mixing
+plant variability during production should be investigated by the Contractor, and consideration given
+to reviewing process controls accordingly."
+MRTS10,9.4.8,Moisture content,34,34,"Minimum testing frequencies for moisture content testing shall be as specified in Table A2 and
+Table A3 of Appendix A.
+The moisture content of each lot shall be represented by the individual moisture content results."
+MRTS10,9.4.9,Unconfined compressive strength,34,35,"Minimum testing frequencies for unconfined compressive strength (UCS) testing shall be as specified
+in Table A2 of Appendix A.
+When UCS tests are being undertaken, the sample being used must also be tested for stabilising
+agent content and moisture content.
+Conformance testing for UCS and stabilising agent content must be undertaken in accordance with
+the time requirements given in the respective Test Methods. Under normal circumstances, these
+tests would all be undertaken on samples taken from material being discharged directly from the
+pug mill. These results would therefore represent material properties at the point of production.
+Material properties at the point of placement are controlled by ensuring materials are placed within
+the allowable working time, which allows a reduction in both the UCS and maximum dry density of
+the material as detailed in Test Method Q136A. However, there is no specific requirements that the
+material is tested for conformance in this regard."
+MRTS10,9.4.10,Proof rolling,35,35,"Each lightly bound pavement layer shall be tested for perceptible surface deformation by ‘proof rolling’
+the pavement, in the presence of the Administrator Witness Point 2 All areas of lightly bound
+pavements shall be proof rolled, including all trafficked lanes, shoulders and other areas.
+Testing shall be undertaken in accordance with Test Method Q723. Testing for perceptible surface
+deformation is exempt from the requirement for NATA accreditation or Construction Material Testing
+(CMT) registration.
+In areas where perceptible surface deformation is observed, the Contractor shall remove and replace
+the affected section, or take other corrective action to the satisfaction of the Administrator. In doing so,
+the Administrator may require the Contractor to carry out additional compliance testing to ensure that
+the affected section of pavement complies with Clause 8.2.5 and 8.3.4. No additional payment will be
+made by the Principal for any such additional testing.
+The proof rolling result reported for any lot shall be representative of the condition of the lot
+immediately prior to it being covered by another pavement layer. If the pavement lot has been
+subjected to rainfall or moisture ingress in any way since proof rolling was undertaken, the
+Administrator may direct the Contractor to retest the lot to prove conformance. If the retested results
+do not comply with the requirements of this Technical Specification, the Contractor shall dry back
+and/or reprepare the pavement such that it complies with the requirements of this Technical
+Specification. No additional payment will be made by the Principal for any such additional efforts.
+Test Method Q723 provides a method for using either a 7,000 L single rear axle or 10,000 L
+tandem rear axle loaded water tanker for proof rolling."
+MRTS10,9.4.11,Ball penetration,35,36,"For lightly bound pavement layers that are to be covered by a sprayed bituminous treatment, the
+Contractor shall undertake ball penetration testing in accordance with Test Method AG:PT/T251 on
+the completed layer prior to undertaking the sprayed bituminous treatment.
+Minimum testing frequencies for ball penetration testing shall be as specified in Table A3 of
+Appendix A.
+In accordance with Test Method AG:PT/T251, ball penetration results shall be reported as both
+individual and average values.
+For the average value to be adopted for lot conformance and seal design purposes, the results
+must be representative of a homogeneous section of pavement. Any areas represented by
+excessively low or high individual values should be considered for sub-lotting and may require
+additional construction or testing actions before they can be incorporated into the final works. Any
+such works shall be undertaken by the Contractor at no cost to the Principal.
+The ball penetration result reported for any lot shall be representative of the condition of the lot
+immediately prior to it being covered. If the pavement lot has been subjected to rainfall or moisture
+ingress in any way since ball penetration testing was undertaken, the Administrator may direct the
+Contractor to retest the lot to prove conformance. If the retested results do not comply with the
+requirements of this Technical Specification, the Contractor shall dry back and/or reprepare the
+pavement such that it complies with the requirements of this Technical Specification. No additional
+payment will be made by the Principal for any such additional efforts."
+MRTS10,9.4.12,Geometrics & deviation from a straight edge,36,36,"Minimum testing frequencies for geometric tolerances and deviation from a straight edge shall be as
+specified in Table A4 of Appendix A.
+Horizontal position, vertical levels, crossfall and layer thickness shall be determined by survey unless
+otherwise agreed by the Administrator."
+MRTS10,9.4.13,Road roughness (surface evenness),36,36,"The road roughness of the final (uppermost) layer of all lightly bound bases shall be measured by
+Test Methods Q708B, Q708C or Q708D.
+For road roughness testing, a lot shall be 100 m in length.
+Road roughness testing is not required to be undertaken on lightly bound subbases and improved
+layers.
+The Administrator may waive the requirement for roughness testing where the lightly bound base
+will be overlayed with asphalt or another pavement material within the same Contract and there is a
+roughness requirement specified elsewhere in the Contract for the overlying layer."
+MRTS10,9.5.1,Acceptance of lots,36,37,"Unless otherwise approved by the Administrator, no layer of lightly bound pavement shall be covered
+by a subsequent layer of pavement or by a surfacing until Hold Point 5:
+a) all testing has been completed (other than UCS testing)
+b) the surface finish of the layer complies with the requirements of Clause 8.2.8
+c) all test results comply with the requirements of this Technical Specification, or any non-
+conformances have been submitted, with corrective actions proposed by the Contractor, and
+accepted by the Administrator
+d) the layer has been presented to the Administrator for inspection, and
+e) the As-Constructed Survey requirements of the lot have been met as specified in
+MRTS56 Construction Surveying and notice of such works has been provided to the
+Administrator."
+MRTS10,9.5.2,Control charts,37,37,"For each lightly bound pavement lot, the Contractor shall submit control charts which show the
+following properties for that lot and all previous lots of the same lightly bound material produced under
+the Contract:
+• Liquid limit
+• Linear shrinkage
+• UCS
+• Stabilising agent content, and
+• Actual moisture content (sampled at plant).
+Appendix B provides some examples of lot control charts. The Contractor may choose to provide
+control charts for additional properties."
+MRTS10,9.5.3,Mix design review,37,37,"From the control charts provided under Clause 9.5.2, when more than five out of the most recent"
+MRTS10,20,"(or less) production UCS test results are outside of the target limits specified in Table 8.3.3, the",37,38,"Contractor shall review the material production (using the control charts), to validate that the intent of
+the mix design requirements specified in TN204 Mix Design Registration of plant-mixed cementitiously
+stabilised pavement material is being achieved.
+Within seven days of triggering this clause the Contractor shall submit a proposal, to the satisfaction of
+the Administrator, to:
+• address the root cause, and
+• bring the production UCS result back in line with the target requirements specified in
+Table 8.3.3.
+In addition to the Administrator, on Transport and Main Roads projects the proposal shall also be
+submitted to the Mix Design Registrar by emailing stabilisedmixdesign@tmr.qld.gov.au.
+When more than 12 of the most recent 40 (or less) production UCS test results are outside of the
+target limits specified in Table 8.3.3, the Contractor shall cease using the nominated mix design.
+Hold Point 6 Use of the mix design, or an alternative mix design shall not continue until
+[Hold Point 3] has been re-released.
+Where the process control charts show production UCSs trending towards the lower or upper side
+of the target range, the Contractor should increase or decrease the nominated 'target content of
+stabilising agent'. Provided the amended 'target content of stabilising agent' is within the acceptable
+target content range shown on the Stabilised Mix Design Certificate, a new mix design registration
+is not needed.
+Where the nominated 'target content of stabilising agent' needs to be decreased, but the required
+target content cannot be effectively blended, the Contractor should revise the mix design to use an
+alternative stabilising agent."
+MRTS10,10,Supplementary requirements,38,40,"The requirements of this Technical Specification are varied by the supplementary requirements
+specified in Clause 4 of Annexure MRTS10.1.
+Appendix A: Maximum lot sizes and minimum testing frequencies
+Table A1 – Maximum lot size requirements
+Construction Activity Maximum Lot Size
+Supply of unbound pavement materials Refer MRTS05 Unbound Pavements
+Construction of lightly bound pavements A continuous single layer constructed in 1 day’s production
+Road roughness testing 100 m
+Table A2 – Lightly bound pavement materials – source and product testing
+Normal Testing Level Reduced Testing Level
+Property Test Method Lot Size
+Minimum Testing Minimum No. of Minimum Testing Minimum No. of
+Frequency Tests Frequency Tests
+Unbound pavement
+material (source and Refer MRTS05 Unbound Pavements
+product)
+pH (water) APHA 4500-H B
+Conductivity (water) APHA 2510-B – Before use and then at 12 month intervals
+Sulfate content (water) AS 1289.4.2.1#
+Stabilising Agent Content Q134 ≤ 100 t – 1 per lot – 1 per lot
+(heat of neutralisation)
+> 100 t 1 per 300t 2 per lot 1 per 500t 2 per lot
+Stabilising Agent Content
+Refer Clause 9.4.7 Any – 1 per lot – 1 per lot
+(mixing plant variability)
+AS 1289.2.1.1, ≤ 100 t – 1 per lot – 1 per lot
+Moisture Content AS 1289.2.1.4 or > 100 t"
+MRTS10,1,per 300t 2 per lot 1 per 500t 2 per lot,40,42,"(sampled at plant) AS 1289.2.1.6
+AS 1289.2.3.1 – 1 per material type if subsidiary methods used
+Unconfined Compressive ≤ 200 t – – – –
+Strength (7 day)
+(all materials)
+Q115
+Unconfined Compressive > 200 t 1 per 1000t* 1 per lot 1 per 1000t* 1 per lot
+Strength (28 day)
+(lightly bound base and
+lightly bound subbase only)
+Notes:
+* 1 test is the average of 3 individual UCS specimens.
+# Or other published or validated classical chemistry technique or instrumentation technique.
+Table A3 – Construction standard testing
+Normal Testing Level Reduced Testing Level
+Property Test Method
+Minimum Testing Minimum No. of Tests Minimum Testing Minimum No. of Tests
+Frequency Frequency
+Segregation Q103A 1 per lot (Additional testing as directed by the Administrator)
+AS 1289.2.1.1, 1 per 500 m² 4 per lot 1 per 1000 m² 4 per lot
+Moisture Content AS 1289.2.1.4 or
+(sampled in field prior
+AS 1289.2.1.6
+to compaction)
+AS 1289.2.3.1 1 per material type if subsidiary methods used
+Compaction Q140A 1 per 500 m² 4 per lot 1 per 1000 m² 4 per lot
+Proof Rolling Q723 Refer Clause 9.4.10
+For lightly bound pavement layers where the final surfacing (to be trafficked) is a sprayed
+bituminous treatment:
+• 5 test chainages per lot
+• Test chainages (longitudinal coordinates) determined in accordance with AS 1289.1.4.2, and
+• At each test chainage an individual test must be undertaken in both the inner and outer wheel
+path for each traffic lane in the lot at that location.
+Ball Penetration
+AG:PT/T251
+Testing
+For lightly bound pavement layers where the final surfacing (to be trafficked) is not a sprayed
+bituminous treatment (i.e. the sprayed bituminous treatment will be covered by asphalt):
+• 5 test chainages per lot
+• Test chainages (longitudinal coordinates) determined in accordance with AS 1289.1.4.2, and
+• At each test chainage an individual test must be undertaken at the offset (lateral coordinate)
+determined in accordance with AS 1289.1.4.2.
+Table A4 – Geometrics testing
+Property Test Method Normal Testing Level Reduced Testing Level
+Layer Thickness Survey 1 per 20 linear m 1 per 50 linear m
+Horizontal Position & Vertical Levels Survey Each 20 linear metres^ - measured at all shoulder edges, lane lines and
+other changes in grade across the pavement
+Deviation from a straight edge Q712 a) within lane: 1 per 20 linear metres^ along each paving run, unless
+otherwise approved by the Administrator. Measurements shall be
+taken in both the transverse and longitudinal directions.
+b) longitudinal joint: 1 per 20 linear metres^ along each joint, unless
+otherwise approved by the Administrator.
+c) transverse joint: 1 measurement per joint in each wheel path in
+each lane.
+For the measurement of joints, place the straightedge on the completed
+layer, perpendicular to the joint. With the end of the straightedge directly
+over the joint, gradually move the straightedge across the joint for its full
+length and identify the point on the layer that produces the largest deviation
+under the straightedge (between two points of contact). Record the
+deviation at this point.
+For all joints that tie the new works to existing pavement (not constructed
+under the Contract), place the straightedge on the road surface
+perpendicular to the joint. With the end of the straightedge directly over the
+joint and the other end located within the works, record the largest deviation
+under the straightedge (between two points of contact)."
+MRTS10,1,per 20 linear metres^ – measured for all crossfalls shown in the design,42,44,"Crossfall Survey
+documentation at the point of testing
+Road Roughness Q708B, Q708C or Q708D Refer Clause 9.4.13
+^ The Administrator may approve the adoption of a reduced testing frequency of 1 per 50 m in ‘mid-block’ applications (that is, areas of pavement not located in the vicinity of
+intersections, roundabouts, steep grades and/or sharp curves).
+Appendix B: Examples of Lot Control Chart
+The following are examples of control charts that would satisfy the requirements of Clause 9.5.2. The
+Contractor may choose to follow this format or another provided that a control chart is provided for
+each property given in Clause 9.5.2 and results for each property are able to be cross-referenced
+against the same samples.
+The Contractor may choose to provide control charts for additional properties.
+The use of a lot tracking spreadsheet to summarise light bound lot data is recommended.
+Figure B1 – Example: Lot Control Chart – UCS and Stabilising Agent
+Figure B2 – Example: Lot Control Chart – Unbound Properties
+Figure B3 – Example: Lot Control Chart – Production Moisture Content"
