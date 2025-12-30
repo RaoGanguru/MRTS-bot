@@ -1,0 +1,40 @@
+Unique ID,Reference Text,Description,Clause,Responsibility,Records,Inspection Method,HpWpCString,ItemTypeString
+7b0e1cc2-b86e-42b7-bba1-59b6eac0ab42,"MRTS03
+Hold Point 4",Backfilling of culverts shall not commence until all the conformance and As Constructed Survey requirements have been met and notice of such works provided to the Administrator.,MRTS03 Cl 11.3.10,Engineer,"Permit
+Correspondance",Visual
+fb774d75-d363-45f1-ba93-9f1b50899673,,The design height of fill above culverts shall be as specified in the drawings.,MRTS03 Cl 10.2,Engineer,Correspondance,Visual
+a3ea3c12-7fc4-4e63-b73f-8af8e234d730,Hold Point 11,"Prior to incorporating any Backfill material into the Works, the Contractor shall submit stockpile or source tests results as specified in Appendix A which demonstrate the source meets the specified material requirements",MRTS04 Cl 19.1,Engineer,"Permit
+Correspondance",Visual
+bc3f7264-2795-439e-b186-7eb60a32b886,Witness Point 5,"Material for Backfill shall be as shown on the drawings or as specified elsewhere in the Contract. Where not so shown or specified, material shall be Earth Backfill Material complying with the requirements of Clause 19.2.2",MRTS04 Cl 19.3.1,Engineer,"Permit
+Correspondance",Visual
+a8bdba98-3cd1-47de-80ea-babe96eaa5a4,,"All Backfill materials shall be free of soluble salts, organic matter and other deleterious matter",MRTS04 Cl 19.2.1,Engineer,Correspondance,Visual
+5dd004b3-f9eb-4753-9e7a-cc13ab38dfd7,Hold Point 12,"Backfill material shall not be placed until culverts, structures, pipes, conduits, pits, and so on have been completed and inspected, and any specified curing periods have elapsed.",MRTS04 Cl 19.3.3,Engineer,"Permit
+Correspondance",Visual
+8a4c662d-2e6d-4db8-b6e0-a0165f91b7bd,,"Backfill Materials
+  Earth Backfill Material - MRTS04 Cl 19.2.2
+  Select Backfill Material - MRTS04 Cl 19.2.3, Table 19.2.3
+  Free Draining Granular Material - MRTS04 Cl 19.2.4, Table 19.2.4
+  Sand - MRTS04 Cl 19.2.5, Table 19.2.5
+  Coarse sand- MRTS04 Cl 19.2.6, Table 19.2.6
+  Bedding Material and drainage aggregate - MRTS Cl 19.2.7, Table 19.2.7
+  Filter material - MRTS04 Cl 19.2.8, Table 19.2.8
+  Cement Stabilised Unbound Granular Material - MRTS04 Cl 18.2.2, 18.2.5
+  Stabilised Sand, Dry Stabilised Sand - MRTS04 Cl 19.2.10, 19.2.11
+  Lean Mix Concrete (Min 5 MPa at 28 days) - MRTS04 Cl 19.2.12",MRTS04 Cl 19.2,Engineer,Correspondance,Visual
+71ad18f6-4c1f-4e5e-9b0d-99f7546013e5,,"Foundation bedding, Haunch, Side and Overlay zones for concrete pipe culverts shall be constructed as shown on Standard Drawing 1359 Culverts – Installation, Bedding and Filling / Backfilling Against / Over Culverts.",MRTS04 Cl 19.3.4,Engineer,Correspondance,Visual
+4272942b-e222-49d7-b204-8a40fac3f013,,Materials for foundation bedding and Haunch Zone shall be Bedding Material complying with the requirements of Clause 19.2.7.,MRTS04 Cl 19.2.7,Engineer,Correspondance,Visual
+ae3e9c95-9ad9-4e0c-b725-ae3743ab7c3c,,Material for a Side Zone shall be Select Backfill Material complying with the requirements of Clause 19.2.3.,MRTS04 Cl 19.2.3,Engineer,Correspondance,Visual
+24faf7e8-0488-467e-9402-f5147a092e57,,"For Overlay Zones, material within 300 mm of the structure, culvert, pipe, and so on shall be Earth Backfill Material complying with the requirements of Clause 19.2.2(Class A1, A2 or Class B except that 100% of the material shall pass 25.0 mm test sieve. Elsewhere, Overlay Zone material may contain Stone sized up to 150 mm maximum dimension.",MRTS04 Cl 19.2.2,Engineer,Correspondance,Visual
+f4671e69-b69c-422d-b882-c9e18112aff5,,"The construction loads which shall be placed on the culvert shall be as per Clause 12 of MRTS03 Drainage, Retaining Structures and Protective Treatments.",MRTS03 Cl 12,Engineer,Correspondance,Visual
+f03ce5b9-c7e2-4633-ae73-8de7063556e8,,"Compaction
+Unless specified otherwise in Clause 19.3 or elsewhere in the Contract, Backfill shall be compacted using the compacted layer method of construction in accordance with the requirements of Clause 15, except as may be modified by the requirements of Clause 19.","MRTS04 Cl 15, 19.3",Engineer,Correspondance,Visual
+bf5c5fcd-e006-4a28-bbd2-686d5a078ba1,,Backfill which extends into the Subgrade shall conform to the requirements of Clause 18.,MRTS04 Cl 18,Engineer,Correspondance,Visual
+0a9f81a7-8dd6-4892-ae46-2577a4e93c64,,"Backfill Layer Thickness
+Except Sand - >100mm <= 150mm
+Sand >100mm <= 300mm",MRTS04 Cl 15.3,Engineer,Correspondance,Visual
+2c1779b2-b7dc-4d0d-b1b6-91fa2ac91a5c,,"Density Requirement
+Cohesive >= 95%
+Cohesion-less 70% (Density Index)",MRTS04 Cl 15.3,Engineer,Correspondance,Visual
+bcc25240-d88a-46da-b51f-3e532ecdda35,,"Testing Frequency
+As per Appendix A of MRTS04 & Annexure Clause 1 of MRTS03.1","MRTS04 Appendix A
+MRTS03.1 Annexure Cl 1",Engineer,Correspondance,Visual
