@@ -25,17 +25,6 @@ def load_csvs(endswith: str) -> pd.DataFrame:
 
 clauses_df = load_csvs("_structured_clauses.csv")
 tables_df  = load_csvs("_tables_ocr.csv")
-st.sidebar.header("Debug")
-st.sidebar.write("DATA_FOLDER:", DATA_FOLDER)
-st.sidebar.write("Folder exists:", os.path.exists(DATA_FOLDER))
-
-if os.path.exists(DATA_FOLDER):
-    st.sidebar.write("Files in folder:")
-    st.sidebar.write(os.listdir(DATA_FOLDER))
-
-st.sidebar.write("Clauses rows:", 0 if clauses_df.empty else len(clauses_df))
-st.sidebar.write("Tables/OCR rows:", 0 if tables_df.empty else len(tables_df))
-
 
 # MRTS list
 mrts_set = set()
@@ -46,7 +35,12 @@ if not tables_df.empty and "mrts" in tables_df.columns:
 all_mrts = sorted([m for m in mrts_set if m.strip()])
 
 selected_mrts = st.selectbox("Select MRTS", ["All MRTS"] + all_mrts)
-search_text = st.text_input("Search (e.g. EME thickness, air voids, Table 8.2)")
+search_text = st.text_input("Search (try: pavement, stabilisation, compaction, moisture, sampling, bitumen)")
+
+# ✅ UX FIX: don’t dump all clauses when search is empty
+if not search_text.strip():
+    st.info("Type a keyword to search. Example: pavement, stabilisation, compaction, moisture, sampling, bitumen.")
+    st.stop()
 
 def filter_df(df: pd.DataFrame) -> pd.DataFrame:
     if df.empty:
@@ -56,12 +50,13 @@ def filter_df(df: pd.DataFrame) -> pd.DataFrame:
     if selected_mrts != "All MRTS" and "mrts" in out.columns:
         out = out[out["mrts"].astype(str) == selected_mrts]
 
-    if search_text.strip():
-        words = [w.lower() for w in search_text.split() if len(w) > 2]
-        out = out[out.apply(
-            lambda r: any(w in " ".join(r.astype(str)).lower() for w in words),
-            axis=1
-        )]
+    words = [w.lower() for w in search_text.split() if len(w) > 2]
+
+    # keyword match across whole row
+    out = out[out.apply(
+        lambda r: any(w in " ".join(r.astype(str)).lower() for w in words),
+        axis=1
+    )]
     return out
 
 clauses_f = filter_df(clauses_df)
@@ -71,23 +66,47 @@ tab1, tab2 = st.tabs(["🟦 Clauses", "🟩 Tables / OCR"])
 
 with tab1:
     if clauses_f.empty:
-        st.info("No clause results found.")
+        st.info("No clause results found. Try different keywords.")
     else:
-        # Required columns: mrts, clause_id, title, page_start, page_end, text
-        for _, r in clauses_f.iterrows():
+        MAX_RESULTS = 25
+        st.caption(f"Showing top {min(len(clauses_f), MAX_RESULTS)} results (limit {MAX_RESULTS}).")
+        for _, r in clauses_f.head(MAX_RESULTS).iterrows():
             clause_id = r.get("clause_id", "")
             title = r.get("title", "Clause")
             header = f"{clause_id} – {title}".strip(" –")
+
+            text = r.get("text", "")
+            snippet = text[:350] + ("..." if len(text) > 350 else "")
+
             with st.expander(header):
-                st.markdown(r.get("text", ""))
+                st.write(snippet)
                 st.caption(f"MRTS {r.get('mrts','')} | Pages {r.get('page_start','')}–{r.get('page_end','')}")
+                st.markdown("---")
+                st.markdown(text)
 
 with tab2:
+    # OCR tab is useful only if value_text contains real OCR text
     if tables_f.empty:
-        st.info("No table/OCR results found.")
+        st.info("No table/OCR results found. (Tip: OCR text must be in the 'value_text' column.)")
     else:
-        # Recommended columns: mrts, clause, table_id, parameter, min, max, units, value_text, page, notes, source
-        display_cols = [c for c in ["mrts","clause","table_id","parameter","min","max","units","page","notes"] if c in tables_f.columns]
-        st.dataframe(tables_f[display_cols], use_container_width=True)
-        st.caption("OCR extracted tables – verify against official MRTS.")
+        MAX_RESULTS = 25
+        st.caption(f"Showing top {min(len(tables_f), MAX_RESULTS)} OCR results (limit {MAX_RESULTS}).")
+
+        # Show OCR cards (better than empty dataframe)
+        for _, r in tables_f.head(MAX_RESULTS).iterrows():
+            mrts = r.get("mrts","")
+            page = r.get("page","")
+            value_text = str(r.get("value_text","")).strip()
+            notes = str(r.get("notes","")).strip()
+
+            if not value_text and not notes:
+                continue
+
+            title = f"{mrts} | Page {page}".strip()
+            with st.expander(title):
+                if notes:
+                    st.caption(notes)
+                st.text(value_text if value_text else "(No OCR text in value_text)")
+                st.caption("OCR extracted – verify against official MRTS.")
+
 
