@@ -114,3 +114,69 @@ st.caption(
     "Note: This tool presents MRTS content as stored in CSV files. "
     "Always verify against the official MRTS documents."
 )
+# -----------------------------
+# MRTS selector (add ALL)
+# -----------------------------
+csv_files = [f for f in os.listdir(DATA_FOLDER) if f.lower().endswith(".csv")]
+csv_files = sorted(csv_files)
+
+mrtx_map = {f: f.replace("_", " ").replace(".csv", "") for f in csv_files}
+options = ["ALL_MRTS"] + csv_files
+
+selected_file = st.selectbox(
+    "Select MRTS document",
+    options=options,
+    format_func=lambda x: "All MRTS (search everything)" if x == "ALL_MRTS" else mrtx_map[x]
+)
+
+search_text = st.text_input("Search (try: EME thickness, air voids, Table 8.2)")
+
+def load_one(path: str) -> pd.DataFrame:
+    df1 = pd.read_csv(path).fillna("")
+    df1["_source_file"] = os.path.basename(path)
+    return df1
+
+# -----------------------------
+# Load data (one or all)
+# -----------------------------
+if selected_file == "ALL_MRTS":
+    all_frames = []
+    for f in csv_files:
+        try:
+            all_frames.append(load_one(os.path.join(DATA_FOLDER, f)))
+        except:
+            pass
+    if not all_frames:
+        st.warning("Could not load any CSV files from mrts_data.")
+        st.stop()
+    df = pd.concat(all_frames, ignore_index=True)
+else:
+    file_path = os.path.join(DATA_FOLDER, selected_file)
+    df = load_one(file_path)
+
+# -----------------------------
+# Smarter search: split into keywords
+# -----------------------------
+df = df.fillna("")
+filtered_df = df
+
+if search_text.strip():
+    words = [w.strip().lower() for w in search_text.replace("?", "").split() if len(w.strip()) >= 3]
+
+    def row_matches(row) -> bool:
+        text = " ".join(row.astype(str).tolist()).lower()
+        return any(w in text for w in words)
+
+    mask = df.apply(row_matches, axis=1)
+    filtered_df = df[mask]
+
+st.markdown("### Results")
+
+if filtered_df.empty:
+    st.info("No matching records found. Try keywords like: EME, thickness, air voids, Table 8.2.")
+    st.stop()
+
+# Show source file first if searching ALL
+show_cols = list(filtered_df.columns)
+if "_source_file" in show_cols:
+    st.caption("Tip: results show which MRTS file they came from.")
