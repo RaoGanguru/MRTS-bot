@@ -1,64 +1,116 @@
 
 import streamlit as st
 import pandas as pd
+import os
 
-st.set_page_config(page_title="TMR MRTS 32 Asphalt Reference", layout="centered")
+# -----------------------------
+# Page setup
+# -----------------------------
+st.set_page_config(
+    page_title="MRTS Reference Viewer",
+    layout="wide"
+)
 
-st.title("TMR MRTS 32 Asphalt Reference (QLD)")
-st.caption("Structured reference tool — presents MRTS values with notes and references. No compliance decisions.")
+st.title("MRTS Reference Viewer (QLD)")
+st.caption(
+    "Structured MRTS reference tool. "
+    "Displays requirements, procedures, inspections, and records exactly as stored. "
+    "No compliance decisions."
+)
 
-# Load data
-DATA_FILE = "asphalt_mrts32.csv"
+# -----------------------------
+# Data folder
+# -----------------------------
+DATA_FOLDER = "mrts_data"
+
+if not os.path.exists(DATA_FOLDER):
+    st.warning("No MRTS data folder found. Please upload CSV files to /mrts_data.")
+    st.stop()
+
+# -----------------------------
+# Load CSV files
+# -----------------------------
+csv_files = [f for f in os.listdir(DATA_FOLDER) if f.lower().endswith(".csv")]
+
+if not csv_files:
+    st.warning("No CSV files found in /mrts_data yet.")
+    st.stop()
+
+# Friendly names for selector
+mrtx_map = {f: f.replace("_", " ").replace(".csv", "") for f in csv_files}
+
+# -----------------------------
+# MRTS selector
+# -----------------------------
+selected_file = st.selectbox(
+    "Select MRTS document",
+    options=csv_files,
+    format_func=lambda x: mrtx_map[x]
+)
+
+file_path = os.path.join(DATA_FOLDER, selected_file)
 
 try:
-    df = pd.read_csv(DATA_FILE)
+    df = pd.read_csv(file_path)
 except Exception as e:
-    st.error(f"Could not load data file: {DATA_FILE}")
+    st.error("Unable to read the selected CSV file.")
     st.code(str(e))
     st.stop()
 
-# Basic cleanup for display
 df = df.fillna("")
 
-# Filters (mobile-friendly)
-topic_options = ["All"] + sorted([t for t in df["topic"].unique() if t])
-material_options = ["All"] + sorted([m for m in df["material"].unique() if m])
+# -----------------------------
+# Search
+# -----------------------------
+search_text = st.text_input("Search keyword (e.g. thickness, air voids, testing)")
 
-topic = st.selectbox("Topic", topic_options, index=0)
-material = st.selectbox("Material / Mix", material_options, index=0)
-
-filtered = df.copy()
-if topic != "All":
-    filtered = filtered[filtered["topic"] == topic]
-if material != "All":
-    filtered = filtered[filtered["material"] == material]
+if search_text:
+    mask = df.apply(
+        lambda row: row.astype(str).str.contains(search_text, case=False).any(),
+        axis=1
+    )
+    filtered_df = df[mask]
+else:
+    filtered_df = df
 
 st.markdown("### Results")
-st.dataframe(filtered, use_container_width=True)
 
-# Friendly “Answer-style” view for common items
-st.markdown("### Quick view")
-for _, row in filtered.iterrows():
-    st.markdown(f"**{row['topic']} — {row['material']} — {row['property']} ({row['layer_or_class']})**")
+if filtered_df.empty:
+    st.info("No matching records found.")
+    st.stop()
 
-    # Thickness range
-    if row["value_min"] != "" or row["value_max"] != "":
-        st.write(f"- Range: **{row['value_min']}–{row['value_max']} {row['units']}**")
+# -----------------------------
+# Display results
+# -----------------------------
+for idx, row in filtered_df.iterrows():
+    with st.expander(f"{row.get('Description', 'MRTS Entry')}"):
+        if "Clause" in row:
+            st.markdown(f"**Clause:** {row['Clause']}")
+        if "Responsibility" in row:
+            st.markdown(f"**Responsibility:** {row['Responsibility']}")
+        if "Records" in row:
+            st.markdown(f"**Records:** {row['Records']}")
+        if "Inspection Method" in row:
+            st.markdown(f"**Inspection Method:** {row['Inspection Method']}")
 
-    # Tolerances
-    if row["tolerance_avg"] != "":
-        st.write(f"- Tolerance (average): **± {row['tolerance_avg']} {row['units']}**")
-    if row["tolerance_individual"] != "":
-        st.write(f"- Tolerance (individual): **± {row['tolerance_individual']} {row['units']}**")
+        # Show all remaining fields safely
+        st.markdown("---")
+        for col in df.columns:
+            if col not in [
+                "Description",
+                "Clause",
+                "Responsibility",
+                "Records",
+                "Inspection Method"
+            ]:
+                value = row[col]
+                if str(value).strip():
+                    st.markdown(f"**{col}:** {value}")
 
-    # Notes + Reference
-    if row["notes"] != "":
-        st.write(f"- Notes: {row['notes']}")
-    ref_bits = [row["reference_doc"], row["reference_date"], row["reference_table"], row["reference_clause"]]
-    ref = ", ".join([b for b in ref_bits if b])
-    if ref:
-        st.write(f"- Reference: {ref}")
-
-    st.divider()
-
-
+# -----------------------------
+# Footer
+# -----------------------------
+st.caption(
+    "Note: This tool presents MRTS content as stored in CSV files. "
+    "Always verify against the official MRTS documents."
+)
