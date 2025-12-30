@@ -1,0 +1,353 @@
+mrts,clause_id,title,page_start,page_end,text
+MRTS12,1,Introduction,5,5,"This Technical Specification applies to the application of sprayed bituminous emulsion surfacing. The
+work covered includes primes, primerseals, seals, reseals and enrichments.
+This Technical Specification shall be read in conjunction with MRTS01 Introduction to Technical
+Specifications, MRTS50 Specific Quality System Requirements and other Technical Specifications as
+appropriate.
+This Technical Specification forms part of the Transport and Main Roads Specifications Manual."
+MRTS12,2,Definition of terms,5,5,"The terms used in this Technical Specification shall be as defined in Clause 2 of MRTS01 Introduction
+to Technical Specifications. Additional terms used in this Technical Specification shall be as defined in
+Table 2. Further definitions are given in Austroads Principles and Practice of Bituminous Surfacing,
+Volume 1 - Sprayed Work. In the event of any conflict of definition, this publication shall have a priority
+rating immediately below the Conditions of Contract.
+Table 2 – Definition of terms
+Term Definition
+Actual Spray Rate The spray rate of residual bituminous emulsion achieved during the
+operation, at 15ºC
+Actual Spread Rate The spread rate of cover aggregate or prime cover material achieved
+during the relevant operation
+anionic emulsion The bituminous emulsion type in which the suspended bitumen
+particles are negatively charged
+bituminous emulsion A liquid product in which a substantial amount of bitumen, with which
+some cutter oil and / or flux oil may be mixed or co-dispersed, is
+suspended in a finely divided condition in water by means of one or
+more emulsifying and stabilising agents
+cationic emulsion The bituminous emulsion type in which the suspended bitumen
+particles are positively charged
+cover aggregate Aggregate complying with the requirements of MRTS22 Supply of
+Cover Aggregates, and which forms a permanent wearing surface on
+a pavement
+Designed Spray Rate The spray rate for the relevant bituminous material at 15ºC as
+determined by the Seal Design in accordance with Clause 6
+Designed Spread Rate The spread rate of cover aggregate or prime cover material as
+determined by the Seal Design in accordance with Clause 6
+Estimated Spray Rate The spray rate of residual bituminous emulsion at 15ºC stated in
+Clause 6 of Annexure MRTS12.1
+Estimated Spread Rate The spread rate for cover aggregate or prime cover material stated in
+Clause 6 of Annexure MRTS12.1
+prime cover material Material used to cover a prime to enable traffic to use the pavement.
+Prime cover material may be a clean sand, crusher dust or cover
+aggregate
+spray run The area of pavement selected for coverage with a bituminous
+material during one continuous operation with a sprayer"
+MRTS12,3,Reference documents,6,6,"Table 3 lists documents referenced in this Technical Specification.
+Table 3 – Referenced documents
+Reference Title
+- Design of Sprayed Seals – Austroads
+- Bitumen Sprayers – Austroads"
+MRTS12,4,Standard Test Methods,6,6,"The standard test methods given in Table 4 shall be used in this Technical Specification.
+Further details of test numbers and test descriptions are given in Clause 4 of MRTS01 Introduction to
+Table 4 – Standard Test Methods
+Property to be Tested Method No.
+Ball embedment test AG:PT/T251
+Field spread rate of cover aggregate Q711A"
+MRTS12,5.1,"Hold Points, Witness Points and Milestones",6,6,"General requirements for Hold Points, Witness Points and Milestones are specified in Clause 5.2 of
+MRTS01 Introduction to Technical Specifications.
+The Hold Points, Witness Points and Milestones applicable to this Technical Specification are
+summarised in Table 5.1.
+Table 5.1 – Hold Points, Witness Points and Milestones
+Clause Hold Point Witness Point Milestone"
+MRTS12,6.2.2,2. Commencement of Submission of test plan,6,6,spraying operations (7 days)
+MRTS12,6.2.3,3. Commencement of Submission of seal,6,6,spraying operations design (7 days)
+MRTS12,11.3,1. Pavement temperature,6,7,"above minimum
+specified
+Clause Hold Point Witness Point Milestone"
+MRTS12,12.5,2. Bitumen temperature,7,7,"within specified range
+prior to spraying"
+MRTS12,5.2,Construction procedures,7,7,"The Contractor shall prepare documented procedures for all handling processes as defined in
+Clause 5 of MRTS50 Specific Quality System Requirements.
+These procedures shall be consistent with safe handling practices which apply to bitumen products as
+defined in the following publications:
+a) Code of Practice for Safe Handling of Bitumen Products (Australian Institute of Petroleum),
+and
+b) Bitumen Sealing Safety Guide (Austroads).
+Procedures shall be submitted to the Administrator not less than seven days prior to their use.
+Milestone
+Procedures shall not be implemented until permission to use has been granted by the Administrator.
+Hold Point 1
+The Contractor shall establish an Inspection and Test Plan for supply and delivery of bitumen. The
+Inspection and Test Plan shall address at least:
+a) traceability
+b) conformance of bituminous emulsion supplied to the Site, and
+c) sampling and testing at the Site."
+MRTS12,6.1,Specific surfacing treatments,7,7,"Where so stated in Clause 6 of Annexure MRTS12.1, the specific requirements for bituminous
+emulsion surfacing treatments shall be as set out therein. Where no such details are included in
+Clause 6 of Annexure MRTS12.1, bituminous emulsion surfacing treatments shall be as shown in the
+drawings."
+MRTS12,6.2.1,General,7,7,"The seal design shall be carried out by either the Designer under the Contract or by the Contractor as
+stated in Clause 7 of Annexure MRTS12.1."
+MRTS12,6.2.2,Seal design by the Designer under the Contract,7,8,"Where the seal design is carried out by the Designer under the Contract, the Contractor shall submit
+to the Administrator, at least seven days prior to the commencement of bituminous emulsion spraying
+operations, a test plan which defines the relevant properties of the proposed cover material.
+Milestone
+The Contractor shall allow a period of seven days for the Designer to carry out seal design. Spraying
+operations shall not commence until the Contractor has been notified of the requirements of the seal
+design. Hold Point 2"
+MRTS12,6.2.3,Seal design by the Contractor,8,8,"Where the seal design is carried out by the Contractor, the Contractor shall submit to the
+Administrator, at least seven days prior to commencement of bituminous emulsion spraying
+operations, the details of the intended spraying and / or seal design, including:
+a) its proposed Designed Spray Rate of residual bituminous material
+b) its proposed Designed Spread Rate of cover material, and
+c) a test plan which defines the relevant properties of the cover material.
+A separate seal design shall be submitted for each size and source of cover material and for each
+pavement type for which sprayed bituminous emulsion surfacing is to be applied. Milestone
+Seal designs shall be determined in accordance with the processes defined in the Austroads
+publication Design of Sprayed Seals (latest edition).
+Where the sprayed bituminous layer will be the final surfacing or shall be trafficked, ball embedment
+testing in accordance with Test Method AG:PT/T251 shall be undertaken on the underlying pavement
+layer. Using the test results, the seal design shall be amended in accordance with the design method.
+Spraying operations shall not commence prior to expiration of the seven day period. Hold Point 3"
+MRTS12,7,Material,8,8,"Materials shall comply with the requirements of the relevant Technical Specifications listed in Table 7.
+Table 7 – Material specifications
+Material Technical Specification
+Bituminous emulsion MRTS21 Bituminous Emulsion
+Prime cover material and cover aggregate MRTS22 Supply of Cover Aggregate
+Modified bituminous emulsion As specified in Clause 1.1 of Annexure MRTS12.1
+Adhesion agent As specified in Clause 2 of Annexure MRTS12.1"
+MRTS12,8.2,Storage,8,9,"Storage of bituminous emulsion shall be arranged to minimise contact with air by using vertical tanks
+or keeping horizontal tanks full. When build-up of sludge requires removing, the tanks shall be flushed
+with hot water, preferably containing a compatible emulsifier.
+Storage shall be at a temperature between 10ºC and 85ºC. Tanks shall be suitably insulated and,
+where necessary, heated to prevent freezing of the emulsion.
+Drummed emulsion shall be stored at least one metre above the ground and protected against
+freezing. Drums shall be rotated end-over-end at least six times at intervals not exceeding 14 days.
+Drummed emulsion shall be used within 90 days of manufacture."
+MRTS12,8.3,Handling,9,9,"Cationic and anionic emulsions are not compatible. Mixing cationic with anionic emulsion causes
+instantaneous break, with catastrophic damage to associated equipment.
+Bituminous emulsion of one type shall not be placed into a container in which the other type has been
+held unless the container, pump, lines and spray bars have been emptied and very thoroughly cleaned
+with an approved detergent compatible with the emulsion type being removed."
+MRTS12,8.4,Cover aggregate,9,9,"Cover aggregate shall not be exposed to contaminating agents, in particular, dust, and shall be
+handled so as to avoid contamination and any other deleterious effects."
+MRTS12,9,Plant,9,9,"The Contractor shall have on the Site and in use as required the plant necessary for the performance
+of the particular operation. The respective minimum requirements for the plant listed in Table 9 shall
+apply. Additional minimum requirements for plant shall apply if such are specified in Clause 3 of
+Annexure MRTS12.1.
+Table 9 – Minimum requirements for plant
+Plant Item Minimum Requirements
+aggregate spreader A mechanical spreader capable of accurately spreading a uniform
+layer of aggregate
+bituminous emulsion tank A tank suitable for the storage and / or transport of bituminous
+emulsion
+drag broom A mechanical broom suitable for the distribution of unevenly
+spread aggregate without disturbance of particles freshly
+embedded in binder
+road broom A drawn rotary broom or self-propelled rotary broom suitable for
+sweeping or cleaning road surfaces. Where suitable, a vacuum
+system may be used
+rubber-tyred roller A dual axle, multi-wheeled roller with a minimum load of one
+tonne per tyre. Tyres shall be smooth and be able to operate at a
+pressure of at least 500 kPa
+sprayer A bitumen sprayer which:
+a) complies with the relevant requirements of Austroads Bitumen
+Sprayers, and
+b) has a current Sprayer Certificate issued by the Department of
+Transport and Main Roads, Queensland.
+steel-wheeled roller A roller with steel wheels having a minimum diameter of 0.9 m
+and a maximum axle load of 5 tonnes. Vibratory equipment shall
+not be used unless approved by the Contract Administrator
+rubber-coated steel-wheeled A steel-wheeled roller with rubber-coated steel wheels
+roller
+Not less than seven days prior to sealing operations, the Contractor shall submit details of all plant to
+be used in the operations. Hold Point 4"
+MRTS12,10.1,Surfacing preparation,10,10,"The surface to be prepared shall include the surface to be sprayed plus either an area which is a
+minimum of 250 mm beyond the surface to be sprayed, or one which extends to the edge of the
+formation, whichever is the lesser.
+The preparation work shall be carried out in a manner which shall promote the adhesion of the
+bituminous emulsion to the surface of the pavement. Such preparation work shall include that listed in
+Clauses 10.2 to 10.4."
+MRTS12,10.2,Initial treatment (no existing bituminous treatment),10,10,"All foreign and loose material, including lenses of pavement material, shall be removed from the
+surface. The surface shall be swept with a road broom until the larger particles in the surface of the
+pavement are slightly exposed without dislodgment and / or excessive erosion of the surrounding finer
+material. A light watering shall be carried out just prior to spraying."
+MRTS12,10.3,Re-treatment (an existing bituminous treatment),10,10,"All foreign and loose material shall be removed from the surface with a road broom. On surfaces
+where a prime coat has been covered by a cover material, all the cover material shall be removed,
+without damage to the prime coat."
+MRTS12,10.4,Disposal of foreign and / or loose material,10,10,"All foreign and / or loose material shall be removed from the road formation and utilised / disposed of
+in accordance with the requirements of Clause 11 of MRTS01 Introduction to Technical Specifications."
+MRTS12,10.5,Protection of services,10,10,"The Contractor shall take all necessary precautions to prevent any bituminous emulsion or other
+material used on the work from entering or adhering to any road furniture or roadside facility.
+If any bituminous material does adhere to any road furniture or roadside facility, the Contractor shall
+remove all such material so that the road furniture or roadside facility is left in an as-found condition."
+MRTS12,10.6,Setting out,10,10,"The Contractor shall set out sufficient marks on the pavement surface to permit the spraying of
+bituminous emulsion on the sections of pavement described in the Contract and in accordance with
+the requirements of this standard. The Contractor shall set out the work so that longitudinal joints
+coincide with lane lines, unless shown otherwise in the Contract. Tapers may be sprayed separately.
+The start and finish point of each spray run shall be marked."
+MRTS12,10.7,Programming spray runs,10,11,"The Contractor shall program operations to ensure that:
+a) sufficient loaded aggregate trucks are ready to follow the sprayer to cover the spray run
+immediately (refer to Clause 4.3), and
+b) not less than the minimum specified rolling is achieved on the day of spraying (refer to
+Clause 14.5).
+Additional requirements, if any, relating to programming of spray runs are given in Clause 4.1 of
+Annexure MRTS12.1."
+MRTS12,11.1,Condition of underlying pavements prior to bituminous layers,11,11,"Where the sprayed bituminous layer will be the final surfacing or shall be trafficked, ball embedment
+testing in accordance with Test Method AG:PT/T251 shall be undertaken. Hold Point 5
+Where testing indicates embedment measured by the test method exceeds 3 mm at any location
+along the pavement, placement of the sprayed bituminous layer shall not proceed for that pavement
+lot. Testing is to be conducted a maximum of 12 hours prior to the placement of the sprayed
+bituminous layer and shall be repeated following any wet weather or placement of excess water on the
+pavement."
+MRTS12,11.2,Availability of cover aggregate,11,11,"Prior to commencement of bituminous emulsion spraying operations on any day, the Contractor shall
+provide the Contract Administrator with evidence that sufficient uncontaminated precoated cover
+aggregate of the relevant category, nominal size and specified properties is available for the extent of
+bituminous emulsion spraying work to be undertaken on that day."
+MRTS12,11.3,Pavement surface temperature,11,11,"Spraying shall not commence until the temperature on the surface of the pavement is above the
+temperature given in Clause 4.2 of the Annexure MRTS12.1 or, if not so given, above 10ºC for at least
+one hour before spraying commences. Witness Point 1
+Spraying shall not continue unless all operations up to completion of the minimum rolling, as specified
+in Clause 14.5, can be completed before the temperature on the pavement surface drops below the
+temperature given in Clause 4.2 of Annexure MRTS12.1 or, if not so given, below 10ºC.
+Witness Point 1"
+MRTS12,11.4,Weather conditions,11,11,"Spraying shall not take place during rain or if rain is likely to fall prior to the spreading of cover
+aggregate and rolling with a minimum of two passes."
+MRTS12,11.5,Period between bituminous emulsion treatments,11,11,"The minimum period between seal treatments shall be as shown in Clause 4.3 of
+Annexure MRTS12.1. Where not so stated, the minimum period between a prime and a seal shall be
+three days."
+MRTS12,12.1,General,11,11,"The Contractor shall spray the bituminous emulsion in a uniform manner and in a way which promotes
+adhesion of the bituminous emulsion to the pavement surface and to the cover aggregate, and in
+accordance with Clauses 12.2 to 12.8 inclusive."
+MRTS12,12.2,Method of application,12,12,"Bituminous emulsion shall be applied by means of the mechanically operated spray bar of a bitumen
+sprayer. In areas where the use of a spray bar of a bitumen sprayer is not possible, and only in such
+areas, the hand spraying lance from the sprayer may be used."
+MRTS12,12.3,Joints between spray runs,12,12,"All joints, transverse and longitudinal, shall abut neatly and uniformly to adjacent spray runs, without
+gap or overlap.
+Spraying on each spray run shall start on a protective strip of heavy paper, with a minimum mass of
+120 g/m² and a minimum width of 500 mm. The paper shall be laid across the pavement surface for
+the full width of the spray run and shall be held securely in place.
+The sprayer shall commence moving at a sufficient distance in advance of the protective strip to
+ensure that the road speed for correct application is attained prior to the commencement of spraying.
+The spraying for each spray run shall terminate on a protective strip of paper as specified above.
+After spraying, the protective strips of paper shall be removed, ensuring no excess bituminous
+emulsion is deposited on the pavement surface. The Contractor shall dispose of the strips of paper at
+the end of each day's operation."
+MRTS12,12.4,Spray bar nozzles,12,12,"The spray bar nozzles used shall be appropriate for each spray run and shall comply with the Sprayer
+Certificate and Austroads’ publication Bitumen Sprayers."
+MRTS12,12.5,Spraying temperature,12,12,"Bituminous emulsion shall be sprayed at a temperature consistent with the requirements detailed in
+Table 12.5. Witness Point 2
+Table 12.5 – Spraying temperature range
+Material Spraying Temperature Range
+Bituminous emulsion - 60% bitumen content Ambient
+Minimum - 30°C
+Bituminous emulsion - 67% bitumen content
+Maximum - 80°C
+Modified Bituminous emulsion As shown in Clause 1.2 of Annexure MRTS12.1"
+MRTS12,12.6,Defects during spraying,12,12,"Spraying shall cease immediately if any defect develops in the spraying equipment or operation and
+shall not recommence until the fault has been rectified."
+MRTS12,12.7,Spray rate,12,13,"The Estimated Spray Rate, Designed Spray Rate and Actual Spray Rate referred to in this Technical
+Specification shall be the quantities in litres per m², at 15ºC, of the residual bitumen for the relevant
+operation.
+The Actual Spray Rate shall be within ± 5% of the Designed Spray Rate defined in the nominated seal
+design as determined in accordance with Clause 6.
+To comply with the above requirement, the Contractor shall make adjustments to the operation of the
+sprayer to account for the following:
+a) the increased volume of the material to be sprayed where the temperature of the material is
+higher than 15ºC (Refer to Table 12.5), and
+b) the increased volume of the material to be sprayed where there are other materials in the
+bituminous emulsion for the relevant operation, e.g. the water included in, or added to, the
+emulsion."
+MRTS12,12.8,Quantities retained in the sprayer tank,13,13,"To ensure a uniform spray rate, each sprayer run shall be programmed so that at least 250 litres of
+bituminous emulsion is retained in the tank at the completion of the spray run."
+MRTS12,13.1,General,13,13,"The Contractor shall spread the prime cover material so as to produce a complete and even
+distribution. Wet cover material containing free surface water shall not be used."
+MRTS12,13.2,Spread rate,13,13,"The Designed Spread Rate shall be that nominated in the seal design determined in accordance with
+Clause 6.
+The Designed Spread Rate may be adjusted during the spreading operation to ensure a complete and
+even distribution.
+The adjusted rate shall then be the Designed Spread Rate."
+MRTS12,13.3,Time limit,13,13,"The cover material shall not be applied until the emulsion has broken, as evidenced by a change in its
+colour from brown to black."
+MRTS12,13.4,Spreading,13,13,"Bare or insufficiently covered areas shall be re-treated as soon as possible with a further light run, or
+by hand spreading.
+The Actual Spread Rate shall not vary from the Designed Spread Rate by more than ± 10%."
+MRTS12,13.5,Removal of excess cover material,13,13,"Unless otherwise stated in Clause 5.1 of Annexure MRTS12.1, all excess cover material shall be
+lightly swept and / or vacuumed from the pavement surface with a road broom and / or vacuum truck
+and completely removed from the road formation. All excess material shall be utilised / disposed of in
+accordance with the requirements of Clause 11 of MRTS01 Introduction to Technical Specifications."
+MRTS12,14.1,General,13,13,"The Contractor shall spread the cover aggregate in a uniform manner which produces a dense tight
+mat after trafficking and also ensures that the bituminous emulsion adheres to the stone.
+Wet cover aggregate containing free surface water shall not be used."
+MRTS12,14.2,Spread rate,14,14,"The Designed Spread Rate shall be that nominated in the seal design determined in Clause 6.
+The Designed Spread Rate may be adjusted during the spreading operation to ensure that the
+requirements of Clause 14.4 are achieved. Nonconformance
+The adjusted rate shall then be the Designed Spread Rate."
+MRTS12,14.3,Time limit,14,14,"The spreading of cover aggregate shall commence as soon as possible after the spraying of the
+bituminous emulsion.
+The spreading of the cover aggregate shall be completed while the bituminous emulsion is still brown
+in colour. If aggregate is picked up on the wheels of trucks or rollers, spreading shall be delayed."
+MRTS12,14.4,Spreading,14,14,"Spreading of cover aggregate shall be carried out with an aggregate spreader. Minimum requirements
+for aggregate spreaders shall be as stated in Clause 5.2 of Annexure MRTS12.1. Cover aggregate
+shall be spread so that, after compaction, it forms a single layer on the pavement surface, the
+aggregate being partly interlocked.
+Every attempt shall be made to achieve the required spread pattern on the first spreading pass. Bare
+or insufficiently covered areas shall be re-treated as soon as possible with a further light spreading run
+or by hand spreading. Overspreading or underspreading of the aggregate shall be avoided.
+If there is an uneven distribution of cover aggregate, it shall be drag broomed until it is evenly
+distributed without dislodgment of any embedded cover aggregate.
+Cover aggregate shall be spread so that the amount of material spread is not less than that
+represented by the Design Spread Rate or greater than 5% above that represented by the Design
+Spread Rate. Any initial underspreading shall be rectified as specified above.
+The amount of aggregate spread shall be calculated from the volume used or by using Test
+Method Q711A."
+MRTS12,14.5,Rolling,14,14,"After satisfactory spreading, the cover aggregate shall be rolled with multi-tyred rollers at not less than
+the rate:
+a) as stated in Clause 5.3 of Annexure MRTS12.1, or, if not stated
+b) six passes within one hour of spraying at every point on the surface.
+There shall be a minimum of two rubber-tyred rollers available on the Site. There shall also be
+sufficient rubber-tyred rollers on Site and in use to complete the specified minimum amount of rolling
+as a continuous operation with successive spray runs.
+Steel-wheeled rollers shall not be used.
+A rubber-coated steel wheel roller may be used provided that it can be demonstrated that the use of
+such a roller shall provide a finished product in accordance with this Technical Specification."
+MRTS12,14.6,Removal of excess cover aggregate,15,15,"All excess cover aggregate shall be lightly swept and / or vacuumed from the pavement surface,
+without dislodgment of the bedded aggregate. It shall be completely removed from the road formation
+and utilised / disposed of in accordance with the requirements of Clause 11 of MRTS01 Introduction to
+Except where the work is being carried out under traffic, this work shall be completed before the work
+is opened to traffic.
+Where the work is being carried out under traffic, the speed of traffic shall be adequately controlled
+until the work is swept."
+MRTS12,14.7,Two applications of cover aggregate with a single application of binder,15,15,"The intent of this work is to slightly reduce the amount of material spread on the first coat of cover
+aggregate to accommodate the second, smaller aggregate coat.
+The following exceptions to the previous procedures for the spreading of cover aggregate shall apply
+to this work:
+a) the first application of cover aggregate shall be spread so that small gaps are left. This may
+require a 5% to 10% reduction to the normal amount of material spread
+b) the first application of cover aggregate shall not be rolled in accordance with Clause 14.5 but
+shall be rolled with a multi-tyred roller for four complete passes at every point on the surface,
+and
+c) removal of excess cover aggregate, in accordance with Clause 14.6 shall not take place after
+the first application.
+All of the other requirements of Clauses 14.1 to 14.6 inclusive shall apply to each application of cover
+aggregate."
+MRTS12,15,Recording,15,15,"After each spray run, all details of the sealing operations shall be recorded and included in the quality
+records.
+All records shall be such that the actual spray rate for each spray run shall be calculated at 15ºC prior
+to the next spray run."
+MRTS12,16.1,General,15,15,"The process requirements shall be checked for compliance with the specified requirements during and
+after construction for each lot."
+MRTS12,16.2,Lot sizes and testing frequency,15,16,"Sufficient testing shall be carried out to ensure that the material complies with this Technical
+Specification.
+For the checking of compliance for sprayed bituminous layers, a lot shall be no larger than a series of
+spray runs applied on any calendar day.
+Sampling and testing of bituminous emulsion shall be undertaken in accordance with
+MRTS21 Bituminous Emulsion.
+Testing frequencies shall comply with the requirements stated in Table 16.2.
+Table 16.2 − Standard test methods
+Property Method No. Minimum Testing Frequency
+Field spread rate of cover aggregate Q711A 5 per lot"
+MRTS12,1,per Pavement Lot for the Pavement,16,16,"Ball Penetration Test AG:PT/T251 Layer on which the sprayed bituminous
+layer is placed
+A lot which has defects such as stripping of cover aggregate or fattiness of the finished seal under
+traffic shall be rejected."
+MRTS12,17,Supplementary requirements,16,16,"The requirements of MRTS12 Sprayed Bituminous Emulsion Surfacing are varied by the
+supplementary requirements given."
