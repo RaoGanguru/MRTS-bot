@@ -33,13 +33,16 @@ if not clauses_df.empty and "mrts" in clauses_df.columns:
     mrts_set |= set(clauses_df["mrts"].astype(str).unique())
 if not tables_df.empty and "mrts" in tables_df.columns:
     mrts_set |= set(tables_df["mrts"].astype(str).unique())
-all_mrts = sorted([m for m in mrts_set if m.strip()])
+
+all_mrts = sorted([m for m in mrts_set if str(m).strip()])
 
 # -------------------- UI --------------------
 selected_mrts = st.selectbox("Select MRTS", ["All MRTS"] + all_mrts)
-search_text = st.text_input("Search (examples: asphalt thickness tolerance, Table 9.4.2.3, EME thickness, bitumen temperature)")
+search_text = st.text_input(
+    "Search (examples: asphalt thickness tolerance, Table 9.4.2.3, EME thickness, bitumen temperature)"
+)
 
-# ✅ NEW: strict AND matching toggle
+# ✅ Main behaviour toggle
 require_all_keywords = st.checkbox("Require ALL subject keywords (recommended)", value=True)
 
 if not search_text.strip():
@@ -52,10 +55,10 @@ STOP_WORDS = set([
     "to","of","in","on","at","be","is","are","was","were","as"
 ])
 
-# Question words we want to ignore
+# Words to ignore (question words)
 QUESTION_WORDS = set([
     "what","how","when","where","why","who","which","give","tell","show","explain","provide",
-    "minimum","maximum"  # optional: keep if you want these to matter; remove if too strict
+    "please","kindly","can","could","would","should"
 ])
 
 NOISE_TITLE_PATTERNS = [
@@ -86,8 +89,10 @@ def normalize_words(q: str):
     return out
 
 def subject_words(words):
-    """Remove question words; keep only subject terms."""
     return [w for w in words if w not in QUESTION_WORDS]
+
+def first_anchor_word(words_list):
+    return words_list[0] if words_list else ""
 
 def is_noise_title(title: str) -> bool:
     t = str(title).lower()
@@ -97,33 +102,32 @@ def generic_penalty(title: str) -> int:
     t = str(title).lower()
     return 6 if any(g in t for g in GENERIC_TITLE_PENALTY) else 0
 
-def contains_all(text: str, must_words):
-    t = text.lower()
-    return all(w in t for w in must_words)
-
 def contains_any(text: str, words_):
     t = text.lower()
     return any(w in t for w in words_)
 
+# -------------------- Query parsing --------------------
 words = normalize_words(search_text)
-core_words = subject_words(words)  # ✅ subject terms only
-phrase = " ".join(core_words) if len(core_words) >= 2 else ""
+core_words = subject_words(words)
 
-qlower = search_text.lower()
-
-# If user typed only question words, fall back to original words
+# fallback if user typed only question words
 if not core_words:
     core_words = words[:]
 
-# Special: if user wrote asphalt+thickness+tolerance, enforce ALL 3
-force_triplet = ("asphalt" in core_words and "thickness" in core_words and ("tolerance" in core_words or "toler" in qlower))
-if force_triplet:
-    # normalise "tolerance" requirement even if user typed "tolerances"
-    must_have = ["asphalt", "thickness", "toler"]
-else:
-    must_have = core_words
+anchor = first_anchor_word(core_words)  # ✅ anchor = first subject word
+qlower = search_text.lower()
 
-# Table-intent hint
+# Special: if user wrote asphalt+thickness+tolerance, enforce those 3 strongly
+force_triplet = (
+    ("asphalt" in core_words) and
+    ("thickness" in core_words) and
+    (("tolerance" in core_words) or ("toler" in qlower))
+)
+
+# Phrase used only for scoring (not filtering)
+phrase = " ".join(core_words) if len(core_words) >= 2 else ""
+
+# Table intent hint
 TABLE_INTENT_TERMS = ["table", "toler", "allowable", "limit", "min", "max", "thickness", "air", "void"]
 table_intent = any(t in qlower for t in TABLE_INTENT_TERMS)
 
@@ -134,7 +138,7 @@ def score_clause_row(row):
     title = str(row.get("title","")).lower()
     text  = str(row.get("text","")).lower()
 
-    # Phrase boosts (subject phrase)
+    # Phrase boosts
     if phrase and phrase in title:
         score += 14
     if phrase and phrase in text:
@@ -161,11 +165,9 @@ def score_table_row(row):
 
     combined = f"{table_id} {param} {vtext} {notes}"
 
-    # Phrase boost
     if phrase and phrase in combined:
         score += 14
 
-    # Word boosts
     for w in core_words:
         if w in table_id:
             score += 7
@@ -181,7 +183,7 @@ def score_table_row(row):
 
     return score
 
-# -------------------- Filter + rank --------------------
+# -------------------- Filter + Rank --------------------
 def filter_and_rank_clauses(df: pd.DataFrame) -> pd.DataFrame:
     if df.empty:
         return df
@@ -194,14 +196,6 @@ def filter_and_rank_clauses(df: pd.DataFrame) -> pd.DataFrame:
     if "title" in out.columns:
         out = out[~out["title"].apply(is_noise_title)]
 
-    # If asphalt in query, require asphalt in title/text (prevents cross-topic junk)
-    if "asphalt" in qlower and "title" in out.columns and "text" in out.columns:
-        out = out[
-            out["title"].str.contains("asphalt", case=False, na=False) |
-            out["text"].str.contains("asphalt", case=False, na=False)
-        ]
-
-    # ✅ NEW: AND matching on subject keywords
     combined = (
         out.get("clause_id","").astype(str) + " " +
         out.get("title","").astype(str) + " " +
@@ -209,16 +203,19 @@ def filter_and_rank_clauses(df: pd.DataFrame) -> pd.DataFrame:
     )
 
     if require_all_keywords:
-        # must contain all required words (or toler-root)
+        # ✅ Anchor MUST exist + AND match
         def ok(s):
             s = str(s).lower()
+            if anchor and anchor not in s:
+                return False
+
             if force_triplet:
                 return ("asphalt" in s) and ("thickness" in s) and ("toler" in s)
-            else:
-                return contains_all(s, must_have)
+
+            return all(w in s for w in core_words)
+
         out = out[combined.apply(ok)]
     else:
-        # fallback: at least one word must match
         out = out[combined.apply(lambda s: contains_any(str(s), core_words))]
 
     if out.empty:
@@ -247,10 +244,14 @@ def filter_and_rank_tables(df: pd.DataFrame) -> pd.DataFrame:
     if require_all_keywords:
         def ok(s):
             s = str(s).lower()
+            if anchor and anchor not in s:
+                return False
+
             if force_triplet:
                 return ("asphalt" in s) and ("thickness" in s) and ("toler" in s)
-            else:
-                return contains_all(s, must_have)
+
+            return all(w in s for w in core_words)
+
         out = out[combined.apply(ok)]
     else:
         out = out[combined.apply(lambda s: contains_any(str(s), core_words))]
@@ -268,16 +269,16 @@ tables_f  = filter_and_rank_tables(tables_df)
 # -------------------- UI Output --------------------
 tab1, tab2 = st.tabs(["🟦 Clauses (ranked)", "🟩 Tables / OCR (ranked)"])
 
-# Helpful banner for tolerance/thickness queries
+# Helpful banner for table-type questions
 if table_intent and require_all_keywords:
     if tables_f.empty:
-        st.warning("This looks like a table-type question (tolerance/thickness). No table match found. Your tables CSV probably needs OCR text in value_text.")
+        st.warning("This looks like a table-type question (tolerance/thickness). No table match found. Your tables CSV likely needs OCR text in value_text.")
     else:
-        st.success(f"Table matches found: {len(tables_f)} (AND-matched subject keywords).")
+        st.success(f"Table matches found: {len(tables_f)} (anchor + AND match).")
 
 with tab1:
     if clauses_f.empty:
-        st.info("No clause results found under current AND rules. Try selecting the exact MRTS or switch OFF 'Require ALL subject keywords'.")
+        st.info("No clause results found with current rules. Tip: select the correct MRTS, or uncheck 'Require ALL subject keywords'.")
     else:
         MAX_RESULTS = 10
         st.caption(f"Showing top {min(len(clauses_f), MAX_RESULTS)} clause results.")
@@ -298,7 +299,7 @@ with tab1:
 
 with tab2:
     if tables_f.empty:
-        st.info("No table/OCR results found. Tip: put OCR table text into 'value_text' column so it can be searched.")
+        st.info("No table/OCR results found. Tip: put OCR table text into 'value_text' column so it becomes searchable.")
     else:
         MAX_RESULTS = 10
         st.caption(f"Showing top {min(len(tables_f), MAX_RESULTS)} table/OCR results.")
@@ -319,4 +320,3 @@ with tab2:
                     st.caption(notes)
                 st.text(vtext if vtext else "(No OCR text in value_text)")
                 st.caption("OCR extracted – verify against official MRTS.")
-
