@@ -1,0 +1,1188 @@
+mrts,clause_id,title,page_start,page_end,text
+MRTS07B,10,Supplementary requirements .................................................................................................... 35,4,4,Appendix A: Maximum lot sizes and minimum testing frequencies .............................................. 36
+MRTS07B,1,Introduction,5,5,"This Technical Specification applies to the stabilisation of insitu materials by the addition of a
+cementitious stabilising agent.
+This Technical Specification shall be read in conjunction with MRTS01 Introduction to Technical
+Specifications, MRTS50 Specific Quality System Requirements and other Technical Specifications as
+appropriate.
+This Technical Specification forms part of the Transport and Main Roads Specifications Manual."
+MRTS07B,2,Definition of terms,5,5,"The terms used in this Technical Specification shall be as defined in Clause 2 of MRTS01 Introduction
+to Technical Specifications. Additional terms used in this Technical Specification shall be as defined in
+Table 2. Where indicated in Table 2, a more complete definition is contained in the referenced clause.
+Table 2 – Definition of terms
+Term Definition
+Actual stabilised layer Achieved stabilised layer thickness as measured from the bottom of
+thickness stabilised layer to the top of compacted and trimmed stabilised layer.
+Allowable working time The time measured from the commencement of incorporation (i.e.
+mixing) of stabilising agent into the material to completion of compaction
+and trimming.
+Bituminous coat A sprayed bituminous surfacing with cover aggregate.
+Bulking Increase in vertical height during the incorporation of the stabilising
+agent into material using a stabiliser. The increased vertical height of the
+material is measured from the surface level prior to this incorporation
+process - refer Figure 8.6.10.
+Curing materials Materials applied to the exposed surfaces of the completed stabilised
+layer for curing.
+Design Depth As specified in the construction drawings and contract documents –
+refer Figure 8.6.10.
+Finish surface level Top level of the stabilised layer as specified in the drawings and contract
+documents – refer to Figure 8.6.10.
+Hydrated Lime Hydrated lime is a granular form of lime consisting primarily of calcium
+hydroxide (Ca(OH)₂).
+Lower reference level Lower reference level is the finish surface level minus the design depth.
+It is the bottom level of the stabilised layer as specified in the drawings
+and contract documents - refer to Figure 8.6.10.
+Moisture ratio The ratio of the insitu moisture content compared to the laboratory
+(uncompacted) (MRᵤ) optimum moisture content expressed as a percentage for uncompacted
+materials.
+Stabiliser A single-rotor mix-in-place plant of a type (i.e. plant that mixes insitu)
+specifically designed for the dual task of reclamation and stabilisation
+work.
+Stabilising agent A cement, blended cement, cementitious blend or lime / fly ash blend.
+Target depth Target depth is the mixing depth required by the stabiliser to achieve the
+lower reference level and shall consider the bulking height – refer
+Figure 8.6.10."
+MRTS07B,3,Referenced documents,6,6,"Table 3 lists documents referenced in this Technical Specification.
+Table 3 – Referenced documents
+Reference Title
+AS/NZS 3582.1 Supplementary cementitious materials - fly ash
+AS 3582.2 Supplementary cementitious materials - slag
+AS 3972 General purpose and blended cements
+AS 4489.6.1 Test methods for limes and limestones - Lime index - Available lime
+MRTS01 Introduction to Technical Specifications
+MRTS05 Unbound Pavements
+MRTS07A Insitu Stabilised Subgrades using Quicklime or Hydrated Lime
+MRTS23 Supply and Delivery of Quicklime and Hydrated Lime for Road
+Stabilisation
+MRTS50 Specific Quality System Requirements
+MRTS56 Construction Surveying
+NGTM Nuclear Gauge Testing Manual"
+MRTS07B,4,Standard test methods,6,7,"The standard test methods listed in Table 4 shall be used in this Technical Specification.
+Further details of test method numbers and test descriptions are given in Clause 4 of
+MRTS01 Introduction to Technical Specifications.
+Table 4 – Standard test methods
+Property to be Tested Method No.
+Available lime index AS 4489.6.1
+Ball penetration AG:PT/T251
+Calculation of characteristic value of a lot Q020
+California Bearing Ratio Q113A
+Crushed particles AS 1141.18
+Curing moulded specimens of stabilised material Q135B
+Degradation factor Q208B
+Deviation from a straightedge Q712
+Fines ratio Q103A
+Flakiness index Q201
+Foreign Material (Type 2 materials containing recycled Q477
+material)
+Moisture Density Relationship (MDR) Q142A, Q143, Q144A
+Linear shrinkage Q106
+Liquid limit Q104A
+Property to be Tested Method No.
+Moisture content AS 1289.2.1.1,
+AS 1289.2.1.4,
+AS 1289.2.1.6
+Particle size distribution Q103A
+Petrographic assessment of aggregates Q188
+pH (Type 2 materials containing recycled concrete) AS 1289.4.3.1
+Proof rolling test Q723
+Relative compaction Q140A, Q141A, Q141B
+Moisture ratio of uncompacted soils and crushed rock Q250
+Road roughness (surface evenness) Q708B, Q708C, Q708D
+Sampling – aggregates AS 1141.3.1
+Selection of sampling or test sites AS 1289.1.4.2
+Spot sampling of soils, crushed rock and aggregates Q061
+Stabilising agent content Q134A
+Sulfate content AS 1289.4.2.1,
+other published or validated
+classical chemistry technique or
+instrumentation technique#
+Surface spread rate of stabilising agent Q719^
+UCS (Type 2 materials containing recycled concrete) Q115
+UCS (unconfined compressive strength of stabilised materials) Q115
+Water absorption AS 1141.6.1
+Wet strength AS 1141.22
+Wet / dry strength variation AS 1141.22
+Working time of stabilised material Q136A
+# Instrumentation techniques may include Ion Chromatography / Inductively Coupled Plasma / Discrete Analyser
+and so on. National Association of Testing Authorities (NATA) endorsed test results are evidence of a validated
+technique.
+^ For Q719, the requirement for the test to be carried out by a registered NATA and Construction Materials
+Testing (CMT) Supplier in accordance with MRTS50 Specific Quality System Requirements, shall be relaxed."
+MRTS07B,5.1,"Hold Points, Witness Points and Milestones",7,8,"General requirements for Hold Points, Witness Points and Milestones are specified in Clause 5.2 of
+MRTS01 Introduction to Technical Specifications.
+The Hold Points, Witness Points and Milestones applicable to this Technical Specification are
+summarised in Table 5.1.
+Table 5.1 – Hold Points, Witness Points and Milestones
+Clause Hold Point Witness Point Milestone"
+MRTS07B,5.2.2,1. Approval of Supply of the,8,8,"construction construction procedures
+procedures and and construction program
+construction program for the stabilisation works
+(21 days)"
+MRTS07B,7.1,2. Compliance of all,8,8,"materials, prior to their
+incorporation"
+MRTS07B,8.3,"4. Survey of services,",8,8,"utilities buildings and
+drainage"
+MRTS07B,8.4,5. Contractor’s,8,8,"determination of the
+allowable working time"
+MRTS07B,8.5.2.1,6. Approval of,8,8,"compaction based on
+a process requirement"
+MRTS07B,8.5.2.2,1. Construction of trial,8,8,"section (if process
+standard specified for
+compaction)"
+MRTS07B,8.6.1,2. Removal and disposal,8,8,"of material not suitable
+for stabilisation"
+MRTS07B,8.6.4,4. Compacting and,8,8,"trimming surface prior to
+spreading of the
+stabilising agent"
+MRTS07B,8.7.2.1,Ordered spread rate of,8,8,"stabilising agent
+(14 days)"
+MRTS07B,5.2.1,General,9,9,"The Contractor shall prepare documented procedures for all construction processes in accordance
+with Clause 6 of MRTS50 Specific Quality System Requirements.
+The construction procedure described in Clause 5.2.2 shall be submitted to the Administrator."
+MRTS07B,5.2.2,Insitu stabilisation,9,10,"A construction procedure detailing all work described in this Technical Specification shall be prepared.
+The construction procedure shall include, but not be limited to:
+a) Details of all plant associated with the work detailed in this Technical Specification.
+b) Details of how services, utilities, buildings and drainage components shall be located and
+protected (refer to Clause 8.3).
+c) Details of how services, utilities, buildings, drainage components, plant personnel shall be
+protected from damage, injury, etc. (refer to Clause 8.3).
+d) The daily calibration procedures of spreader and verification of spread rates in the field (refer to
+Clause 8.6.6).
+e) A detailed sequence of operations for all aspects of the stabilisation works, including, but not
+necessarily limited to:
+i. details of joint locations
+ii. details of joint overlaps
+iii. the length of each run
+iv. the width of each run
+v. marking-out the extents of each run
+vi. details of procedures for working up to, or against, structures, kerb, kerb and channel and
+road safety barriers, and such as bridges, access chambers, gullies, culverts and concrete
+medians and any existing pavement cutback point, and
+vii. curing methodology.
+f) The proposed program of works, and
+g) A testing program which shall include, but not be limited to, the testing methodology that shall be
+used to assess:
+i. stabilising agent spread rate
+ii. stabilisation target depth
+iii. moisture ratio
+iv. compaction standard
+v. geometric tolerances
+vi. actual stabilised layer thickness, and
+vii. strength gain of the stabilised layer with time (UCS test) if required.
+The following shall also be submitted to the Administrator along with the construction procedure:
+a) details of the proposed source(s) of the stabilising agent(s)
+b) test results demonstrating compliance of the constituents of the proposed stabilising agent(s)
+to the required standards
+c) test results demonstrating the compliance of each proposed water source
+d) compliance test results (including Test Method Q136A Working Time of Stabilised Material if
+applicable) and a representative sample of the unbound granular material from each
+proposed source to be used for shape correction and/or to replace material not suitable for
+stabilisation, and
+e) where a cementitious blend containing lime or a lime / fly ash blend is specified, the available
+lime index of each proposed lime source.
+The proposed construction procedure shall be submitted to the Administrator at least 21 days prior to
+the commencement of stabilisation works. Milestone
+No stabilisation works shall be commenced until the construction procedure for the stabilisation works
+is acceptable to, and approved by, the Administrator. Hold Point 1"
+MRTS07B,5.3,Conformance requirements,10,10,"The conformance requirements which apply to lots of stabilised material covered by this Technical
+Specification are given in Clause 6 to Clause 9."
+MRTS07B,5.4,Testing frequencies and lot sizes,10,10,"The maximum lot sizes shall be as stated in Table A1 of Appendix A or otherwise stated in Clause 1.1
+of Annexure MRTS07B.1.
+The minimum testing frequencies shall be as stated in Table A2, A3 and A4 of Appendix A or
+otherwise stated in Clause 1.2 of Annexure MRTS07B.1.
+Material compliance testing requirements shall be as specified in Table A2 of Appendix A.
+Construction compliance testing requirements shall be as specified in Table A3 of Appendix A.
+Geometric and deviation from a straightedge compliance testing requirements shall be as specified in
+Table A4 of Appendix A.
+Certification of the compliance of each stabilising agent with this specification is required for each
+source and for each load."
+MRTS07B,6.1,New material to replace material not suitable for stabilisation,10,11,"New material which is required to replace material not suitable for stabilisation shall be unbound
+granular material that complies with the requirements stated in Clause 2 of Annexure MRTS07B.1.
+Where not so stated in the Annexure, materials shall be either of Type 2, Type 3 or Type 4 unbound
+granular material complying with the requirements of MRTS05 Unbound Pavements.
+Stabilised material shall not be used as new material for replacement material.
+Additionally, any new material incorporated into the stabilisation shall have a water-soluble sulfate
+content less than 0.19%.
+Sulfate content is typically not an issue for materials sourced from approved quarries. Therefore, for
+quarried materials, the Administrator may elect to waive the requirement for sulfate testing.
+For existing pavement materials that have been reclaimed for reuse, the original source may be
+unknown. Therefore, where reclaimed materials are used, sulfate testing is typically required."
+MRTS07B,6.2,Additional material for shape correction,11,11,"Where specified in the Drawings or Contract, shape correction material shall be imported and spread
+after preliminary pulverisation as per the requirements of Clause 8.6.3.
+Additional material that is required for shape correction shall be unbound granular material that
+complies with the requirements stated in Clause 3 of Annexure MRTS07B.1.
+Where not so stated in the Annexure, materials shall be either of Type 2, Type 3 or Type 4 unbound
+granular material complying with the requirements of MRTS05 Unbound Pavements.
+Stabilised material shall not be used as additional material for shape correction.
+Additionally, any new material incorporated into the Works shall have a water-soluble sulfate content
+less than 0.19%.
+Sulfate content is typically not an issue for materials sourced from approved quarries. Therefore, for
+quarried materials, the Administrator may elect to waive the requirement for sulfate testing.
+For existing pavement materials that have been reclaimed for reuse, the original source may be
+unknown. Therefore, where reclaimed materials are used, sulfate testing is typically required."
+MRTS07B,6.3,Stabilising agents,11,12,"The stabilising agent shall comply with the relevant Specifications and standards given in Table 6.3.
+The type, estimated content and specified spread rate of the stabilising agent to be used at specific
+locations shall be as stated in Clause 9 of Annexure MRTS07B.1.
+Table 6.3 – Stabilising agent requirements
+Agents Relevant Technical Specification or Australian Standard
+General Purpose (GP) cement Type GP cement that complies with AS 3972
+General Blended (GB) cement Type GB fly ash blended cement that complies with AS 3972
+Cementitious blend A blend of the following:
+• GP cement, that complies with AS 3972
+• Special Grade or Grade 1 fly ash that complies with
+AS/NZS 3582.1
+• Ground granulated blast furnace slag (GGBFS) complying
+with AS 3582.2, and/or
+• Hydrated lime complying with MRTS23 Supply and Delivery of
+Quicklime and Hydrated Lime for Road Stabilisation.
+Lime / fly ash blend A blend of the following:
+• Hydrated lime complying with MRTS23 Supply and Delivery of
+Quicklime and Hydrated Lime for Road Stabilisation, and
+• Special Grade or Grade 1 fly ash that complies with
+AS/NZS 3582.1
+Each component of the stabilising agents shall comply with the relevant Technical Specification at the
+time of mixing.
+All of the stabilising agent components shall be completely, homogeneously and accurately
+blended / mixed by a dedicated blending plant prior to delivery to the works. At the time of spreading
+each component of the stabilising agent shall:
+a) comply with the relevant Standard(s) and Technical Specification(s), and
+b) not be more than three months old, measured from its date of manufacture to the time of
+spreading, unless it has been retested for conformance within one month of use (up to a
+maximum of six months old).
+Where lime is used, the lime shall have an available lime index of not less than 80% from the time of
+manufacture up to the time of spreading."
+MRTS07B,6.4,Water,12,13,"Where possible, water used for insitu stabilisation works shall be ‘potable water’.
+Water sources classified by the relevant water authority as ‘potable water’, shall be exempt from
+any testing requirements.
+Where 'potable water' is not available, the Administrator may consider water from other sources.
+Unless otherwise accepted by the Administrator, any ‘non-potable water’ sources shall be tested.
+In all cases, the water used shall contain less than 0.05% sulfates and be free from oil, acids, organic
+matter and any other matter that could be deleterious to the mixture.
+Marine water andrecycled water shall not be used for cement stabilisation.
+The sources(s) of water shall not be changed without the written approval of the Administrator."
+MRTS07B,7.1,General,13,13,"No material shall be incorporated into the works unless it has been demonstrated, to the
+Administrator’s satisfaction, that the material to be used complies fully with the requirements of this
+The Contractor is responsible for carrying out sufficient testing to ensure that the material complies
+with the requirements of this Technical Specification. However, the Contractor's testing program shall
+be such that the testing frequencies and number of tests are not less than those given in Clause 5.4.
+The testing of individual samples shall be carried out in accordance with the Test Methods described
+in Table 4. Testing frequencies and lot sizes shall be as per the requirements of Clause 5.4.
+The material / sources used in the Contract shall be the same as those for material supplied as
+samples or for which certificates of compliance with this Technical Specification are provided.
+The costs associated with material compliance testing shall be deemed to be incorporated in the
+relevant work items."
+MRTS07B,7.2,Stabilising agents,13,13,"Sampling and testing shall be carried out in accordance with the relevant Standards and Technical
+Specifications.
+A certificate of test results demonstrating compliance of each of the constituents of the proposed
+stabilising agent to the relevant Standards or Technical Specifications shall be provided for each load,
+or part thereof, of stabilising agent."
+MRTS07B,7.3,Water,13,13,"A certificate of test results demonstrating the compliance of each proposed water source shall be
+provided."
+MRTS07B,7.4,Unbound granular material,13,13,"Compliance testing of unbound granular material used to replace material not suitable for stabilisation
+shall be carried out in accordance with the requirements of Clause 5.4.
+Compliance testing of unbound granular material used for shape correction shall be carried out in
+accordance with the requirements of Clause 5.4.
+In all cases Type 2, Type 3 and Type 4 material shall also comply with MRTS05 Unbound Pavements."
+MRTS07B,8,Construction,13,13,"Prior to acceptance (Clause 9.10), construction shall not proceed until the Administrator is satisfied
+that the requirements covered from Clause 8.1 to Clause 8.7.5.5.3 and Clause 8.7.6 have been
+adhered to by the Contractor. Hold Point 3"
+MRTS07B,8.1,General,14,14,"Construction of the stabilised layer shown in the Drawings or otherwise specified in the Contract, shall
+be completed as one layer.
+The required design depth shall be stated in Clause 9 of Annexure MRTS07B.1.
+The datum for measurement of the design depth (refer to Figure 8.6.10) shall be as stated in
+Clause 10 of Annexure MRTS07B.1.
+Details of measuring the actual thickness of stabilised layer is described in Clause 8.7.5.3.2."
+MRTS07B,8.2,Program of works,14,14,"The Contractor shall submit the proposed program of the stabilisation works to the Administrator at
+least 21 days prior to the commencement of stabilisation works, unless otherwise agreed to by the
+Administrator.
+Stabilisation works shall not be commenced until the program has been approved by the Administrator
+(refer to Clause 5.2.2 and Hold Point 1)."
+MRTS07B,8.3,"Site services, utilities, buildings and drainage",14,14,"A survey of the site to determine the location and depth of services, utilities, buildings and drainage
+components shall be carried out prior to commencement of construction. The survey shall include
+details of how these and plant and personnel on site shall be protected and how the stabilisation
+works shall be completed without any detrimental effects to them. All such details shall be included in
+the proposed construction procedure (refer to Clause 5.2.2).
+Stabilisation works shall not commence until the survey has been completed and a copy of the report
+provided to the Administrator. Hold Point 4"
+MRTS07B,8.4,Allowable working time,14,15,"Compaction and trimming of the stabilised layer shall be completed within the allowable working time.
+The allowable working time is measured from the commencement of the incorporation (i.e. mixing) of
+the stabilising agent into the insitu material, to the completion of compaction and trimming of the
+stabilised layer (excluding static multi-tyre rolling).
+The maximum allowable working time shall be stated in Clause 9 of Annexure MRTS07B.1. If no such
+value is given, it shall be two hours.
+Alternatively, the allowable working time may be determined by the Contractor prior to commencement
+of insitu stabilisation using Test Method Q136A. For Test method Q136A, the Contractor shall adopt
+the following:
+• type of stabilising agent nominated in Clause 9 of Annexure MRTS07B.1
+• blend ratio of the stabilising agent nominated in Clause 9 of Annexure MRTS07B.1
+• estimated stabilising agent content nominated in Clause 9 of Annexure MRTS07B.1
+• Contractor’s proposed source(s) of stabilising agent(s)
+• Contractor’s proposed source of water, and
+• existing pavement materials blended with the Contractor’s proposed unbound granular import
+materials as appropriate.
+All test results shall be reported to the Administrator. Hold Point 5"
+MRTS07B,8.5.1,General,15,15,"The construction process shall be based on either a process requirement or a product standard. The
+method for this Contract shall be as stated in Clause 9 of Annexure MRTS07B.1. Where not so stated
+in the Annexure, product standard shall apply."
+MRTS07B,8.5.2,Construction based on process requirements,15,15,"If a process requirement is specified in Clause 9 of Annexure MRTS07B.1 construction shall:
+a) incorporate the methodology and construction of trial sections in accordance with the
+requirements of Clauses 8.5.2.1 and 8.5.2.2
+b) comply with the construction requirements stated in Clause 8.6, and
+c) comply with the product standards stated in Clause 8.7 except that compaction testing shall
+not be required on completed works other than trial sections, provided that the Contractor
+uses the same construction plant, process and methodology as that used for the trial section."
+MRTS07B,8.5.2.1,Methodology,15,15,"Each section of the Works with a unique combination of stabilising agent type, stabilising agent spread
+rate, material(s) to be stabilised and depths shall be identified as a separate area for construction.
+A trial section shall be constructed for each separate area for construction in accordance with the
+requirements of Clause 8.5.2.2.
+The compaction of each trial section shall be tested in accordance with Clause 5.4 and checked for
+compliance with Clause 8.7.4. If the minimum characteristic value of the relative compaction results for
+the trial section is not less than the value specified in Clause 8.7.4, no further compaction testing shall
+be carried out for the balance of the area for construction that is represented by that trial section,
+provided that the same construction plant, processes and methodology is used to construct the
+remaining area as that used for the construction of the trial section.
+If the minimum characteristic value of the relative compaction results for the trial section is less than
+the value specified in Clause 8.7.4, the trial section shall be rectified so that it complies with this
+accordance with this Clause 8.5.
+Construction based on a process requirement and a trial shall not be used for the balance of the
+Works without approval of the Administrator. Hold Point 6"
+MRTS07B,8.5.2.2,Trial section,15,15,"A trial section shall be constructed using the same construction plant, processes and methodology
+that are proposed to be used for the remainder of the works represented by the trial section.
+Witness Point 1
+A trial section shall be at least 100 metres long and three metres wide and include a longitudinal joint.
+All operations, testing, etc. required by this Technical Specification, including compaction testing, shall
+be used in the construction and testing of a trial section."
+MRTS07B,8.5.3,Construction based on product standards,16,16,"If a product requirement is specified in Clause 9 of Annexure MRTS07B.1 construction shall:
+a) comply with the construction requirements stated in Clause 8.6, and
+b) comply with the product standards stated in Clause 8.7."
+MRTS07B,8.6.1,Removal and disposal of material not suitable for stabilisation (if required),16,16,"Material not suitable for stabilisation shall include:
+a) Any particle or conglomeration, that exists after preliminary pulverisation, with a dimension
+greater than 75 mm along any axis.
+b) Any material(s) deemed unsuitable by the Administrator, which may include:
+i. concrete
+ii. cement treated patches, and
+iii. asphalt patches where the total asphalt thickness is greater than 50 mm, and
+c) Any additional requirements as stated in Clause 4 of Annexure MRTS07B.1.
+At least seven days prior to the date shown in the Contractor’s program of works for the removal of
+material not suitable for stabilisation, the Administrator will mark out patches and / or identify
+unsuitable materials that are to be removed and replaced.
+Where material not suitable for stabilisation is encountered, the volume to be removed shall be agreed
+with the Administrator prior to commencing removal and replacement of the material. Witness Point 2
+Material that is unsuitable for stabilisation shall be removed and disposed of in accordance with
+Clause 10 MRTS01 Introduction to Technical Specifications.
+New material conforming to the requirements stated in Clause 6.1 shall be used to replace the
+material removed. It shall be spread, compacted and trimmed to the alignment, heights and shapes
+specified in the Drawings or Contract for the completed work.
+Compaction of the new material shall be administrated through either product requirement
+(Clause 9.3) and/or process requirement (Clause 9.2). This shall be approved by the Administrator.
+The minimum characteristic value of the relative compaction results shall not be less than 100%.
+This compaction testing requirement is not applicable if the layer thickness is less than 100 mm."
+MRTS07B,8.6.2,Preliminary pulverisation,16,17,"The materials to be stabilised shall be pulverised in accordance with the requirements of this clause.
+One pass of a stabiliser hooked-up to a fully laden water truck shall be undertaken to pulverise the
+materials to be stabilised.
+The pulverisation pass shall be undertaken to a depth that is 50 mm less than the design depth
+(50 mm above the lower reference level). Witness Point 3
+Preliminary pulverisation shall occur:
+a) after the removal and replacement of material deemed by the Administrator as material not
+suitable for stabilisation
+b) prior to the addition of shape correction (or overlay) material, and
+c) prior to the addition of the stabilising agent.
+The pulverisation pass shall be undertaken with the incorporation of moisture from the water truck
+hooked-up to the stabiliser.
+The incorporation of moisture during the pulverisation pass allows the insitu materials to be pre-
+conditioned (in particular, those insitu materials with higher water absorptions).
+Typically, 0.2 – 0.5% moisture rate through the stabiliser for the pulverisation pass.
+Where the insitu materials has a relatively higher moisture content at the time of insitu stabilising,
+the addition of moisture during the pulverisation pass may not be required to pre-condition the
+materials.
+Any additional patches identified during preliminary pulverisation as material not suitable for
+stabilisation and accepted by the Administrator as being material not suitable for stabilisation, shall be
+removed and replaced as specified in Clause 8.6.1.
+Any particle or conglomeration with a dimension greater than 75 mm along any axis shall be removed
+from the pulverised material and the voids made good prior to stabilisation. Voids shall be made good
+either by using either new material in accordance with Clause 6.1 or excess pulverised material that is
+both adjacent to the void and suitable for stabilisation."
+MRTS07B,8.6.3,Additional material for shape correction (if required),17,17,"The shape of the pavement shall be corrected after the preliminary pulverisation and prior to the
+importation of any shape correction (or overlay) material, unless otherwise agreed to by the
+Administrator.
+Additional material required for shape correction shall be as specified in Clause 6.2 and shall be
+spread after preliminary pulverisation has been completed. It shall be spread onto the surface of the
+pavement to a shape suitable for stabilisation and compacted and trimmed to the alignment, heights
+and shapes specified in the Drawings or Contract.
+Compaction of the additional material required for shape correction shall be administrated through
+either process requirement (refer Clause 9.2) and / or product requirement (refer to Clause 9.3). This
+shall be approved by the Administrator. The minimum characteristic value of the relative compaction
+results shall not be less than 100%. This compaction testing requirement is not applicable if the layer
+thickness is less than 75 mm."
+MRTS07B,8.6.4,Compacting and trimming of the surface prior to spreading of the stabilising agent,17,17,"Prior to spreading of the stabilising agent, the surface shall be shaped, compacted and trimmed to a
+degree that is sufficient to facilitate stabilisation specified in the Contract. Witness Point 4"
+MRTS07B,8.6.5,Stabilising agent equipment,18,18,"Stabilising agent shall be transported, stored and spread using equipment that is both waterproof and
+watertight. Equipment used to transfer the stabilising agent shall also be waterproof during the transfer
+process. All such equipment shall be emptied, cleaned and dried prior to the introduction of each type
+of stabilising agent to be used in the stabilisation works.
+The stabilising agent shall be spread using a purpose-built calibrated spreader. The stabilising agent
+and water shall be incorporated into the material using a stabiliser.
+Where a stabiliser with a calibrated integrated spreader is nominated (refer to Clause 5 of
+Annexure MRTS07B.1), the stabilising agent shall be incorporated directly into the material to be
+stabilised."
+MRTS07B,8.6.6,Spreading of stabilising agent,18,18,"The stabilising agent shall be uniformly spread over the insitu material at a controlled rate (mass per
+unit area, kg/m²).
+The maximum amount of stabilising agent to be spread in one pass shall be 20 kg/m² to avoid
+wastage. The number of passes shall be calculated to comply with this requirement.
+Traffic shall be stopped during spreading of stabilising agent if wind direction is such that airborne
+cementitious blends are impeding through traffic.
+At the start of each individual spreading run, the surface spread rate of the stabilising agent shall be
+determined using the surface spread rate Test Method Q719. The surface spread rate test shall be
+carried out within a distance of 35 m from the start of each individual spreading run. After the purpose-
+built calibrated spreader / integrated spreader has spread over the mat or tray/s, the spreader shall be
+halted, the actual spread rate measured, and this result compared with allowable tolerances specified
+in Clause 8.7.2.3. If the spread rate result is within the allowable tolerance, the spreader shall be
+allowed to complete the run. If the spread rate result is outside the allowable tolerance, additional
+surface spread rate tests shall be repeated in 35 m intervals until the measured surface spread rate
+result is within the tolerance stated in Clause 8.7.2.3. The Contractor shall undertake corrective action
+in the area which has nonconforming surface spread rates. Witness Point 5
+Additional surface spread rate tests at other locations (for example middle and/or end of a run) shall
+be conducted upon the request of the Administrator.
+Once the stabilising agent has been spread, no traffic, other than the construction plant employed for
+the stabilisation work, shall travel over it.
+All surface spread rate test results shall be recorded and included in the Contractor’s quality records
+(refer to Clause 9.5)."
+MRTS07B,8.6.7,Time between spreading and mixing,18,18,"The maximum allowable time between spreading the stabilising agent and incorporation into the insitu
+material shall be as stated in Clause 9 of Annexure MRTS07B.1. Where no such time is stated in the
+Annexure, the maximum time between spreading and mixing shall be 60 minutes."
+MRTS07B,8.6.8.1,General,19,19,"Incorporation of the stabilising agent shall be achieved using the stabiliser. The stabiliser shall be
+hooked-up to a fully laden water truck to allow for the incorporation of moisture.
+The incorporation of moisture together with the stabilising agent allows the insitu materials to be
+pre-conditioned (in particular, those insitu materials with higher water absorptions).
+Through the incorporation pass(es), the Contractor should target incorporating approximately 50%
+of the required total moisture needed to achieve the specified moisture ratio (refer to Clause 8.7.3).
+Where the insitu materials has a relatively higher moisture content at the time of insitu stabilising,
+the addition of moisture during the incorporation pass(es) may not be required to pre-condition the
+materials.
+The Contractor shall ensure that no excess stabilising agent is spilt into the adjoining section during
+the spreading and incorporation passes. This shall be achieved by:
+a) ensuring the stabiliser slows down as it approaches the limit of the section, and
+b) any excess stabilising agent which is spilt into the adjoining section is spread by the grader back
+into the section which is currently being stabilised."
+MRTS07B,8.6.8.2,Single incorporation pass and final moisture incorporation pass,19,19,"Where a single pass is required to spread the ordered amount of stabilising agent specified in
+Clause 8.7.2.1, at least two mixing passes shall be undertaken.
+The first (and only) incorporation pass of the stabilising agent shall be to a depth that is 50 mm less
+than design depth (50 mm above the lower reference level) in accordance with Clause 8.6.8.1.
+Compacting, shaping, and trimming of surface prior to the final moisture incorporation pass shall be
+undertaken in accordance with Clause 8.6.9.
+The final moisture incorporation pass shall be to a depth specified by the target depth (to ensure
+mixing to the lower reference level) in accordance with Clause 8.6.10."
+MRTS07B,8.6.8.3,Multiple incorporation passes,19,19,"Where more than one pass is required to spread the ordered amount of stabilising agent specified in
+Clause 8.7.2.1, the stabilising agent be incorporated into the material after each spreading pass.
+All incorporation passes of the stabilising agent shall be to a depth that is 50 mm less than design
+depth (50 mm above the lower reference level) in accordance with Clause 8.6.8.1.
+Compacting, shaping, and trimming of surface between multiple incorporation passes shall be
+undertaken as per Clause 8.6.8.4.
+Compacting, shaping, and trimming of surface prior to the final moisture incorporation pass shall be
+undertaken as per Clause 8.6.9.
+The final moisture incorporation pass shall be to a depth specified by the target depth (to ensure
+mixing to the lower reference level) in accordance with Clause 8.6.10."
+MRTS07B,8.6.8.4,Compaction and shaping of surface between incorporation passes,20,20,"Adequate compaction shall be completed after each application of stabilising agent has been
+incorporated into the materials to be stabilised as stated in Clause 8.6.8.3. This shall be carried out
+using a roller that can achieve relatively uniform compaction over the depth of the stabilised layer. The
+compacted surface shall be adequately shaped to the specified crossfall to allow for subsequent
+spreading of the stabilising agent."
+MRTS07B,8.6.9,Compaction and trimming of surface prior to the final moisture incorporation pass,20,20,"Prior to the final moisture incorporation pass, the surface level shall be compacted and shaped to the
+specified crossfall. Surface level heights higher than specified in the Drawings or Contract after
+compaction and shaping due to the effects of ‘bulking’ shall be uniform and shall be identified. In this
+case, the difference in height between specified in the Drawings or Contract and attained (bulking)
+shall be added to the design depth to determine the stabilising target depth for the final moisture
+incorporation pass (refer to Figure 8.6.10). Witness Point 6
+Alternatively, the surface shall be shaped, compacted and trimmed to the alignment, height and
+crossfall specified in the contract documents prior to the final moisture incorporation pass."
+MRTS07B,8.6.10,Final moisture incorporation pass,20,21,"The distribution of the stabilising agent and water shall be uniform throughout the entire layer depth for
+the area stabilisation. The moisture content shall be adjusted as necessary during the wet
+incorporation process to achieve the moisture ratio stated in Clause 8.7.3. The target depth shall
+ensure mixing to the lower reference level whereby meeting the requirements of Clause 8.7.5.3.
+Unless otherwise approved by the Administrator, water shall be added by means of a controlled
+pressure feed distribution system located inside the mixing chamber of the stabiliser. This system shall
+be capable of spraying varying rates across its width.
+Where test results or visual inspection by the Administrator indicates that any of the requirements
+stated in this clause have not been met, additional mixing passes shall be carried out to improve the
+uniformity of the:
+a) materials to be stabilised
+a) distribution of the stabilising agent, and
+b) distribution of water.
+No additional or separate payment shall be made for any additional passes ordered by the
+Administrator.
+Figure 8.6.10 – Target depth sketch
+Bulking height
+FSL
+Pulverisation &
+Target depth =
+stabilising agent
+incorporation Design depth Bulking height
++
+depth
+Design depth
+50mm
+LRL
+Design depth – as specified in the construction drawings and contract documents.
+FSL : Finish Surface Level
+LRL : Lower Reference Level
+Pulverisation and Target depth
+Bulking after incorporation
+incorporation of on the final moisture
+of stabilising agent
+stabilising agent incorporation pass
+After surface compaction and
+trimming, the materials will
+Preliminary pulverisation Mixing depth required on the
+change in volume due to
+and incorporation of final pass by the stabiliser to
+incorporation of the stabilising
+stabilising agent shall be reach the LRL shall account
+agent."
+MRTS07B,50,mm less than the design for the additional bulking,21,21,"The bulking height above FSL
+depth. above the FSL.
+needs to be identified and
+added to the design depth."
+MRTS07B,8.6.11,Compaction and trimming after final moisture incorporation pass,21,22,"Immediately after wet incorporation pass, the stabilised area shall be compacted with adequate rollers
+(refer to Clause 8.6.17) to achieve the compaction stated in Clause 8.7.4.
+For layer thicknesses 200 – 300 mm which are being compacted using a pad foot roller (refer to
+Clause 8.6.17), pad foot marks shall be removed to prevent differential compaction and the pad foot
+marks reflecting to the surface. The contractor shall ensure that no marks caused by a pad foot roller
+remain on the surface. A minimum cut to -100 mm from the Finished Surface Level (FSL) of the
+stabilised layer is required to completely remove the influence of the pad foot marks and not create a
+thin false layer when the stabilised material is reinstated.
+Removing (or cutting out) of the pad foot marks can be undertaken using a grader or stabiliser.
+In both cases, a minimum cut to -100 mm from the Finished Surface Level (FSL) of the stabilised
+layer is required.
+Where a grader is used to remove the pad foot marks, the stabilised material shall not be wasted.
+Once the pad foot marks have been completely removed, the stabilised material can be reinstated
+to allow the completion of compaction and trimming.
+Where a stabiliser is used to remove the pad foot marks, the upper 'loose' stabilised materials can
+be compacted and trimmed in place to complete the stabilised layer. The stabiliser's tyre tread
+marks (or ruts) must be removed to prevent differential compaction and the tyre tread marks
+reflecting to the surface. A sufficiently deep cut with the grader is required to completely remove the
+influence of the tyre tread marks and not create a thin false layer when the stabilised material is
+reinstated.
+For layer thicknesses < 200 mm which are being compacted using smooth drum and multi-tyre rollers
+(refer to Clause 8.6.17), removal of pad foot marks is not required. However, the stabiliser's tyre tread
+marks (or ruts) shall be removed to prevent differential compaction and the tyre tread marks reflecting
+to the surface. The Contractor shall ensure that no marks caused by the stabiliser's tyre tread marks
+remain on the surface. A sufficiently deep cut with the grader is required to completely remove the
+influence of the tyre tread marks and not create a thin false layer when the stabilised material is
+reinstated.
+Initial shaping of the stabilised surface shall be carried out after the stabilised layer has been
+compacted.
+The trimmed surface shall be free from loose pockets, holes, bumps and lenses of materials. The
+identified depressions shall be filled with additional stabilised material that is mixed and placed within
+its allowable working time as specified in Clause 8.4.
+No marks caused by any roller or stabilisation plant shall be left on the surface of the stabilised layer.
+All final trimming shall involve cutting to waste. All material cut to waste shall be disposed of in
+accordance with Clause 10 of MRTS01 Introduction to Technical Specifications. No separate payment
+shall be made for the disposal of material cut to waste. The cost of all activities associated with the
+disposal of material cut to waste shall be deemed to be incorporated into the relevant work items.
+Compaction and trimming (excluding static multi-tyre rolling) shall be completed within the allowable
+working time as specified in Clause 8.4.
+When finishing compaction using the vibrating smooth drum roller, adequate care and attention
+must be undertaken to avoid “over-compacting” the stabilised layer (also commonly referred to a
+“de-compacting” or “shattering”). Over-compaction can commonly occur when the smooth drum
+roller is operated on high amplitude vibration mode.
+To avoid over-compaction and damaging the stabilised layer’s surface, typical best practise is low
+amplitude vibration mode for the forward direction, and static (or no vibration) for the backwards
+direction."
+MRTS07B,8.6.12.1,General,23,23,"Joints shall be constructed such that the material at the joints complies with the requirements of this
+A construction joint (longitudinal or transverse) shall be deemed fresh when the material on each side
+of the joint has been stabilised, placed and compacted within the allowable working time (refer to
+Clause 8.4) of the stabilised material constructed first."
+MRTS07B,8.6.12.2,Longitudinal joints,23,25,"Longitudinal joints shall not be located in the through traffic wheel paths.
+Where a fresh longitudinal joint between adjacent runs is to be compacted, the outside 300 mm of
+material from the first run shall be left uncompacted until the adjacent material is ready for compaction.
+The joint shall be water cured during this period. When the fresh joint is compacted the roller shall be
+partially supported on the portion of the first run that has been previously compacted.
+For longitudinal joints that are not fresh, to ensure complete stabilisation across the full width of the
+pavement, the minimum distance for cutting back / overlapping into previously stabilised material shall
+be the greater of 100 mm or the distance to a point where the stabilised material complies with this
+The overlap at a change of crossfall or crown shall be carefully considered to comply with the
+longitudinal joint requirements of this clause and Clause 8.7.5.
+Where there is more than one layer of insitu stabilised material, the formation of the longitudinal
+joint at the crown needs to be considered. Refer to MRTS07A Insitu Stabilised Subgrades using
+Quicklime or Hydrated Lime, Figure 8.6.7.2 – Typical construction process for guidance.
+No separate or additional payment shall be made for the disposal of material cut to waste. The cost of
+all activities associated with the disposal of material cut to waste shall be deemed to be incorporated
+into the relevant work items.
+Figure 8.6.12.2 – Typical construction process
+When constructing a longitudinal joint in accordance with this clause and Figure 8.6.12.2, the
+Contractor must ensure that the final moisture incorporation pass encompasses the entire area
+where the stabilising agent has been spread and mixed.
+To achieve this, the Contractor may consider adopting the following process:
+• Spread the mix the stabilising agent 150 mm offset from the longitudinal joint location which
+is commonly the crown and/or centreline as shown in Figure 8.6.12.2 (refer to Step 2 in
+Figure 8.6.12.2).
+• Complete the final moisture incorporation pass ensuring the stabiliser cuts into the
+adjoining stabilised materials thus forming a sufficient overlap (refer to Step 3 in
+Figure 8.6.12.2)."
+MRTS07B,8.6.12.3,Transverse joints,25,25,"For transverse joints that are not fresh, the adjoining stabilised section shall be mixed using a
+stabiliser by the greater of 1.5 m or the length ordered by the Administrator.
+Where there is more than one layer of insitu stabilised material, the transverse joints of each layer
+shall be offset from the underlying layer’s joint by a minimum distance of 150 mm."
+MRTS07B,8.6.13,Surface finish,25,26,"The finished surface of any stabilised pavement layer shall:
+• be hard and homogenous in appearance
+• not be friable when subject to mechanical brooming
+• not have transverse shrinkage cracks
+• not have any loose, segregated or contaminated areas
+• have the course particles slightly exposed
+• not be affected by delamination
+• not have any cracking
+• not show signs of water pumping, and
+• not visibly deflect under load when proof rolled in accordance with Clause 9.8.
+For layers that are to be covered by a sprayed bituminous treatment, the surface shall have a
+maximum ball penetration value that complies with Clause 8.7.6.
+It is intended that these requirements apply to the condition of the pavement surface immediately
+prior to application of the surfacing treatment / layer. The Contractor may need to undertake
+additional controls beyond the basic construction activities (compaction, trimming and so on) to
+ensure these requirements are satisfied.
+Where a stabilised pavement layer is required to be covered by a sprayed bituminous treatment,
+particular attention needs to be given to the surface finish of the stabilised pavement layer in order
+to ensure good adhesion. This is particularly relevant when the treatment includes polymer
+modified bitumen.
+The following factors are important to ensure the successful adhesion of a sprayed bituminous
+treatment:
+• All dust must be removed from the pavement immediately before spraying
+• Compaction of the stabilised pavement layer may form a thin lens of dried slurry on the
+surface of the pavement. This can appear hard, however may be prone to ‘shattering’ or
+delamination and should be removed before spraying
+• Variation in the surface ‘tightness’ may warrant the specification of either an AMC0 or
+AMC00 prime (or an equivalent emulsion prime accepted by the Administrator). The
+effectiveness of any prime should be assessed in field trials.
+Inadequate curing can lead to an excessively dusty surface, which may be difficult to prepare. To
+address this, curing should be undertaken in accordance with Clause 8.6.14 to ensure the
+pavement remains continuously damp.
+Where the insitu stabilised layer is to be overlaid with another pavement layer (that is, not bitumen
+seal and/or asphalt), consideration needs to be given on how to adequately prepare the surface to
+maximise the bond between the pavement layers.
+If the insitu stabilised layer is to be overlaid with another insitu stabilised layer, it is recommended
+that the overlying layer be insitu stabilised to a depth which will 'tuck in' to the underlying layer. The
+‘tuck in’ details shall be provided in the Contract documents.
+If the insitu stabilised layer is to be overlaid with a plant-mixed stabilised or granular layer, it is
+recommended that the finished surface be hard-cut and/or broomed to produce a roughly textured
+surface before placing the next layer."
+MRTS07B,8.6.14,Curing,26,27,"A curing operation shall commence immediately after the completion of compaction. Curing operation
+shall be carried out with extreme care to avoid any damage to the stabilised layer.
+The stabilised layer shall be cured using water by maintaining the layer surface and edges in a
+continuously damp condition, using a uniformly applied fine mist, until the stabilised layer is covered
+by an overlying pavement layer or a sprayed bituminous surfacing with cover aggregate is placed as
+described in Clause 8.6.16 has been applied.
+Water shall be applied in a manner such that slurrying of the surface, pavement instability and erosion
+and/or leaching of the stabilising agent are all avoided. During the water curing process, no heavy
+construction equipment shall be allowed on the stabilised layer."
+MRTS07B,8.6.15,Maintenance of the stabilised layer,27,27,"The stabilised layer shall be maintained by the Contractor until a bituminous surfacing with a cover
+aggregate is applied, or until the stabilised layer is covered by another pavement layer, or until the
+Administrator accepts and takes responsibility for that area (whichever is the longer).
+The surface of the stabilised layer shall be kept moist, in good order, in good condition and free from
+contamination. Construction and other traffic shall not traverse the stabilised layer where damage to
+the surface may occur.
+No separate or additional payment shall be made for maintenance of the stabilised layer. The cost of
+all activities associated with maintenance of the stabilised layer shall be deemed to be incorporated
+into the relevant work items for the stabilised layer."
+MRTS07B,8.6.16,Bituminous surfacing,27,27,"Unless otherwise approved by the Administrator, a bituminous surfacing with a cover aggregate shall
+be applied within seven calendar days of completion of the stabilised layer."
+MRTS07B,8.6.17,Minimum requirements and numbers of particular plant,27,28,"The minimum requirements and numbers of particular plant that shall be on site at all times during the
+stabilisation works shall be as stated in Clause 5 of Annexure MRTS07B.1. Where not so stated in the
+Annexure, the minimum requirements and numbers of particular plant that shall be on site at all times
+during the stabilisation works shall be as stated in Table 8.6.17.
+Table 8.6.17 – Minimum requirements and numbers of particular plant
+Minimum
+Description Minimum requirement for each piece of plant number of
+units
+Stabiliser or a) Minimum power capacity of 155 kW/m of the drum width. 1
+Integrated spreader
+b) Capable of mixing to the specified depth.
+stabiliser
+c) Capable of supplying water such that incorporation rates
+can be varied across the full width of the stabilising box
+and incrementally across the box.
+d) Calibrated and capable of uniformly spreading stabilising
+agent to varying widths (if integrated spreader stabiliser).
+Purpose built Calibrated with load cells and capable of uniformly spreading 1
+calibrated spreader stabilising agent using a fixed bulk bin feeding a mechanical
+or hydraulic driven spreading rotor to varying widths.
+Vibrating pad foot For layer thickness < 200 mm: For layer thickness 200 1
+roller not required - 300 mm: 21 tonnes
+Vibrating smooth For layer thickness < 200 mm: For layer thickness 200 1
+drum roller 16 tonnes - 300 mm: 16 tonnes
+Multi-tyre roller Minimum 12 tonnes. 1
+Water truck Minimum capacity of 6000 litres. 2
+Grader Manned by final trim Operator. 1
+The Contractor shall utilise adequate roller sizes and rolling patterns to achieve the specified
+relative compaction.
+When compacting an insitu stabilised layer thickness of 200 – 300 mm a padfoot roller is required
+for initial compaction. After the removal of padfoot marks (refer to Clause 8.6.11), care needs to be
+taken by the Contractor to ensure that the final smooth drum rolling does not de-compact (or crack)
+the stabilised layer.
+Typically, insitu stabilised layer thicknesses are not less than 200 mm. However, for layer thickness
+< 200 mm, the Contractor shall use a combination of smooth drum and multi-tyre rollers which has
+demonstrated it will achieve the specified relative compaction. After the removal of the stabiliser's
+tyre tread marks (refer to Clause 8.6.11), care needs to be taken by the Contractor to ensure that
+the final smooth drum rolling does not de-compact (or crack) the stabilised layer."
+MRTS07B,8.6.18,Conditions under which stabilisation shall not proceed,28,28,"The entire stabilisation process shall not proceed in any of the following situations:
+a) during rainfall
+b) when rainfall appears to be imminent
+c) during periods when the wind is strong enough to cause particles of the stabilising agent to
+become airborne
+d) during conditions that may result in the work causing nuisance or danger to people, property,
+the environment, or livestock
+e) when the pavement temperature, measured 50 mm below the surface, drops below 10ºC, or
+f) when the air temperature, measured in the shade, exceeds 40ºC."
+MRTS07B,8.7.1,General,28,28,"Compliance testing of the stabilised layer shall be undertaken for each lot. Where a process standard
+is specified (refer to Clause 8.5.1), the compaction requirements in Clause 8.7.4 shall apply to the trial
+section(s) but not to other sections. Where a product standard is specified (refer to Clause 8.5.1), the
+compaction requirements in Clause 8.7.4 shall apply to all lots."
+MRTS07B,8.7.2.1,Ordered spread rate,28,28,"At least 14 days prior to the commencement of stabilisation works, the Administrator will confirm or
+adjust the specified stabilising agent spread rate and any blend ratio stated in Clause 9 of
+Annexure MRTS07B.1. The confirmed or adjusted stabilising agent spread rate shall be the ordered
+spread rate of stabilising agent. Milestone"
+MRTS07B,8.7.2.2,Corrected content,29,29,"Notwithstanding the ordered spread rate of stabilising agent given in Clause 8.7.2.1, the content to be
+used for the stabilisation works shall be the corrected content, , as calculated below.
+Where the stabilising agent does not contain hydrated lime, 𝐶𝐶 𝐶𝐶=𝑜𝑜 .
+Where a cementitious blend containing hydrated lime, or a h𝐶𝐶y𝐶𝐶d𝑜𝑜rate𝐶𝐶d𝑜𝑜 lime / fly ash blend is specified for
+the stabilising agent:
+𝑃𝑃𝑁𝑁𝑁𝑁 𝑃𝑃𝐻𝐻𝑁𝑁 𝐴𝐴𝐴𝐴𝑥𝑥
+𝐶𝐶𝐶𝐶𝑜𝑜 =𝐶𝐶𝑜𝑜×�� �+� × ��
+where: = corrected content of stabilisin1g0 a0gent in1 0p0erce𝐴𝐴n𝐴𝐴t 𝑦𝑦 (%)
+𝐶𝐶𝐶𝐶𝑜𝑜 = ordered content of stabilising agent in percent (%) as defined in Clause 8.7.2.1
+𝐶𝐶𝑜𝑜 = proportion of the blend in percent (%) that is not hydrated lime
+𝑃𝑃𝑁𝑁𝑁𝑁 = proportion of the blend in percent (%) that is hydrated lime
+𝑃𝑃𝐻𝐻𝑁𝑁 = available lime index of the hydrated lime (%) used in the laboratory mix design
+testing (refer to Clause 9 of Annexure MRTS07B.1)
+𝐴𝐴𝐴𝐴𝑥𝑥
+= available lime index of the hydrated lime (%) used in construction"
+MRTS07B,8.7.2.3,𝐴𝐴𝐴𝐴A 𝑦𝑦 ctual spread rate,29,29,"The actual spread rate shall be represented by the average of the surface spread rates of the
+stabilising agent for each lot.
+The actual stabilising agent spread rate shall be within ± 10% of the ordered spread rate as specified
+in Clause 8.7.2.1."
+MRTS07B,8.7.3,Moisture ratio,29,29,"The moisture ratio of the uncompacted materials during the final moisture incorporation pass shall be
+determined in accordance with Clause 9.7, and shall comply with the requirements specified in
+Table 8.7.3.
+Table 8.7.3 – Moisture ratio requirements
+Property Minimum value (%) Maximum value (%)
+Moisture ratio (uncompacted)
+(MRᵤ) during the final moisture 85 105
+incorporation pass"
+MRTS07B,8.7.4,Compaction standard,29,29,"The minimum characteristic value of the relative compaction results for the full thickness of the
+stabilised layer shall be determined in accordance with Clause 9.6, and shall comply with the
+requirements specified in Table 8.7.4.
+Table 8.7.4 – Compaction requirements
+Layer Minimum relative compaction value
+Cementitious stabilised layer 100% (standard compaction)"
+MRTS07B,8.7.5.1,General,30,30,"The stabilised layer shall be constructed so as not to depart from the alignment, widths, thicknesses,
+lengths, heights and shapes specified in the Drawings or Contract by more than the tolerances stated
+in Clause 8.7.5.2 to Clause 8.7.5.5.
+When constructing the stabilised layer, the Contractor shall consider the geometric tolerances of any
+overlaying layer(s) and shall prepare the stabilised layer in such a manner that will permit the
+geometric conformance of the stabilised layer, and any overlying layer(s)."
+MRTS07B,8.7.5.2.1,Primary tolerance,30,30,"A primary tolerance shall apply to the height of any point on the finished surface of the stabilised layer.
+The primary tolerance shall be as stated in Clause 6.1 of Annexure MRTS07B.1 and be one of the
+alternatives given in Table 8.7.5.2.1. If no such indication is given, the primary tolerance shall be
+Alternative B (-5 and +15 mm).
+Table 8.7.5.2.1 – Primary tolerance for the height of any point on the surface of the stabilised
+layer
+Alternative Primary Tolerance (mm)
+A -5 and +10
+B -5 and +15
+C Thickness only
+Alternative A primary tolerance (-5 to +10 mm) is recommended for an insitu stabilised layer when
+the subsequent overlying layer is asphalt.
+In all cases the primary tolerance shall also apply for the thickness of the completed stabilised layer
+(refer to Clause 8.7.5.3.1).
+Where Alternative C (thickness only) has been specified in Clause 6.1 of Annexure MRTS07B.1, the
+following shall apply:
+a) height of collimation (also known as a 'dumpty level' technique) shall be used to determine
+the actual stabilised layer thickness
+b) minimum testing frequency for determining the actual stabilised layer thickness shall be at
+each compaction test location (refer Clause 9.6), and
+c) at any point of the completed stabilised layer the measured thickness shall be within -5 mm
+and +15 mm of the design depth stated in Clause 9 of Annexure MRTS07B.1."
+MRTS07B,8.7.5.3.1,General,31,31,"At any point of the completed stabilised layer, the measured actual stabilised layer thickness (refer to
+Clause 8.7.5.3.2) shall be within primary tolerance nominated in Clause 8.7.5.2.1 of the design depth
+specified in Clause 9 of Annexure MRTS07B.1."
+MRTS07B,8.7.5.3.2,Measuring actual stabilised layer thickness,31,32,"During each final moisture incorporation pass and prior to compaction, depth checks shall be
+undertaken to determine the lower reference level at the bottom of the stabilised layer. The frequency
+of the depth checks shall be stated in Clause 5.4. Depth checks shall be undertaken by a Surveyor in
+accordance with the limits of accuracy defined in MRTS56 Construction Surveying.
+Following compaction and final trim, levels shall be obtained from the top of the finished stabilised
+layer. They shall be recovered in the horizontal plane to an accuracy of ± 50 mm of the same location
+as those from which the lower reference levels were obtained. The difference between the finished
+surface level and lower reference level shall be recorded as the actual stabilised layer thickness.
+The actual stabilised layer thickness shall be recorded by the Contractor and reported to the
+Administrator. The record for each thickness determination shall include:
+a) the position and measurement of the lower reference level at each depth check location
+b) the position and measurement of the finished surface level at each depth check location
+c) the actual stabilised layer thickness result obtained by subtracting the finish surface level
+measurement from the lower reference level measurement for each test location (rounded to
+the nearest 1 mm), and
+d) the minimum characteristic value calculated in accordance with Clause 12 of
+MRTS01 Introduction to Technical Specifications, of all stabilised layer thickness
+measurements for each lot.
+As an alternative to measuring the finished surface level recovered in the horizontal plane to an
+accuracy of ± 50 mm of the same location as the lower reference level measurements, a Triangular
+Irregular Networks (TIN) surveyed surface may be used by the Contractor.
+The Contractor shall submit to the Administrator the proposed reporting positions (grid pattern and
+offsets) for the finished surface level survey capture. The use of TIN shall not be accepted until the
+Administrator has approved the Contractor’s methodology.
+In some locations, the finished surface level design geometry may be sub-optimal in crossfall
+and/or longitudinal grade and therefore not suitable for TIN surface creation. In these locations, the
+use of TIN shall not be accepted by the Administrator.
+A Surveyor shall undertake the as-constructed survey capture of the finished stabilised layer in
+accordance with the geometrics conformance requirements of this Specification, and the As
+Constructed Survey requirements of MRTS56 Construction Surveying. From the as-constructed
+survey capture, a TIN surface can be developed and used to represent the finished surface level of
+the stabilised layer.
+The actual stabilised layer can be measured and reported to the Administrator using this TIN
+surface as per the requirements of this Clause.
+In all cases,
+• the reported positions must be recovered within the bounds of the developed TIN surface,
+and
+• the finished surface level and lower reference level measurements are recovered in the as-
+constructed survey to an accuracy of ± 1,000 mm."
+MRTS07B,8.7.5.4,"Geometrics, horizontal tolerances",32,32,"The horizontal position of any point on the pavement shall not differ from the corresponding point
+shown on the Drawings or as otherwise specified in the Contract, by not more than ± 50 mm, except
+where alignment of the pavement with an existing pavement or structure is necessary. In this case, the
+new work shall be joined neatly to the existing work or structure in a smooth manner as shown on the
+Drawings or as otherwise specified in the Contract.
+If the Drawings or other Contract documents do not demonstrate, describe or specify how new work is
+to join to existing pavement or structures then it shall be done in a manner that is acceptable to the
+Administrator."
+MRTS07B,8.7.5.5.1,General,32,32,"Where required by Clauses 8.7.5.5.2, 8.7.5.5.3 and 8.7.5.5.4, additional tolerances shall apply to the
+stabilised layer.
+Additional work shall be carried out by the Contractor where necessary to achieve these additional
+tolerances. Payment for any such work shall be deemed to be included in the Contractor’s scheduled
+rate for the relevant work items."
+MRTS07B,8.7.5.5.2,Deviation from a straightedge,32,33,"Clause 6.2.1 of Annexure MRTS07B.1 specifies whether a deviation from a straightedge tolerance is
+to be applied. If no indication is given, deviation from a straightedge tolerance shall apply.
+The deviation from a 3 m long straightedge placed anywhere on the surface of a layer shall not
+exceed the limit stated in Clause 6.2.2 of Annexure MRTS07B.1, due allowance being made for
+design shape, where relevant.
+The limit stated in Clause 6.2.2 of Annexure MRTS07B.1 shall be one of the alternatives given in
+Table 8.7.5.5.2. If no limit is given, it shall be Alternative D (5 mm).
+Table 8.7.5.5.2 – Tolerance for deviation from a straightedge
+Alternative Maximum value (mm)
+D 5
+E 8
+F 15
+Alternative D tolerance (5 mm) is recommended for an insitu stabilised layer that will be bitumen
+sealed and trafficked, or when the subsequent overlying layer is asphalt."
+MRTS07B,8.7.5.5.3,Crossfall,33,33,"Clause 6.3 of Annexure MRTS07B.1 specifies whether a crossfall tolerance applies. If no indication is
+given, crossfall tolerance shall apply.
+The crossfall shall not depart from the corresponding crossfall shown in the Drawings or Contract by
+more than 0.5% absolute.
+The crossfall shall be measured:
+a) Between any two points more than two metres apart except where a pavement verge is less
+than two metres wide. For pavement verges less than two metres wide, the measurement
+shall be made between the extreme edges of the pavement verge on each side of the
+pavement.
+b) Transverse to the centre line of the carriageway, and
+c) Within the boundaries of a cross-section element that has a constant crossfall."
+MRTS07B,8.7.5.5.4,Road roughness (surface evenness),33,34,"Clause 6.4.1 of Annexure MRTS07B.1 specifies whether a surface evenness tolerance applies to the
+stabilised layer. If no indication is given, surface evenness tolerance shall apply.
+The surface evenness of a stabilised layer shall be such as to provide a road roughness value not
+exceeding the specified road roughness (R ) stated in Clause 6.4.2 of Annexure MRTS07B.1 or,
+where not so stated, not exceeding the value specified in Table 8.7.5.5.4.
+ₛ
+Table 8.7.5.5.4 – Road roughness requirements
+Property Maximum value (m/km)
+Road roughness (R ) 1.94
+ₛ
+The roughness of the following features is required to be reported during roughness testing, but shall
+be excluded from the ride quality assessment:
+• roundabouts
+• railway crossing and grids
+• bridge joints, and
+• inspection pit covers (for example, drainage access chambers).
+The Contractor shall nominate a methodology and provide calculations on ride quality for the
+Administrators acceptance, showing how each feature has been excluded from the assessment and
+the subsequent lot structure.
+Pavement features (including joints) or signalised / unsignalised intersections (other than
+roundabouts) shall not be excluded from the ride quality assessment unless agreed by Administrator.
+The Administrator may increase the specified maximum road roughness (Rs) value to 2.31 m/km
+when the stabilised layer will be overlaid with asphalt or another pavement material within the same
+Contract, and there is a roughness requirement specified elsewhere in the Contract for the
+overlying layer.
+In all cases, when applying extended limits and reduced values in accordance with MRS07B, the
+specified maximum road roughness (Rs) value shall be as stated in Clause 6.4.2 of
+Annexure MRTS07B.1 or, where not so stated, not exceeding the value specified in
+Table 8.7.5.5.4."
+MRTS07B,8.7.6,Ball penetration,34,34,"The ball penetration test shall apply to a completed stabilised layer, unless stated otherwise in
+Clause 7 of Annexure MRTS07B.1. If no indication is given, the ball penetration test shall apply for
+stabilised layers that are to be covered by a sprayed bituminous treatment.
+For stabilised layers that are to be covered by a sprayed bituminous treatment, the surface shall have
+a maximum ball penetration value that complies with the requirements specified in Table 8.7.6 when
+tested in accordance with Clause 9.9.
+Table 8.7.6 – Ball penetration requirements
+Property Maximum value (mm)
+Ball penetration 3"
+MRTS07B,9.1,General,34,34,"Unless otherwise stated in this Technical Specification, the selection of sampling or test locations shall
+be carried out using random stratified sampling. Exceptions include testing of:
+a) geometrics (Clause 9.4)
+b) the stabilising agent content (Clause 9.5)
+c) proof rolling of pavement layers (Clause 9.8).
+The Contractor is responsible for performing sufficient tests to ensure that the pavement complies with
+the standards and requirements of this Technical Specification. However, the Contractor’s testing
+program shall be such that the testing frequencies and number of tests are not less than those
+specified in Clause 5.4."
+MRTS07B,9.2,Process requirements,34,34,"Where construction has been carried out using process requirements, checking for compliance with
+the specified requirements shall be carried out during and after the construction operation, as relevant.
+Except for compaction, compliance checking shall be carried out in accordance with Clause 5.4. If
+process requirement is specified for compaction, the minimum testing frequencies and minimum
+number of tests for compaction specified in Clause 5.4 apply to trial sections and do not apply to other
+sections.
+Notwithstanding this, the requirements of Clauses 8.5.2 shall apply."
+MRTS07B,9.3,Product standards,35,35,"Where construction has been carried out using product standards, compliance testing of the stabilised
+layer shall be undertaken for each lot. If product standard is specified, the minimum testing
+frequencies and minimum number of tests for compaction specified in Clause 5.4 apply.
+Notwithstanding this, the requirements of Clauses 8.5.3 shall apply."
+MRTS07B,9.4.1,General,35,35,"All geometric tolerances, except for surface evenness, shall be checked at regular intervals not
+greater than the frequency specified in Clause 5.4."
+MRTS07B,9.4.2,Road roughness (surface evenness),35,35,"The surface evenness of a stabilised pavement layer shall be measured by road roughness as per
+Test Methods Q708B, Q708C and Q708D.
+For road roughness testing, a lot shall be 100 m in length"
+MRTS07B,9.5,Stabilising agent spread rate,35,35,"The stabilising agent spread rate shall be determined by Test Method Q719. The stabilising agent
+spread rate shall be within the allowable tolerance specified in Clause 8.7.2.3 in all cases.
+The results of all surface spread rate tests shall be recorded and included in the quality records and
+reported to the Administrator. The record and report for each surface spread rate test shall include:
+a) the position, date and time
+b) all values and calculations, including ordered spread rate and assumptions, used to calculate
+the surface spread rate, and
+c) the calculated surface spread rate.
+The testing program shall be discussed and agreed with the Administrator prior to commencement of
+stabilising operations (refer to Clause 5.2.2 Hold Point 1).
+In addition, the tonnage of stabilising agent placed during each spreading run shall be recorded and
+reported to the Administrator. The record and report for each spreading run shall include:
+a) the start position, date and time
+b) the end position, date and time
+c) the length of the run
+d) the width of the run
+e) the tonnage of stabilising agent in the spreader at the start of the run
+f) the tonnage of stabilising agent at 500 m intervals (if the length of the run exceeds 500 m)
+g) the tonnage of stabilising agent in the spreader at the end of the run
+h) the tonnage of stabilising agent spread for each 500 m interval (if the length of the run
+exceeds 500 m), and
+i) the tonnage of stabilising agent spread for the entire run."
+MRTS07B,9.6,Compaction,36,36,"The compaction standard for each lot shall be represented by the minimum characteristic value of the
+compaction results. The characteristic value shall be calculated as stated in Clause 12 of
+MRTS01 Introduction to Technical Specifications or Test Method Q020 using the individual relative
+compaction results determined from testing each lot.
+Where the minimum characteristic value of a lot’s compaction results does not comply with the
+requirements of this specification, the Contractor shall raise a suitable non-conformance report. The
+Administrator should review each individual compaction result. The review may necessitate the
+need for additional investigation to identify the underlying cause(s) for the noncompliance. The
+Administrator should also review the homogeneity of the works.
+The locations of all tests undertaken for the determination of insitu dry density and relative compaction
+shall be at the same locations of samples taken to determine the corresponding laboratory MDR.
+Sampling of stabilised materials to determine the laboratory MDR as detailed in Test Method Q142A
+shall take place immediately after the final moisture incorporation pass, and prior to the
+commencement of compaction of the stabilised material.
+The relative compaction of the stabilised material as detailed in Test Method Q140A shall be
+determined for the entire thickness of the stabilised layer.
+Inherently, the insitu stabilisation process involves the mixing of existing materials whose properties
+can be unpredictable and may also vary within the Project limits. Therefore, caution must be
+applied when seeking to determine nuclear gauge biases (refer to Nuclear Gauge Testing Manual
+(NGTM) Test Method N01), and/or, attempting to establish and monitor assigned values (refer to
+Test Method Q144A)."
+MRTS07B,9.6.1,Time limits for MDR laboratory compaction,36,36,"Following sampling, the MDR testing shall be completed to a stage where laboratory compaction has
+been completed within two hours of the commencement of the final moisture incorporation pass for the
+corresponding lot.
+To comply with the above requirements, the Contractor may need to consider the establishment of
+an annex laboratory facility onsite.
+Additionally, following sampling, oven drying of all specimens used to determine the moisture content
+shall commence within the same work shift as the stabilisation works for the corresponding lot."
+MRTS07B,9.6.2,Time limits for the determination of compacted density,36,37,"Unless otherwise approved by the Administrator, the determination of compacted density using Test
+Method Q141A or Test Method Q141B shall be completed to a stage where the wet density has been
+determined within 24 hours after the end of the work shift where stabilisation works were completed
+for the corresponding lot.
+Additionally, any moisture sub-sample is being oven dried within the same work shift as the
+compacted density testing for Test Method Q141A or Test Method Q141B is being undertaken."
+MRTS07B,9.6.3,Time limits for the determination of material biases,37,37,"For the determination of material biases for Test Method Q141A, compacted density testing using Test
+Method Q141B shall be completed to a stage where the wet density has been determined within"
+MRTS07B,24,hours after the end of the work shift where stabilisation works were completed for the,37,37,"corresponding lot.
+Additionally, any moisture sub-sample is being oven dried within the same work shift as the
+compacted density testing for Test Method Q141B is being undertaken."
+MRTS07B,9.7,Moisture ratio,37,37,"The moisture ratio of the uncompacted materials (MRᵤ) shall be determined in accordance with Test
+Method Q250.
+The moisture sample locations shall be identical to the MDR sampling locations for compaction testing
+(refer to Clause 9.6). The moisture samples shall be extracted immediately after the final moisture
+incorporation pass by the stabiliser and prior to the addition of any additional moisture for the
+purposes of compaction and trimming.
+Following sampling, oven drying of all specimens used to determine the moisture content shall
+commence within the same work shift as the stabilisation works for the corresponding lot.
+The moisture ratio shall be calculated using the individual moisture content compared to the optimum
+moisture content for each corresponding location (refer to Clause 9.6). As a minimum frequency, the
+moisture ratio of the uncompacted materials shall be assessed at each test location for compaction.
+The results shall be reported to the Administrator as soon as it is available."
+MRTS07B,9.8.1,Proof rolling prior to early trafficking,37,37,"No trafficking shall be allowed until the requirements of Clause 9.8 is carried out and no perceptible
+surface deformation is observed. Additional curing time may be required prior to trafficking."
+MRTS07B,9.8.2,Proof rolling of stabilised layers,37,38,"The proof rolling test specified in this clause shall apply to a completed stabilised layer, unless stated
+otherwise in Clause 8 of Annexure MRTS07B.1. If no indication is given, the proof rolling test shall
+apply.
+Each stabilised layer shall be tested for perceptible surface deformation by ‘proof rolling’ the stabilised
+layer, in the presence of the Administrator Witness Point 7. All areas of the stabilised layers shall be
+‘proof rolled’, including all trafficked lanes, shoulders and other areas.
+Testing shall be in accordance with Test Method Q723 unless otherwise approved by the
+Administrator. Testing for perceptible surface deformation is exempt from the requirement for NATA
+accreditation or Construction Material Testing (CMT) registration.
+Where the surface of any section of a stabilised layer displays perceptible surface deformation under
+proof rolling, the Administrator may require the Contractor to undertake additional compliance testing
+to ensure that the affected section of the stabilised layer complies with Clauses 8.7.3, 8.7.4 and 8.7.5.
+No additional payment shall be made by the Principal for such additional testing.
+Where the surface of any section of a stabilised layer displays perceptible surface deformation under
+proof rolling, the construction of any overlying pavement layer and/or spray seal shall not proceed until
+the Administrator grants the Contractor permission to proceed in accordance with Clause 9.10.
+The proof rolling result reported for any stabilised layer lot shall be representative of the condition of
+the lot immediately prior to it being covered by another pavement layer or spray seal. If the stabilised
+layer lot has been subjected to rainfall or moisture ingress in any way since proof rolling was
+undertaken, the Administrator may direct the Contractor to retest the lot to prove conformance. If the
+retested results do not comply with the requirements of this Technical Specification, the Contractor
+shall rectify the stabilised layer such that it complies with the requirements of this Technical
+Specification. No additional payment will be made by the Principal for any such additional efforts.
+Test Method Q723 provides a method for using a loaded water tanker for proof rolling."
+MRTS07B,9.9,Ball penetration testing,38,38,"For stabilised pavement layers that are to be covered by a sprayed bituminous treatment, the
+Contractor shall undertake ball penetration testing on the completed layer prior to undertaking the
+sprayed bituminous treatment.
+Minimum testing frequencies for ball penetration testing shall be as specified in Clause 5.4.
+In accordance with AG:PT/T251, ball penetration results shall be reported as both individual and
+average values.
+For the average value to be adopted for lot conformance and seal design purposes, the results
+must be representative of a homogeneous section of pavement. Any areas represented by
+excessively low or high individual values should be considered for sub-lotting, and may require
+additional construction or testing actions before they can be incorporated into the final works. Any
+such works shall be undertaken by the Contractor at no cost to the Principal.
+The ball penetration result reported for any stabilised layer lot shall be representative of the condition
+of the lot immediately prior to it being covered. If the stabilised layer lot has been subjected to rainfall
+or moisture ingress in any way since ball penetration testing was undertaken, the Administrator may
+direct the Contractor to retest the lot to prove conformance. If the retested results do not comply with
+the requirements of this Technical Specification, the Contractor shall rectify the stabilised layer such
+that it complies with the requirements of this Technical Specification. No additional payment will be
+made by the Principal for any such additional efforts."
+MRTS07B,9.10,Acceptance,38,39,"For any completed stabilised pavement lot, the Contractor shall submit to the Administrator all
+compliance testing relevant to that lot within 72 hours after the completion of the lot's final moisture
+incorporation pass (refer to Clause 8.6.10). Construction shall not proceed until the Administrator has
+received these compliance test results. The Contractor shall allow at least one working day for a
+response from the Administrator.
+Compliance test results need to be provided by the Contractor to the Administrator in a timely
+manner (within 72 hours after the completion of the lot's final moisture incorporation pass). This will
+allow the Contractor and Administrator to monitor the progress and quality of the works and
+address any non-conformances promptly.
+No stabilised pavement lot shall be covered by a subsequent layer of pavement or a surfacing until all
+compliance testing has been completed and the layer has been presented to the Administrator for
+permission to proceed. Hold Point 7
+No stabilised pavement lot shall be covered by a subsequent layer of pavement or a surfacing until the
+As Constructed Survey requirements for the stabilised pavement lot have been met as specified in
+MRTS56 Construction Surveying and notice of such works has been provided to the Administrator."
+MRTS07B,10,Supplementary requirements,39,43,"The supplementary requirements given in Clause 11 of Annexure MRTS07B.1 shall apply.
+Appendix A: Maximum lot sizes and minimum testing frequencies
+Table A1 – Maximum lot size requirements
+Construction Activity Maximum Lot Size
+Supply of unbound granular materials for shape correction and 5,000 tonnes
+new material to replace unsuitable material
+Construction of insitu stabilised pavements using cement or The area (in m²) of production, of completed stabilised layer, achieved during a single
+cementitious blends work period, provided the material is, in the opinion of the Administrator, essentially
+uniform.
+Road roughness (surface evenness) testing 100 m
+Table A2 – Unbound granular materials for shape correction and new material to replace unsuitable material – source and product compliance
+testing requirements
+Normal Testing Level Reduced Testing Level
+Property Test Method
+Minimum Testing Minimum No. of Minimum Testing Minimum No. of
+Frequency Tests Frequency Tests
+Source Testing
+Petrographic assessment of aggregates Q188
+Wet strength AS 1141.22
+Wet/dry strength variation AS 1141.22
+Water absorption AS 1141.6
+Degradation factor Q208B
+Product Testing
+Flakiness index Q201
+California Bearing Ratio* Q113A For Type 2, Type 3 or Type 4 unbound granular material
+refer to MRTS05 Unbound Pavements
+Particle size distribution (grading) Q103A
+Fines ratio Q103A
+Liquid limit Q104A
+Linear shrinkage Q106
+UCS (Type 2 materials containing Q115
+recycled concrete)
+Foreign Material (Type 2 materials Q477
+containing recycled material)
+pH (Type 2 materials containing AS 1289.4.3.1
+recycled concrete)
+Sulfate content AS 1289.4.2.1# 1 test per material source
+Sulfate content (water) AS 1289.4.2.1# 1 test per water source
+Notes:
+* Refer to MRTS05 for CBR testing requirements for Type 2, Type 3 and Type 4 materials.
+# Or other published or validated classical chemistry technique or instrumentation technique.
+Table A3 – Construction compliance testing requirements
+Normal Testing Level Reduced Testing Level
+Construction Activity Test Method
+Minimum Testing Frequency Minimum No. of Tests Minimum Testing Minimum No. of Tests
+Frequency
+Compaction Q140A 1 test per 500 m² 4 tests per lot 1 test per 1000 m² 2 tests per lot
+Moisture ratio 1 test per 500 m² 4 tests per lot 1 test per 1000 m² 2 tests per lot
+Q250
+(uncompacted) (MRᵤ)
+Surface spread rate of
+Q719^ Minimum 1 per spreading run
+stabilising agent
+a) 1 per 5 linear m within the first 20 m of each final a) 1 per 5 m within the first 20 m of each final
+moisture incorporation pass, and moisture incorporation pass, and
+Depth checks Survey
+b) 1 per 20 linear m for the remaining length of each final b) 1 per 50 m for the remaining length of each final
+moisture incorporation pass moisture incorporation pass.
+Proof Rolling Q723 Refer to Clause 9.8
+For stabilised pavement layers where the final surfacing (to be trafficked) is a sprayed bituminous
+treatment:
+• 5 test chainages per lot
+• Test chainages (longitudinal coordinates) determined in accordance with Test Method AS 1289.1.4.2
+• At each test chainage an individual test must be undertaken in both the inner and outer wheel path for
+each traffic lane in the lot at that location.
+Ball Penetration
+AG:PT/T251
+Testing
+For stabilised pavement layers where the final surfacing (to be trafficked) is not a sprayed bituminous
+treatment (that is, the sprayed bituminous treatment will be covered by asphalt):
+• 5 test chainages per lot
+• Test chainages (longitudinal coordinates) determined in accordance with Test Method AS 1289.1.4.2
+• At each test chainage an individual test must be undertaken at the offset (lateral coordinate) determined
+in accordance with Test Method AS 1289.1.4.2.
+Note:
+^ For Q719, the requirement for the test to be carried out by a registered NATA and Construction Materials Testing (CMT) Supplier in accordance with MRTS50 Specific Quality
+System Requirements, shall be relaxed.
+Table A4 – Geometrics compliance testing requirements
+Normal Testing Level Reduced Testing Level
+Test
+Construction Activity
+Method Minimum Testing Frequency Minimum No. of Tests Minimum Testing Minimum No. of Tests
+Frequency
+Geometrics horizontal Each 20 linear m – measured at all shoulder edges, lane lines and other changes in grade across the pavement
+Survey
+position
+Geometrics vertical levels Survey
+Geometrics layer
+Survey 1 per 20 linear m 1 per 50 linear m
+thickness
+a) within lane:"
+MRTS07B,1,"per 20 linear m along each stabilising run, unless otherwise approved by the Administrator.",43,43,"Measurements shall be taken in both the transverse and longitudinal directions.
+b) longitudinal joint:"
+MRTS07B,1,measurement per joint in each wheel path in each lane.,43,43,"For the measurement of joints, place the straightedge on the completed layer, perpendicular to the joint.
+Deviation from a
+Q712 With the end of the straightedge directly over the joint, gradually move the straightedge across the joint for its
+straightedge
+full length and identify the point on the layer that produces the largest deviation under the straightedge
+(between two points of contact).
+Record the deviation at this point.
+d) joint to existing pavement (not constructed under the Contract):"
+MRTS07B,1,measurement per joint in each wheel path in each lane.,43,43,"For all joints that tie the new works to existing pavement (not constructed under the Contract), place the
+straightedge on the road surface perpendicular to the joint.
+With the end of the straightedge directly over the joint and the other end located within the works, record the
+largest deviation under the straightedge (between two points of contact).
+Crossfall Survey 1 per 20 linear m – measured for all crossfalls shown in the design documentation at the point of testing
+Q708B,
+Road roughness
+Q708C or Refer to Clause 8.7.5.5.4 and Clause 9.4.2
+(surface evenness)
+Q708D"
