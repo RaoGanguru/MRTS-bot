@@ -1,0 +1,246 @@
+Unique ID,Reference Text,Description,Clause,Responsibility,Records,Inspection Method,HpWpCString,ItemTypeString
+b7e7573e-8194-476a-9af4-6f5244b730e4,,"Sampling and lab testing frequency of supplied asphalt in each shift
+Prior to asphalt placement, supplied asphalt in each shift to be sampled and tested in lab for below properties at a frequency specified in table 5.3.2 (a)
+ Filler - tested for properties defined in cl 7.1.5 on Monthly basis.
+ Combined Particle Size Distribution (MRTS32 Cl 7.2.2 & MRTS30 7.4.3.2)
+ Binder Content (MRTS30 Cl 7.4.3.2)
+ Maximum density (MRTS30 Cl 7.4.3.2)
+",MRTS32 Table 5.3.2(b),Engineer,"Test Report
+Correspondence","Material Testing
+Review reports"
+b59ca030-f74b-4333-842a-5b7134d30741,,"Binder Compliance
+
+
+ 
+At least 1 litre of binder from binder storage shall be taken prior to commencement of EME2 asphalt production of each work shift.
+Additional 1 litre binder shall be taken and forwarded to administrator (If requested)
+ 
+","MRTS32 Cl 5.3.4.1
+MRTS32 Cl 5.3.4.2
+MRTS32 Table 5.3.4.1
+MRTS32 Table 5.3.4.2",Engineer,"Test Report
+Correspondence",Review
+2191a999-2aea-4046-bab0-8d4a2389d31c,,"Materials for Asphalt
+ Aggregates (Coarse & Fine) as per MRTS101 - Natural sand not be used
+ RAP binder shall comply MRTS32 table 7.1.4
+ Combined filler shall comply MRTS32 table 7.1.5
+ Binder shall comply MRTS32 table 7.1.6
+ Additives (If any) shall comply MRTS30 Cl 7.1.7","MRTS101
+MRTS32 Table 7.1.4
+MRTS32 Table 7.1.5
+MRTS32 Table 7.1.6
+MRTS30 Cl 7.1.7",Engineer,"Report
+Correspondence",Test report
+75fd21fa-e999-45cc-8152-c533d090395f,,"Product Compliance - RAP Binder (Each mix design)
+Max 15% RAP material by mas may be utilised
+RAP aggregate particles shall have 100% passing 19mm AS sieve
+","MRTS32
+Cl 7.1.4
+Table  7.1.4
+Table 5.3.2(a)",Engineer,"Report
+Correspondence",Test report
+12475aa3-61a2-4c7a-b8f1-6aa0a29d7760,,"Product Compliance - Filler (Monthly for each mix design)
+Maximum filler content equals total fractions of fines produced.
+Particles shall have 100% passing 0.075mm AS sieve
+","MRTS32
+Cl 7.1.5
+Table  7.1.5
+Table 5.3.2(a)",Engineer,"Report
+Correspondence",Test report
+a10c3597-9659-4087-867c-e219fb51a49a,,"Product Compliance - Binder (Each mix design)
+
+","MRTS32
+Cl 7.1.6
+Table  7.1.6
+Table 5.3.2(a)",Engineer,"Report
+Correspondence",Test report
+4a8fdda4-30ec-4fe1-beb7-c5426d44d0ab,,"Particle size distribution of combined aggregate and filler
+ 100% passing 19.0mm AS sieve
+ To be nominated as part of mix design 
+ If not nominated, as per MRTS30 clause 7.2.1.1","MRTS32 Cl 7.2.2
+MRTS30 Cl 7.2.1.1",Engineer,"Report
+Correspondence",Test report
+7745e92a-77a4-470d-ab38-85e6b2892bb8,,"Mix Design Criteria
+
+","MRTS32
+Cl 7.2.1
+Cl 7.2.2
+Cl 7.2.3
+Cl 7.2.4
+Table 7.2.1",Engineer,"Report
+Correspondence",Test report
+5c24540e-80df-4313-984c-3eae63b8bfb9,,"Mix design maximum constituent material variation
+","MRTS32 Cl 7.4
+MRTS32 Table 7.4 (a)",Engineer,"Report
+Correspondence",Test report
+8d8fc0fb-3812-443f-a9c5-fa421f68f714,,"Loading and Delivery of Asphalt (1 measurement each delivered load)
+The dispatch temperature of the asphalt must facilitate achieving the specified compaction level in the finished product. Details of the project specific process temperatures and the frequency of recording must be provided in the AQP. 
+The temperature of asphalt must not at any time in the process exceed the temperatures stated in Table 7.4 (b)
+","MRTS32 Cl 7.4
+Table 7.4 (b)",Engineer,"Report
+Correspondence",Test report
+463dcfc6-f501-467b-8f1c-810875179c0c,Hold Point 1,"Recommencement of production after nonconforming Tensile Strength Ratio (Only if Required)
+Where a Hold Point is indicated in MRTS30 Cl 7.2.5, the Administrator shall consider the submitted documents prior to authorising the release of the Hold Point allowing recommencement of asphalt production.",MRTS30 Cl 7.2.5,Engineer,"Report
+Correspondence",Test report
+7929465e-9b34-40f9-9d67-900bfe1e64e4,,"Asphalt production and Transportation
+Production of asphalt in accordance with MRTS30 Cl 7.4 and as detailed in the Subcontractor?s Asphalt Quality Plan (AQP).
+
+Transport of asphalt in accordance with MRTS30 Cl 7.5 and as detailed in the Subcontractor?s Asphalt Quality Plan (AQP).","MRTS32 Cl 7.4
+MRTS32 Cl 7.5",Engineer,Correspondence,Visual
+57d7cae4-9a5b-4309-9098-a2558e09bbdd,,"Surface Preparation
+The surface of the pavement shall be
+ Dry
+ Swept/Remove (Rotary broom) loose material
+ Free from other deleterious material
+ 
+Any deleterious material after sweeping shall be removed by other means. Following mechanical sweeping:
+a) Areas of oil or fuel spillage shall be cleaned with detergent, flushed with clean water and allowed to dry prior to application of the tack coat, and
+b) Cracks, joints or holes in the pavement/bridge deck shall be rectified as stated in Cl 8.2.3",MRTS30 Cl 8.2.2,Engineer,Correspondence,Visual
+85f7ad92-8093-4da6-b614-516add567de7,Hold Point 4,"Approval to place asphalt over weak substrate
+Unless otherwise approved by the Administrator, asphalt shall not be placed over pavement exhibiting significant perceptible surface deformation.",MRTS30 Cl 8.2.2,Engineer,Correspondence,Visual
+ba36cca7-ce20-4314-a3a1-dbba83d7bf8f,Witness Point 1,"Proof Rolling of Substrate
+For asphalt placed over pavement constructed by others, the surface on which asphalt will be placed shall be tested for perceptible surface deformation by 'proof rolling' in the presence of the Administrator.",MRTS30 Cl 8.2.2,Engineer,Correspondence,Visual
+2bd8dc19-72ad-450f-a811-78d7fd97785d,Witness Point 2,"Crack filling
+The extent of crack filling to be carried out shall be marked out in the presence of the Administrator. Cracks cleaned and then filled to level with a polymer modified sealant approved by the Administrator.",MRTS30 Cl 8.2.3,Engineer,Correspondence,Visual
+b7b843e4-6ca5-40ee-9cc1-188f5500cb11,Witness Point 3,"Strain Alleviating Strips
+In the areas shown on the drawings or stated in Cl 3 of Annexure MRTS30.1, strain alleviating fabric strips shall be applied to existing cracks prior to placement of asphalt or sprayed sealing.",MRTS30 Cl 8.2.4,Engineer,Correspondence,Visual
+bed00854-7a65-4b73-89ca-c89f046a0cda,Hold Point 5,"Approval to place asphalt of nonconforming layer thickness
+Placement of asphalt in a nonconforming layer thickness shall not occur unless approved by the Administrator.",MRTS30 Cl 8.6.2,Engineer,Correspondence,Visual
+72bdd5a3-da5b-4759-aebc-cf9913a25b2b,Hold Point 6,"Pavement surface temperature (One measurement every 2 hours)
+Asphalt placement shall not commence or continue, unless the pavement surface temperature complies with the requirements of Table 8.7
+",MRTS32 Cl 8.3,Engineer,Correspondence,Visual
+f88a59c8-01f3-4cb3-8d5e-4319b76ff860,,"Protection of work, services and road furnitures
+ No traffic until the asphalt placed, compacted and cooled sufficiently
+ Protect services (pits, drains, pipes etc.,) against asphalt spilling
+ Remove all waste asphalt and clean job site","MRTS30 Cl 8.4
+MRTS30 Cl 8.5",Engineer,Correspondence,Visual
+9036f9ee-1c4b-4f8a-9885-16fbca157e85,Hold Point 7,"Placement Trial (If specified)
+Separate trial for each nominated mix
+Review and conform the results for homogeneity, insitu air voids, thickness, surface shape, joint quality and geometrics.
+Further works shall be commenced only after the administrator approval.
+If trial fails, a new trial shall be undertaken for approval (Hold Point)","Annexure MRTS30.1 Cl 6
+MRTS30 Cl 8.11",Engineer,Correspondence,Review
+cb3f0827-aa68-4ba1-b296-4128a4d3f313,,"PAC Requirement - Placement trial
+ A4 (If specified in Cl 6 Annexure MRTS30.1
+ A2 and/or A3 (Other cases)",MRTS32 Cl 8.4,Engineer,Visual,Visual
+17fe7b31-6c20-4a4a-a48a-6064d497e46a,,"Tack Coat (One test per lot)
+ Design Tack Coat _____________
+ Surface Is clean, dry and free from loose material
+ Tack coat is to be dried before asphalt placement",MRTS30 Cl 8.9,Engineer,Verification Checklist,Visual
+ff8e0af0-46c1-438c-b6d4-d45ba2d90418,,"Longitudinal Joints
+ Away from trafficked wheel paths
+ Coincide with final line markings (surface course)
+ 150mm offset to underlying layer joint except on a crowned pavement)
+ Within 150mm of the line of change in Crossfall
+Transverse Joints
+ located a minimum of 25m apart
+ 1m offset from underlying layer joint
+ Form a joint at each paving run
+ Form a joint when a delay in paving causes the fall in asphalt temperature",MRTS30 Cl 8.10,Engineer,Verification Checklist,Survey
+cf00fe9a-8550-417e-9877-e4c2b61e5111,,"Temporary Ramps joining existing pavement & structures
+At Transverse Joint
+ Speed Limit ≤ 60km/h - 1.5m length per each 50mm (or part thereof)
+ Speed Limit > 60km/h - 2.5m length per each 50mm (or part thereof)
+At Longitudinal Joint 
+ 1.0m length per each 50mm (or part thereof)
+Interface with Structures (MH, Gully Pits, Utility Covers etc.,)
+ 1.0m length per each 50mm (or part thereof)",MRTS30 Cl 8.12,Engineer,Correspondence,Visual
+bc3b146f-22a4-473f-8f4d-6d7111c00c79,,"Surface Gritting (SMA only)
+ Grit material shall comply properties as defined in Table 8.5
+ Uniform spread, rolled into surface of hot asphalt
+ Loose grit removed prior to opening to traffic
+ Spread Rate ≥ 0.2 kg/m2
+","MRTS32 Cl 8.5
+Table 8.5",Engineer,"Correspondence
+Verification Checklist
+Product certificates",Review
+2c048315-42fa-4a6e-8f03-9358e2289e39,,"Paving and compaction temperatures 
+The Contractor's AQP must document the temperatures at which the asphalt is placed and compacted to achieve the Insitu air voids requirements specified in Clause 9.2.1",MRTS30 Cl 8.8 & AQP,Engineer,Visual,Visual
+42fcfe0b-978f-45db-bdac-7e22678cd8ae,,"Homogeneity (Visual assessment per lot)
+Areas of asphalt that exhibit cracking, ravelling, bony or fatty material, or have been damaged during construction must be rectified or replaced.
+Rectification process shall be approved by administrator.",MRTS30 Cl 9.1,Engineer,Verification Checklist,Visual
+829f0e0c-c8d6-4ff1-ba7a-948257946b49,,"In-Situ Air-Voids Compliance
+
+Testing Frequency
+
+Compliance requirement
+",MRTS32 Cl 9.1,Engineer,"Test Report
+Correspondence",Review
+d3d7f945-eb41-4252-a6a8-6dbb952b65e2,,"Vertical Tolerance (3 point Pickup at every 20m)
+Level Control (intermediate, base and corrector courses) variance ≤ 10mm
+Thickness Control (Surfacing Courses) variance as per below table
+",MRTS32 Table 9.2.3,Engineer,Visual,Visual
+3fdcddbf-4326-4c4e-9650-383431bb1288,Milestone 1,"Asphalt Quality Plan (AQP)
+ AQP submission - At least seven days prior to work commencement.
+ AQP shall include the elements defined in Table 5.2 of MRTS30","MRTS32 Cl 5.1
+MRTS30 Cl 5.2
+MRTS30 Table 5.2",Engineer,"Report
+Correspondence",Review
+83bd737c-e17c-41dd-b27b-2d78c1fa1316,,"Asphalt contractor prequalification
+ Asphalt shall be manufactured, placed and compacted by a prequalified asphalt contractor (PAC).
+ Minimum Prequalification for trial - A2 or A3
+ PAC details shall be notified to administrator at least seven days before asphalt placement Works","MRTS32 Cl 6
+MRTS32 Cl 8.4",Engineer,"Report
+Correspondence",Review
+a19b0a09-598f-4028-93d5-85d1b0433f9c,,"Asphalt mix design registration
+Mix design(s) are submitted to the Asphalt Mix Design Registrar for registration not less than 28 days prior to asphalt being incorporated into the Works.",MRTS32 Cl 7.3.2,Engineer,"Report
+Correspondence",Review
+8bbc7b8f-75a7-40f3-9d2c-1ff412f53dfa,Milestone 2,"Nomination of registered mix designs
+At least 7 days before asphalt production is required, the Contractor shall submit the copy of the mix design certificate(s) for each nominal size & type of asphalt mix to be incorporated into the works.",MRTS32 Cl 7.3.3,Engineer,"Report
+Correspondence",Review
+1544977d-9cc9-47de-825c-7830e980a701,Hold Point 2,"Approval prior to incorporation of Asphalt into the works
+ Approved PAC
+ Approved Mix Design Certificate
+ Approved AQP
+ Approved Aggregate Production Procedure
+ Approved Contractor's RAP","MRTS30 Cl 7.4.1
+MRTS30 Cl 8.3, 8.11
+Annexure MRTS30.1 Cl 4, 6",Engineer,"Mix design certificate
+Correspondence",Review
+eaab9616-bc73-4d68-9fce-d8556a9fa7da,Hold Point 3,"Acceptance of Nonconforming mix design for incorporation into the Works 
+Nonconforming mix designs that hold current registration with the department shall not be incorporated into the Works unless otherwise accepted in writing by the Administrator prior to the commencement of asphalt production.",MRTS30 Cl 7.4.1,Engineer,"Mix design certificate
+Correspondence",Review
+a04dce32-e731-4765-94be-576e20352ce2,,"SUPPLY OF ASPHALT
+Supply of asphalt in accordance with MRTS30 Cl 7 and as detailed in the Subcontractor's Asphalt Quality Plan (AQP):
+ Materials for asphalt in accordance with MRTS30 Cl 7.1
+ Requirements for asphalt in accordance with MRTS30 Cl 7.2
+ Additional requirement for coarse aggregate as per MRTS32 table 7.1.2","MRTS32 Cl 7
+Table 7.1.2",Engineer,"Report
+Correspondence",Test report
+2c3be4dc-340c-4de3-b887-13db70ebdee8,,"Placement of asphalt
+In accordance with MRTS30 Cl 8 and as detailed in the Subcontractor?s Asphalt Quality Plan (AQP):
+ Method placement in accordance with MRTS32 Cl 8.1
+ Protection of work in accordance with MRTS30 Cl 8.4
+ Protection of services and road fixtures in accordance with MRTS30 Cl 8.5
+ Course and layer thicknesses in accordance with MRTS30 Cl 8.6
+ Pavement temperature and weather conditions in accordance with MRTS30 Cl 8.7
+ Paving and compaction temperatures in accordance with MRTS30 Cl 8.8
+ Tack coat applied where required in accordance with MRTS30 Cl 8.9
+ Joints in accordance with MRTS30 Cl 8.10
+ Temporary ramps to existing pavement and structures as required in accordance with MRTS30 Cl 8.12",MRTS32 Cl 8,Engineer,Correspondence,Visual
+8c29d18d-756c-40fe-9748-4c06e0c65d66,,"MTV Requirement
+MTV is must If specified in Cl 4 of Annexure MRTS30.1.
+Contractor shall demonstrate capacity and capability of MTV defined in MRTS30 Cl 8.3
+Exclusions
+ Tapers
+ Roundabouts of radius less than 50m
+ Turning lanes less than 100m in length
+ Areas approved by Administrator","MRTS30 Cl 8.3
+Annexure MRTS30.1 Cl 4",Engineer,Correspondence,"Survey
+Measurement"
+370178f6-b356-49d4-a326-e58afe235963,,"Nominated layer thickness
+",MRTS32 Cl 8.2,Engineer,Correspondence,Visual
+1eb7c6cb-6cba-4d77-80eb-d03a31c53750,,"Course position (Horizontal Location)
+The horizontal location of any point on the surface must not deviate more than ± 50mm from drawings. 
+1 test per 20m at shoulder edge, lane line/s and applicable changes in grade",MRTS30 Clause 9.4.3,Engineer,Visual,Visual
+19ba8098-adb8-494d-a23e-d4cfe5d6ef62,,"Surface Shape (Straight Edge)
+ One measurement at every 20m at longitudinal joint and within lane
+ One measurement per transverse joint
+ Result shall comply below table.
+","MRTS30 Cl 9.5.2
+Table 9.5.2",Engineer,"Report
+Correspondence",Review
+69601afa-ee01-4a16-93e8-037d07a49bb0,,"Lot Closure
+ All compliance met requirements
+ All Test results received, reviewed and approved
+ All NCRs actioned",MRTS32,Engineer,Visual,Visual
