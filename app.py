@@ -8,6 +8,7 @@ st.title("MRTS Reference Viewer (QLD)")
 st.caption("Read-only MRTS reference. Clauses + OCR tables. Verify against official MRTS.")
 
 DATA_FOLDER = "mrts_data"
+
 if not os.path.exists(DATA_FOLDER):
     st.error("Folder not found: mrts_data. Create it in GitHub and upload CSVs into it.")
     st.stop()
@@ -35,17 +36,23 @@ if not tables_df.empty and "mrts" in tables_df.columns:
     mrts_set |= set(tables_df["mrts"].astype(str).unique())
 all_mrts = sorted([m for m in mrts_set if m.strip()])
 
-# -------------------- UI controls --------------------
+# -------------------- UI --------------------
 selected_mrts = st.selectbox("Select MRTS", ["All MRTS"] + all_mrts)
-search_text = st.text_input("Search (try: asphalt thickness tolerance, compaction tolerance, stabilised layer, moisture, bitumen)")
+search_text = st.text_input("Search (examples: thickness tolerance, Table 9.4.2.3, allowable tolerance, EME thickness)")
 
-# Don’t dump everything
+# Strictness slider = how many words must match (95–100% = almost all words)
+strict_pct = st.slider("Search strictness (higher = more exact matches)", 60, 100, 95)
+
 if not search_text.strip():
-    st.info("Type a keyword to search. Example: asphalt thickness tolerance, stabilised layer tolerance, compaction, moisture, bitumen.")
+    st.info("Type a keyword to search. Example: thickness tolerance, Table 9.4.2.3, EME thickness.")
     st.stop()
 
 # -------------------- Helpers --------------------
-STOP_WORDS = set(["the", "and", "for", "with", "from", "into", "that", "this", "shall", "must", "may", "than", "then", "any"])
+STOP_WORDS = set([
+    "the","and","for","with","from","into","that","this","shall","must","may","than","then","any",
+    "to","of","in","on","at","be","is","are","was","were","as"
+])
+
 NOISE_TITLE_PATTERNS = [
     "introduction",
     "definition",
@@ -59,75 +66,77 @@ NOISE_TITLE_PATTERNS = [
     "milestones",
 ]
 
-# Generic titles to penalise (reduce junk results)
 GENERIC_TITLE_PENALTY = ["general", "geometrics", "submission", "test results", "time for submission"]
-
-def generic_penalty(title: str) -> int:
-    t = str(title).lower()
-    return 6 if any(g in t for g in GENERIC_TITLE_PENALTY) else 0
 
 def normalize_words(q: str):
     parts = re.findall(r"[a-zA-Z0-9\.]+", q.lower())
     words = [p for p in parts if len(p) > 2 and p not in STOP_WORDS]
-    return words
+    # de-duplicate while preserving order
+    seen = set()
+    out = []
+    for w in words:
+        if w not in seen:
+            seen.add(w)
+            out.append(w)
+    return out
 
 def is_noise_title(title: str) -> bool:
     t = str(title).lower()
     return any(p in t for p in NOISE_TITLE_PATTERNS)
 
-# Simple intent → suggested MRTS (heuristic only)
-SUGGEST = [
-    (["asphalt", "seal", "bitumen", "sprayed", "binder"], ["MRTS30", "MRTS11", "MRTS10", "MRTS12"]),
-    (["stabilised", "stabilisation", "lime", "cement"], ["MRTS07B", "MRTS07C"]),
-    (["unbound", "granular", "subbase", "basecourse"], ["MRTS05"]),
-]
+def generic_penalty(title: str) -> int:
+    t = str(title).lower()
+    return 6 if any(g in t for g in GENERIC_TITLE_PENALTY) else 0
 
 words = normalize_words(search_text)
 phrase = " ".join(words) if len(words) >= 2 else ""
 
-def suggested_mrts_from_query(q: str):
-    ql = q.lower()
-    candidates = []
-    for keys, mrts_list in SUGGEST:
-        if any(k in ql for k in keys):
-            candidates.extend([m for m in mrts_list if m in all_mrts])
-    # unique preserve order
-    seen = set()
-    out = []
-    for c in candidates:
-        if c not in seen:
-            seen.add(c)
-            out.append(c)
-    return out
-
-suggested = suggested_mrts_from_query(search_text)
-
-# Offer a smart narrowing when All MRTS is selected
-if selected_mrts == "All MRTS" and suggested:
-    st.warning(f"Your search looks like it belongs to: {', '.join(suggested)}. "
-               f"Tip: filtering will remove unrelated MRTS results.")
-    if st.button("Filter to suggested MRTS (recommended)"):
-        selected_mrts = suggested[0]
-
-def score_clause_row(row, words, phrase):
+def required_hits(words, strict_pct):
     """
-    Weighted scoring:
-    - clause_id match: +6
-    - title match: +4
-    - text match: +1
-    - phrase match in title/text: +8 to +10
-    - penalise generic titles
+    Convert strictness % into required word hits.
+    100% = all words
+    95% = almost all words
     """
+    if not words:
+        return 0
+    req = int((strict_pct / 100) * len(words))
+    # Make sure it isn't too low when strictness is high
+    if strict_pct >= 95:
+        req = max(req, len(words) - 0)  # basically all words
+    elif strict_pct >= 85:
+        req = max(req, len(words) - 1)
+    else:
+        req = max(req, 1)
+    return min(req, len(words))
+
+REQ_HITS = required_hits(words, strict_pct)
+
+def count_hits(text: str, words):
+    t = text.lower()
+    return sum(1 for w in words if w in t)
+
+def passes_strictness(combined_text: str) -> bool:
+    return count_hits(combined_text, words) >= REQ_HITS
+
+# Detect table-intent queries (because tolerances often in tables)
+TABLE_INTENT_TERMS = ["table", "toler", "allowable", "limit", "min", "max", "thickness", "air", "void"]
+qlower = search_text.lower()
+table_intent = any(t in qlower for t in TABLE_INTENT_TERMS)
+
+# -------------------- Scoring --------------------
+def score_clause_row(row):
     score = 0
     cid   = str(row.get("clause_id","")).lower()
     title = str(row.get("title","")).lower()
     text  = str(row.get("text","")).lower()
 
+    # Phrase boosts
     if phrase and phrase in title:
-        score += 10
+        score += 12
     if phrase and phrase in text:
         score += 8
 
+    # Word boosts
     for w in words:
         if w in cid:
             score += 6
@@ -139,7 +148,7 @@ def score_clause_row(row, words, phrase):
     score -= generic_penalty(title)
     return score
 
-def score_table_row(row, words, phrase):
+def score_table_row(row):
     score = 0
     table_id = str(row.get("table_id","")).lower()
     param    = str(row.get("parameter","")).lower()
@@ -147,7 +156,7 @@ def score_table_row(row, words, phrase):
     notes    = str(row.get("notes","")).lower()
 
     if phrase and (phrase in table_id or phrase in param or phrase in vtext):
-        score += 10
+        score += 12
 
     for w in words:
         if w in table_id:
@@ -155,55 +164,48 @@ def score_table_row(row, words, phrase):
         if w in param:
             score += 5
         if w in vtext:
-            score += 2
+            score += 3
         if w in notes:
             score += 1
+
+    # Table intent queries should prefer tables
+    if table_intent:
+        score += 3
+
     return score
 
-def min_match_filter_row(row_text: str, words, min_hits=2):
-    """Reduce noise: require at least N query words to appear in the row text."""
-    t = row_text.lower()
-    hits = sum(1 for w in words if w in t)
-    return hits >= min_hits
-
+# -------------------- Filter + rank --------------------
 def filter_and_rank_clauses(df: pd.DataFrame) -> pd.DataFrame:
     if df.empty:
         return df
     out = df.copy()
 
-    # Scope by MRTS
     if selected_mrts != "All MRTS" and "mrts" in out.columns:
         out = out[out["mrts"].astype(str) == selected_mrts]
 
-    # Remove noise titles
     if "title" in out.columns:
         out = out[~out["title"].apply(is_noise_title)]
 
-    qlower = search_text.lower()
-
-    # ✅ If query contains "asphalt", require asphalt in title or text
+    # If asphalt query, require asphalt present
     if "asphalt" in qlower and "title" in out.columns and "text" in out.columns:
         out = out[
             out["title"].str.contains("asphalt", case=False, na=False) |
             out["text"].str.contains("asphalt", case=False, na=False)
         ]
 
-    # If tolerance query, force tolerance presence (big relevance boost)
+    # If tolerance query, require tolerance
     if "toler" in qlower and "text" in out.columns:
         out = out[out["text"].str.contains(r"toler", case=False, na=False)]
 
-    # Require at least 2 keyword hits for longer queries to avoid 1-word matches
-    if not out.empty:
-        combined = (
-            out.get("clause_id","").astype(str) + " " +
-            out.get("title","").astype(str) + " " +
-            out.get("text","").astype(str)
-        )
-        min_hits = 2 if len(words) >= 3 else 1
-        out = out[combined.apply(lambda s: min_match_filter_row(s, words, min_hits=min_hits))]
+    # Strictness filter (95–100% = must match almost all words)
+    combined = (
+        out.get("clause_id","").astype(str) + " " +
+        out.get("title","").astype(str) + " " +
+        out.get("text","").astype(str)
+    )
+    out = out[combined.apply(passes_strictness)]
 
-    # Score + sort
-    out["score"] = out.apply(lambda r: score_clause_row(r, words, phrase), axis=1)
+    out["score"] = out.apply(lambda r: score_clause_row(r), axis=1)
     out = out[out["score"] > 0].sort_values("score", ascending=False)
     return out
 
@@ -215,9 +217,7 @@ def filter_and_rank_tables(df: pd.DataFrame) -> pd.DataFrame:
     if selected_mrts != "All MRTS" and "mrts" in out.columns:
         out = out[out["mrts"].astype(str) == selected_mrts]
 
-    qlower = search_text.lower()
-
-    # If query contains "asphalt", require asphalt somewhere in table fields
+    # If asphalt query, require asphalt in any table field
     if "asphalt" in qlower:
         combined_a = (
             out.get("table_id","").astype(str) + " " +
@@ -233,25 +233,59 @@ def filter_and_rank_tables(df: pd.DataFrame) -> pd.DataFrame:
         out.get("value_text","").astype(str) + " " +
         out.get("notes","").astype(str)
     )
-    min_hits = 2 if len(words) >= 3 else 1
-    out = out[combined.apply(lambda s: min_match_filter_row(s, words, min_hits=min_hits))]
+    out = out[combined.apply(passes_strictness)]
 
-    out["score"] = out.apply(lambda r: score_table_row(r, words, phrase), axis=1)
+    out["score"] = out.apply(lambda r: score_table_row(r), axis=1)
     out = out[out["score"] > 0].sort_values("score", ascending=False)
     return out
 
 clauses_f = filter_and_rank_clauses(clauses_df)
 tables_f  = filter_and_rank_tables(tables_df)
 
-# -------------------- UI output --------------------
+# -------------------- UI Output --------------------
 tab1, tab2 = st.tabs(["🟦 Clauses (ranked)", "🟩 Tables / OCR (ranked)"])
+
+# Banner to push table-first thinking when relevant
+if table_intent:
+    if not tables_f.empty:
+        st.success(f"Tables likely contain your answer. Found {len(tables_f)} matching table/OCR rows.")
+    else:
+        st.warning("This looks like a tables-type question (tolerances/thickness). No matching table/OCR rows found — your tables CSV may need more OCR text in value_text.")
+
+with tab2:
+    if tables_f.empty:
+        st.info("No table/OCR results found. Tip: put OCR text into the 'value_text' column so it can be searched.")
+    else:
+        MAX_RESULTS = 15
+        st.caption(f"Showing top {min(len(tables_f), MAX_RESULTS)} tables/OCR results (strictness {strict_pct}%).")
+        for _, r in tables_f.head(MAX_RESULTS).iterrows():
+            score = int(r.get("score", 0))
+            mrts = r.get("mrts","")
+            page = r.get("page","")
+            table_id = r.get("table_id","")
+            param = r.get("parameter","")
+            vtext = str(r.get("value_text","")).strip()
+            notes = str(r.get("notes","")).strip()
+
+            title = f"[{score}] {mrts} | Page {page} | {table_id}".strip()
+            with st.expander(title):
+                if param:
+                    st.write(f"**Parameter:** {param}")
+                # If you later add structured columns, show them if present
+                for col in ["min_value","max_value","unit","tolerance_avg","tolerance_individual"]:
+                    if col in r and str(r.get(col,"")).strip():
+                        st.write(f"**{col}:** {r.get(col)}")
+                if notes:
+                    st.caption(notes)
+                st.text(vtext if vtext else "(No OCR text in value_text)")
+                st.caption("OCR extracted – verify against official MRTS.")
 
 with tab1:
     if clauses_f.empty:
-        st.info("No clause results found. Try different keywords or filter to a specific MRTS.")
+        st.info("No clause results found (strict). Lower strictness slider to 80–90% if needed.")
     else:
         MAX_RESULTS = 15
-        st.caption(f"Showing top {min(len(clauses_f), MAX_RESULTS)} results (ranked).")
+        st.caption(f"Showing top {min(len(clauses_f), MAX_RESULTS)} clause results (strictness {strict_pct}%).")
         for _, r in clauses_f.head(MAX_RESULTS).iterrows():
             clause_id = r.get("clause_id", "")
             title = r.get("title", "Clause")
@@ -266,27 +300,3 @@ with tab1:
                 st.caption(f"MRTS {r.get('mrts','')} | Pages {r.get('page_start','')}–{r.get('page_end','')}")
                 st.markdown("---")
                 st.markdown(full_text)
-
-with tab2:
-    if tables_f.empty:
-        st.info("No table/OCR results found. (Tip: OCR text must be in the 'value_text' column.)")
-    else:
-        MAX_RESULTS = 15
-        st.caption(f"Showing top {min(len(tables_f), MAX_RESULTS)} OCR results (ranked).")
-        for _, r in tables_f.head(MAX_RESULTS).iterrows():
-            score = int(r.get("score", 0))
-            mrts = r.get("mrts","")
-            page = r.get("page","")
-            table_id = r.get("table_id","")
-            param = r.get("parameter","")
-            vtext = str(r.get("value_text","")).strip()
-            notes = str(r.get("notes","")).strip()
-
-            title = f"[{score}] {mrts} | Page {page} | {table_id}".strip()
-            with st.expander(title):
-                if param:
-                    st.write(f"**Parameter:** {param}")
-                if notes:
-                    st.caption(notes)
-                st.text(vtext if vtext else "(No OCR text in value_text)")
-                st.caption("OCR extracted – verify against official MRTS.")
