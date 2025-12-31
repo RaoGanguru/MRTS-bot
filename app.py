@@ -184,87 +184,50 @@ def score_table_row(row):
     return score
 
 # -------------------- Filter + Rank --------------------
-def filter_and_rank_clauses(df: pd.DataFrame) -> pd.DataFrame:
-    if df.empty:
+def filter_and_rank_tables(df, query_tokens, require_all=True):
+    import pandas as pd
+
+    if df is None or len(df) == 0:
         return df
 
     out = df.copy()
 
-    if selected_mrts != "All MRTS" and "mrts" in out.columns:
-        out = out[out["mrts"].astype(str) == selected_mrts]
+    needed_cols = ["mrts", "table_id", "caption", "parameter", "value", "units", "notes", "table_text", "pages", "page"]
+    for c in needed_cols:
+        if c not in out.columns:
+            out[c] = ""
 
-    if "title" in out.columns:
-        out = out[~out["title"].apply(is_noise_title)]
+    for c in needed_cols:
+        out[c] = out[c].fillna("").astype(str)
 
-    combined = (
-        out.get("clause_id","").astype(str) + " " +
-        out.get("title","").astype(str) + " " +
-        out.get("text","").astype(str)
-    )
+    out["_search_blob"] = (
+        out["mrts"] + " " +
+        out["table_id"] + " " +
+        out["caption"] + " " +
+        out["parameter"] + " " +
+        out["value"] + " " +
+        out["units"] + " " +
+        out["notes"] + " " +
+        out["table_text"] + " " +
+        out["pages"] + " " +
+        out["page"]
+    ).str.lower()
 
-    if require_all_keywords:
-        # ✅ Anchor MUST exist + AND match
-        def ok(s):
-            s = str(s).lower()
-            if anchor and anchor not in s:
-                return False
-
-            if force_triplet:
-                return ("asphalt" in s) and ("thickness" in s) and ("toler" in s)
-
-            return all(w in s for w in core_words)
-
-        out = out[combined.apply(ok)]
-    else:
-        out = out[combined.apply(lambda s: contains_any(str(s), core_words))]
-
-    if out.empty:
+    if not query_tokens:
+        out["_score"] = 0
         return out
 
-    out["score"] = out.apply(lambda r: score_clause_row(r), axis=1)
-    out = out[out["score"] > 0].sort_values("score", ascending=False)
-    return out
+    def score_row(text):
+        return sum(1 for t in query_tokens if t in text)
 
-def filter_and_rank_tables(df: pd.DataFrame) -> pd.DataFrame:
-    if df.empty:
-        return df
+    out["_score"] = out["_search_blob"].apply(score_row)
 
-    out = df.copy()
-
-    if selected_mrts != "All MRTS" and "mrts" in out.columns:
-        out = out[out["mrts"].astype(str) == selected_mrts]
-
-    combined = (
-        out.get("table_id","").astype(str) + " " +
-        out.get("parameter","").astype(str) + " " +
-        out.get("value_text","").astype(str) + " " +
-        out.get("notes","").astype(str)
-    )
-
-    if require_all_keywords:
-        def ok(s):
-            s = str(s).lower()
-            if anchor and anchor not in s:
-                return False
-
-            if force_triplet:
-                return ("asphalt" in s) and ("thickness" in s) and ("toler" in s)
-
-            return all(w in s for w in core_words)
-
-        out = out[combined.apply(ok)]
+    if require_all:
+        out = out[out["_search_blob"].apply(lambda t: all(q in t for q in query_tokens))]
     else:
-        out = out[combined.apply(lambda s: contains_any(str(s), core_words))]
+        out = out[out["_score"] > 0]
 
-    if out.empty:
-        return out
-
-    out["score"] = out.apply(lambda r: score_table_row(r), axis=1)
-    out = out[out["score"] > 0].sort_values("score", ascending=False)
-    return out
-
-clauses_f = filter_and_rank_clauses(clauses_df)
-tables_f  = filter_and_rank_tables(tables_df)
+    return out.sort_values("_score", ascending=False)
 
 # -------------------- UI Output --------------------
 tab1, tab2 = st.tabs(["🟦 Clauses (ranked)", "🟩 Tables / OCR (ranked)"])
