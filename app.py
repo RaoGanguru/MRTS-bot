@@ -1,31 +1,19 @@
-# app.py
 import os
 import re
-from dataclasses import dataclass
-from typing import List, Tuple
+import sqlite3
+from typing import List
 
 import pandas as pd
 import streamlit as st
 
+DB_PATH = os.path.join("data", "mrts.db")
 
-# -----------------------------
-# Config
-# -----------------------------
-DATA_FOLDER = "mrts_data"   # must match your GitHub folder name exactly
-CLAUSES_SUFFIX = "_structured_clauses.csv"
-TABLES_SUFFIX = "_tables_ocr.csv"
-
-
-# -----------------------------
-# Helpers: text + tokenizing
-# -----------------------------
 STOPWORDS = {
     "what", "how", "when", "where", "why", "who",
     "is", "are", "was", "were", "do", "does", "did",
     "the", "a", "an", "and", "or", "to", "for", "of", "in", "on", "at", "by",
     "between", "into", "within", "from", "as", "it", "this", "that", "these", "those",
-    "required", "requirement", "requirements",  # often too generic
-    "minimum", "maximum",  # keep if you want; but usually generic
+    "show", "tell", "give", "please",
 }
 
 def norm(s: str) -> str:
@@ -36,11 +24,10 @@ def norm(s: str) -> str:
 
 def tokenize(q: str) -> List[str]:
     q = norm(q).lower()
-    # keep numbers like 9.4.2.3
-    raw = re.findall(r"[a-z0-9]+(?:\.[a-z0-9]+)*", q)
-    # remove stopwords + very short tokens
+    # keep clause numbers like 9.2.1(a), 9.4.2.3, Table 8.8
+    raw = re.findall(r"[a-z0-9]+(?:\.[a-z0-9]+)*|\d+\([a-z]\)", q)
     tokens = [t for t in raw if t not in STOPWORDS and len(t) >= 2]
-    # de-duplicate but keep order
+    # de-dup keep order
     seen = set()
     out = []
     for t in tokens:
@@ -49,310 +36,218 @@ def tokenize(q: str) -> List[str]:
             seen.add(t)
     return out
 
-def score_text(text: str, tokens: List[str]) -> Tuple[int, int]:
+def has_table(conn: sqlite3.Connection, name: str) -> bool:
+    cur = conn.execute("SELECT name FROM sqlite_master WHERE type IN ('table','view') AND name = ?", (name,))
+    return cur.fetchone() is not None
+
+def has_fts(conn: sqlite3.Connection) -> bool:
+    # We expect these from build_db.py / the provided mrts.db
+    return has_table(conn, "clauses_fts") and has_table(conn, "tables_fts")
+
+def build_fts_query(tokens: List[str], require_all: bool) -> str:
     """
-    Returns (hits, total_tokens) where hits = number of tokens found.
+    FTS5 query:
+      - require_all=True  => token1 AND token2 AND ...
+      - require_all=False => token1 OR token2 OR ...
+    We quote tokens to reduce parser surprises (esp. numbers with dots).
     """
     if not tokens:
-        return (0, 0)
-    t = (text or "").lower()
-    hits = sum(1 for tok in tokens if tok in t)
-    return hits, len(tokens)
-
-
-# -----------------------------
-# Loaders
-# -----------------------------
-def safe_read_csv(path: str) -> pd.DataFrame:
-    try:
-        return pd.read_csv(path, dtype=str, keep_default_na=False, encoding_errors="ignore")
-    except Exception:
-        # Try fallback separator (rare)
-        try:
-            return pd.read_csv(path, dtype=str, keep_default_na=False, sep=";", encoding_errors="ignore")
-        except Exception:
-            return pd.DataFrame()
-
-def ensure_cols(df: pd.DataFrame, cols: List[str]) -> pd.DataFrame:
-    if df is None or len(df) == 0:
-        out = pd.DataFrame(columns=cols)
-        return out
-    out = df.copy()
-    for c in cols:
-        if c not in out.columns:
-            out[c] = ""
-    # force string
-    for c in cols:
-        out[c] = out[c].fillna("").astype(str)
-    return out
-
-@dataclass
-class LoadedData:
-    clauses: pd.DataFrame
-    tables: pd.DataFrame
-    mrts_list: List[str]
+        return ""
+    joiner = " AND " if require_all else " OR "
+    safe = []
+    for t in tokens:
+        t = t.replace('"', "")
+        safe.append(f'"{t}"')
+    return joiner.join(safe)
 
 @st.cache_data(show_spinner=False)
-def load_all_data() -> LoadedData:
-    clauses_all = []
-    tables_all = []
+def get_mrts_list() -> List[str]:
+    if not os.path.exists(DB_PATH):
+        return []
+    conn = sqlite3.connect(DB_PATH)
+    try:
+        # try clauses table first, then tables
+        mrts = set()
+        for tbl in ["clauses", "tables"]:
+            if has_table(conn, tbl):
+                rows = conn.execute(f"SELECT DISTINCT mrts FROM {tbl} WHERE mrts IS NOT NULL AND TRIM(mrts) <> ''").fetchall()
+                mrts |= set(r[0] for r in rows if r and r[0])
+        return sorted(mrts)
+    finally:
+        conn.close()
 
-    if not os.path.isdir(DATA_FOLDER):
-        return LoadedData(pd.DataFrame(), pd.DataFrame(), [])
-
-    files = os.listdir(DATA_FOLDER)
-
-    for f in files:
-        full = os.path.join(DATA_FOLDER, f)
-
-        if f.endswith(CLAUSES_SUFFIX):
-            df = safe_read_csv(full)
-            df["__source_file"] = f
-            clauses_all.append(df)
-
-        if f.endswith(TABLES_SUFFIX):
-            df = safe_read_csv(full)
-            df["__source_file"] = f
-            tables_all.append(df)
-
-    clauses_df = pd.concat(clauses_all, ignore_index=True) if clauses_all else pd.DataFrame()
-    tables_df = pd.concat(tables_all, ignore_index=True) if tables_all else pd.DataFrame()
-
-    # Normalize columns we rely on
-    clauses_cols = [
-        "mrts", "title", "clause_id", "clause_title", "text",
-        "page_start", "page_end", "pages", "rev_date", "doc_title"
-    ]
-    tables_cols = [
-        "mrts", "table_id", "caption", "parameter", "value", "units", "notes",
-        "table_text", "page", "pages", "rev_date", "doc_title"
-    ]
-    clauses_df = ensure_cols(clauses_df, clauses_cols + ["__source_file"])
-    tables_df = ensure_cols(tables_df, tables_cols + ["__source_file"])
-
-    # Best-effort fill mrts from filename if missing
-    def infer_mrts_from_file(fname: str) -> str:
-        # e.g. MRTS30_structured_clauses.csv
-        m = re.search(r"(MRTS\d+[A-Z0-9]*)", fname.upper())
-        return m.group(1) if m else ""
-
-    if "mrts" in clauses_df.columns:
-        missing = clauses_df["mrts"].astype(str).str.strip() == ""
-        clauses_df.loc[missing, "mrts"] = clauses_df.loc[missing, "__source_file"].apply(infer_mrts_from_file)
-
-    if "mrts" in tables_df.columns:
-        missing = tables_df["mrts"].astype(str).str.strip() == ""
-        tables_df.loc[missing, "mrts"] = tables_df.loc[missing, "__source_file"].apply(infer_mrts_from_file)
-
-    mrts_set = set()
-    if len(clauses_df):
-        mrts_set |= set(clauses_df["mrts"].dropna().astype(str).str.strip())
-    if len(tables_df):
-        mrts_set |= set(tables_df["mrts"].dropna().astype(str).str.strip())
-
-    mrts_list = sorted([m for m in mrts_set if m])
-
-    return LoadedData(clauses_df, tables_df, mrts_list)
-
-
-# -----------------------------
-# Search
-# -----------------------------
-def search_clauses(df: pd.DataFrame, tokens: List[str], require_all: bool) -> pd.DataFrame:
-    if df is None or df.empty:
+def query_clauses(conn: sqlite3.Connection, mrts_filter: str, tokens: List[str], require_all: bool, limit: int = 20):
+    if not has_table(conn, "clauses"):
         return pd.DataFrame()
 
-    # Create search blob
-    blob = (
-        df["mrts"].map(norm) + " " +
-        df["clause_id"].map(norm) + " " +
-        df["clause_title"].map(norm) + " " +
-        df["title"].map(norm) + " " +
-        df["text"].map(norm)
-    ).str.lower()
+    if has_fts(conn) and tokens:
+        fts_q = build_fts_query(tokens, require_all)
+        sql = """
+        SELECT c.mrts, c.clause_id, c.clause_title, c.text, c.pages, c.page_start, c.page_end,
+               bm25(clauses_fts) AS rank
+        FROM clauses_fts
+        JOIN clauses c ON c.rowid = clauses_fts.rowid
+        WHERE clauses_fts MATCH ?
+        """
+        params = [fts_q]
+        if mrts_filter != "All MRTS":
+            sql += " AND UPPER(c.mrts) = UPPER(?) "
+            params.append(mrts_filter)
+        sql += " ORDER BY rank LIMIT ?"
+        params.append(limit)
+        df = pd.read_sql_query(sql, conn, params=params)
+        # bm25: lower is better (more relevant)
+        return df
 
-    hits = []
-    for i, txt in enumerate(blob):
-        h, n = score_text(txt, tokens)
-        if not tokens:
-            hits.append(0)
-        else:
-            if require_all and h != n:
-                hits.append(-1)
-            else:
-                hits.append(h)
+    # Fallback: LIKE search (worse but safe)
+    q = " ".join(tokens).strip()
+    if not q:
+        return pd.DataFrame()
+    sql = """
+    SELECT mrts, clause_id, clause_title, text, pages, page_start, page_end
+    FROM clauses
+    WHERE (LOWER(text) LIKE ? OR LOWER(clause_title) LIKE ? OR LOWER(clause_id) LIKE ?)
+    """
+    like = f"%{q.lower()}%"
+    params = [like, like, like]
+    if mrts_filter != "All MRTS":
+        sql += " AND UPPER(mrts) = UPPER(?) "
+        params.append(mrts_filter)
+    sql += " LIMIT ?"
+    params.append(limit)
+    return pd.read_sql_query(sql, conn, params=params)
 
-    out = df.copy()
-    out["_hits"] = hits
-
-    out = out[out["_hits"] >= 0]
-    if tokens:
-        out = out[out["_hits"] > 0] if not require_all else out
-        out["_ratio"] = out["_hits"] / max(len(tokens), 1)
-        out = out.sort_values(by=["_ratio", "_hits"], ascending=[False, False])
-
-    return out
-
-def search_tables(df: pd.DataFrame, tokens: List[str], require_all: bool) -> pd.DataFrame:
-    if df is None or df.empty:
+def query_tables(conn: sqlite3.Connection, mrts_filter: str, tokens: List[str], require_all: bool, limit: int = 30):
+    if not has_table(conn, "tables"):
         return pd.DataFrame()
 
-    blob = (
-        df["mrts"].map(norm) + " " +
-        df["table_id"].map(norm) + " " +
-        df["caption"].map(norm) + " " +
-        df["parameter"].map(norm) + " " +
-        df["value"].map(norm) + " " +
-        df["units"].map(norm) + " " +
-        df["notes"].map(norm) + " " +
-        df["table_text"].map(norm) + " " +
-        df["page"].map(norm) + " " +
-        df["pages"].map(norm)
-    ).str.lower()
+    if has_fts(conn) and tokens:
+        fts_q = build_fts_query(tokens, require_all)
+        sql = """
+        SELECT t.mrts, t.table_id, t.caption, t.parameter, t.value, t.units, t.notes, t.table_text, t.page, t.pages,
+               bm25(tables_fts) AS rank
+        FROM tables_fts
+        JOIN tables t ON t.rowid = tables_fts.rowid
+        WHERE tables_fts MATCH ?
+        """
+        params = [fts_q]
+        if mrts_filter != "All MRTS":
+            sql += " AND UPPER(t.mrts) = UPPER(?) "
+            params.append(mrts_filter)
+        sql += " ORDER BY rank LIMIT ?"
+        params.append(limit)
+        df = pd.read_sql_query(sql, conn, params=params)
+        return df
 
-    hits = []
-    for txt in blob:
-        h, n = score_text(txt, tokens)
-        if not tokens:
-            hits.append(0)
-        else:
-            if require_all and h != n:
-                hits.append(-1)
-            else:
-                hits.append(h)
+    # Fallback: LIKE search
+    q = " ".join(tokens).strip()
+    if not q:
+        return pd.DataFrame()
+    sql = """
+    SELECT mrts, table_id, caption, parameter, value, units, notes, table_text, page, pages
+    FROM tables
+    WHERE (
+        LOWER(COALESCE(table_text,'')) LIKE ?
+        OR LOWER(COALESCE(caption,'')) LIKE ?
+        OR LOWER(COALESCE(table_id,'')) LIKE ?
+        OR LOWER(COALESCE(parameter,'')) LIKE ?
+        OR LOWER(COALESCE(value,'')) LIKE ?
+    )
+    """
+    like = f"%{q.lower()}%"
+    params = [like, like, like, like, like]
+    if mrts_filter != "All MRTS":
+        sql += " AND UPPER(mrts) = UPPER(?) "
+        params.append(mrts_filter)
+    sql += " LIMIT ?"
+    params.append(limit)
+    return pd.read_sql_query(sql, conn, params=params)
 
-    out = df.copy()
-    out["_hits"] = hits
+# ---------------- UI ----------------
+st.set_page_config(page_title="MRTS Bot (SQLite)", layout="wide")
+st.title("MRTS Bot (SQLite)")
+st.caption("Fast search using SQLite. Shows clause/table text with page references. Always verify in the official PDF.")
 
-    out = out[out["_hits"] >= 0]
-    if tokens:
-        out = out[out["_hits"] > 0] if not require_all else out
-        out["_ratio"] = out["_hits"] / max(len(tokens), 1)
-        out = out.sort_values(by=["_ratio", "_hits"], ascending=[False, False])
-
-    return out
-
-
-# -----------------------------
-# UI
-# -----------------------------
-st.set_page_config(page_title="MRTS Reference Viewer (QLD)", layout="wide")
-
-st.title("MRTS Reference Viewer (QLD)")
-st.caption("Read-only MRTS reference. Clauses + OCR tables. Verify against official MRTS.")
-
-data = load_all_data()
-
-# If folder missing or no files
-if not os.path.isdir(DATA_FOLDER):
-    st.error(f"Folder not found: `{DATA_FOLDER}`. Create it in GitHub and upload CSV files there.")
+if not os.path.exists(DB_PATH):
+    st.error("Database not found. Please upload `data/mrts.db` to your GitHub repo.")
     st.stop()
 
-if (data.clauses.empty) and (data.tables.empty):
-    st.warning("No data found yet. Upload CSV files into `mrts_data/`.")
-    st.stop()
+mrts_list = get_mrts_list()
+mrts_options = ["All MRTS"] + (mrts_list if mrts_list else [])
+selected_mrts = st.selectbox("Select MRTS", mrts_options, index=1 if len(mrts_options) > 1 else 0)
 
-mrts_options = ["All MRTS"] + (data.mrts_list if data.mrts_list else [])
-selected_mrts = st.selectbox("Select MRTS", mrts_options, index=0)
+query = st.text_input("Search (e.g., 'asphalt thickness tolerance', 'Table 9.2.1', 'rolling temperature')", value="")
+require_all = st.checkbox("Require ALL key words (recommended)", value=True)
 
-query = st.text_input(
-    "Search (examples: asphalt thickness tolerance, Table 9.4.2.3, EME thickness, bitumen temperature)",
-    value="",
-)
+# Extra control to reduce rubbish results
+only_this_mrts_default = selected_mrts != "All MRTS"
+only_this_mrts = st.checkbox("Restrict results to selected MRTS only", value=only_this_mrts_default)
 
-require_all = st.checkbox("Require ALL subject keywords (recommended)", value=True)
-
-# Always define these (prevents NameError)
-clauses_f = pd.DataFrame()
-tables_f = pd.DataFrame()
+effective_mrts = selected_mrts if only_this_mrts else "All MRTS"
 
 tokens = tokenize(query)
 
-# Filter by MRTS selection
-clauses_df = data.clauses
-tables_df = data.tables
-
-if selected_mrts != "All MRTS":
-    clauses_df = clauses_df[clauses_df["mrts"].astype(str).str.upper() == selected_mrts.upper()].copy()
-    tables_df = tables_df[tables_df["mrts"].astype(str).str.upper() == selected_mrts.upper()].copy()
-
-# If no query, don't spam results; show small hint
 if not query.strip():
-    st.info("Type a search to see results. Tip: include the subject words (e.g., 'asphalt thickness tolerance', 'Table 9.4.2.3').")
+    st.info("Type a search. Tip: include the subject words (asphalt / tolerance / temperature / air voids / Table 9.2.1 etc.).")
     st.stop()
 
-# Run searches
-clauses_f = search_clauses(clauses_df, tokens, require_all=require_all)
-tables_f = search_tables(tables_df, tokens, require_all=require_all)
+conn = sqlite3.connect(DB_PATH)
+try:
+    clauses_df = query_clauses(conn, effective_mrts, tokens, require_all=require_all, limit=20)
+    tables_df = query_tables(conn, effective_mrts, tokens, require_all=require_all, limit=30)
+finally:
+    conn.close()
 
-tab1, tab2 = st.tabs(["Clauses (ranked)", "Tables / OCR (ranked)"])
+tab1, tab2 = st.tabs(["Clauses", "Tables / OCR"])
 
 with tab1:
-    if clauses_f is None or clauses_f.empty:
+    if clauses_df is None or clauses_df.empty:
         st.warning("No clause results found.")
     else:
-        limit = 15
-        st.caption(f"Showing top {min(limit, len(clauses_f))} results.")
-        show = clauses_f.head(limit)
-
-        for _, r in show.iterrows():
-            header = f"{r.get('mrts','')}  {r.get('clause_id','')} — {r.get('clause_title','')}"
+        st.caption(f"Top {min(20, len(clauses_df))} clause results.")
+        for _, r in clauses_df.head(20).iterrows():
+            mrts = r.get("mrts","")
+            cid = r.get("clause_id","")
+            title = r.get("clause_title","")
+            pages = r.get("pages","") or ""
+            if not pages:
+                ps = r.get("page_start","")
+                pe = r.get("page_end","")
+                if ps or pe:
+                    pages = f"{ps}-{pe}".strip("-")
+            header = f"{mrts}  {cid} — {title}"
             with st.expander(header, expanded=False):
-                meta = []
-                pages = r.get("pages", "") or ""
-                if not pages:
-                    ps = r.get("page_start", "")
-                    pe = r.get("page_end", "")
-                    if ps or pe:
-                        pages = f"{ps}-{pe}".strip("-")
                 if pages:
-                    meta.append(f"Pages: {pages}")
-                rev = r.get("rev_date", "")
-                if rev:
-                    meta.append(f"Revision: {rev}")
-                src = r.get("__source_file", "")
-                if src:
-                    meta.append(f"Source CSV: {src}")
-                if meta:
-                    st.caption(" | ".join(meta))
-
-                st.write(norm(r.get("text", "")))
+                    st.caption(f"Pages: {pages}")
+                st.write(norm(r.get("text","")))
 
 with tab2:
-    if tables_f is None or tables_f.empty:
+    if tables_df is None or tables_df.empty:
         st.warning("No table/OCR results found.")
     else:
-        limit = 25
-        st.caption(f"Showing top {min(limit, len(tables_f))} results.")
-        show = tables_f.head(limit)
-
-        for _, r in show.iterrows():
-            header = f"{r.get('mrts','')}  {r.get('table_id','')} — {r.get('caption','')}"
+        st.caption(f"Top {min(30, len(tables_df))} table results.")
+        for _, r in tables_df.head(30).iterrows():
+            mrts = r.get("mrts","")
+            tid = r.get("table_id","")
+            cap = r.get("caption","")
+            page = r.get("page","") or r.get("pages","")
+            header = f"{mrts}  {tid} — {cap}"
             with st.expander(header, expanded=False):
-                meta = []
-                pages = r.get("pages", "") or r.get("page", "")
-                if pages:
-                    meta.append(f"Pages: {pages}")
-                rev = r.get("rev_date", "")
-                if rev:
-                    meta.append(f"Revision: {rev}")
-                src = r.get("__source_file", "")
-                if src:
-                    meta.append(f"Source CSV: {src}")
-                if meta:
-                    st.caption(" | ".join(meta))
+                if page:
+                    st.caption(f"Pages: {page}")
 
-                # Show structured row if present
+                # show extracted fields (if present)
                 row = {
-                    "parameter": norm(r.get("parameter", "")),
-                    "value": norm(r.get("value", "")),
-                    "units": norm(r.get("units", "")),
-                    "notes": norm(r.get("notes", "")),
+                    "parameter": norm(r.get("parameter","")),
+                    "value": norm(r.get("value","")),
+                    "units": norm(r.get("units","")),
+                    "notes": norm(r.get("notes","")),
                 }
-                st.write("**Extracted fields**")
-                st.json(row)
+                if any(v for v in row.values()):
+                    st.write("**Extracted fields**")
+                    st.json(row)
 
-                table_text = norm(r.get("table_text", ""))
-                if table_text:
+                ttxt = norm(r.get("table_text",""))
+                if ttxt:
                     st.write("**Table/OCR text**")
-                    st.write(table_text)
+                    st.write(ttxt)
