@@ -1,8 +1,2 @@
 streamlit
-python-dotenv
-PyMuPDF==1.26.7
-pymupdf4llm
-faiss-cpu
-sentence-transformers
-ollama
-langchain-community
+pandas
