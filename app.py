@@ -1,6 +1,9 @@
 # app.py (SQLite MRTS - grouped + table rendering)
+# app.py (SQLite MRTS - grouped + table rendering) - improved table parsing + fixed DB connection handling
 import os
 import re
+import io
+import csv
 import sqlite3
 from typing import List, Optional
 
@@ -22,8 +25,11 @@ STOPWORDS = {
 
 def norm(s: str) -> str:
     s = "" if s is None else str(s)
-    s = s.replace("\n", " ").replace("\r", " ")
-    s = re.sub(r"\s+", " ", s).strip()
+    s = s.replace("\r", " ")
+    # keep newlines for table parsing/rendering where appropriate, but normalize sequences of whitespace
+    s = re.sub(r"[ \t]+", " ", s)
+    s = re.sub(r"\n\s*\n+", "\n\n", s)  # collapse multiple blank lines
+    s = s.strip()
     return s
 
 def tokenize(q: str) -> List[str]:
@@ -53,23 +59,143 @@ def has_table(conn: sqlite3.Connection, name: str) -> bool:
     return r is not None
 
 def looks_like_pipe_table(txt: str) -> bool:
-    # crude detector: at least 2 lines with pipes and a separator row
+    # improved detection: check for at least one line with '|' and a separator line after header
     if not txt:
         return False
-    lines = [l.strip() for l in txt.strip().splitlines() if l.strip()]
-    if len(lines) < 3:
+    lines = [l.rstrip() for l in txt.strip().splitlines() if l.strip()]
+    if len(lines) < 2:
         return False
-    pipe_lines = [l for l in lines if "|" in l]
-    if len(pipe_lines) < 2:
+    # at least one '|' in most lines
+    pipe_count = sum(1 for l in lines if "|" in l)
+    if pipe_count < 2:
         return False
-    # separator like |---|---|
-    sep = any(re.search(r"\|\s*:?-{2,}:?\s*\|", l) for l in lines)
-    return sep
+    # separator like |---|---| or ---|--- or :---:
+    sep_re = re.compile(r"^\s*\|?\s*:?-{2,}:?\s*(\|\s*:?-{2,}:?\s*)+\|?\s*$")
+    for i in range(1, min(len(lines), 4)):
+        if sep_re.match(lines[i]):
+            return True
+    return False
+
+def parse_pipe_table(txt: str) -> Optional[pd.DataFrame]:
+    """
+    Parse a Markdown-style pipe table into a DataFrame.
+    Handles optional leading/trailing '|' and a separator line with dashes.
+    """
+    lines = [l.rstrip() for l in txt.strip().splitlines() if l.strip()]
+    if len(lines) < 2:
+        return None
+
+    # find header and separator line indices
+    sep_idx = None
+    sep_re = re.compile(r"^\s*\|?\s*:?-{2,}:?\s*(\|\s*:?-{2,}:?\s*)+\|?\s*$")
+    for i in range(1, min(len(lines), 4)):
+        if sep_re.match(lines[i]):
+            sep_idx = i
+            break
+
+    if sep_idx is None:
+        # Try lenient parse: treat first line as header and split on '|'
+        header_line = lines[0]
+        data_lines = lines[1:]
+    else:
+        header_line = lines[0]
+        data_lines = lines[sep_idx+1:]
+
+    def split_row(line: str) -> List[str]:
+        # remove leading/trailing pipes, split on '|' and strip each cell
+        row = line.strip()
+        if row.startswith("|"):
+            row = row[1:]
+        if row.endswith("|"):
+            row = row[:-1]
+        cells = [c.strip() for c in row.split("|")]
+        return cells
+
+    header = split_row(header_line)
+    rows = [split_row(l) for l in data_lines if l.strip()]
+    # Normalize row length by padding/trimming
+    maxcols = max(len(header), max((len(r) for r in rows), default=0))
+    header = (header + [""] * maxcols)[:maxcols]
+    norm_rows = [ (r + [""] * maxcols)[:maxcols] for r in rows ]
+
+    try:
+        df = pd.DataFrame(norm_rows, columns=header)
+        return df
+    except Exception:
+        return None
+
+def parse_table_text(value_text: str) -> Optional[pd.DataFrame]:
+    """
+    Try multiple strategies to parse a table-like text into a DataFrame:
+     1) HTML table via pandas.read_html
+     2) Markdown pipe table parser
+     3) CSV/TSV via csv.Sniffer -> pandas.read_csv
+     4) Fixed-width via pandas.read_fwf
+    Return DataFrame on success, otherwise None.
+    """
+    vt = (value_text or "").strip()
+    if not vt:
+        return None
+
+    # 1) try HTML table(s)
+    try:
+        dfs = pd.read_html(vt)
+        if dfs and len(dfs) > 0:
+            return dfs[0]
+    except Exception:
+        pass
+
+    # 2) markdown pipe table
+    try:
+        if looks_like_pipe_table(vt):
+            df = parse_pipe_table(vt)
+            if df is not None and not df.empty:
+                return df
+    except Exception:
+        pass
+
+    # 3) CSV / TSV detection using csv.Sniffer
+    try:
+        sample = "\n".join(vt.splitlines()[:10])
+        sniffer = csv.Sniffer()
+        # try to detect delimiter; fall back to comma if detection fails
+        dialect = None
+        try:
+            dialect = sniffer.sniff(sample)
+        except Exception:
+            # fallback: if there are tabs, use '\t', else if pipes present, use '|', else use ','
+            if "\t" in sample:
+                dialect = csv.get_dialect("excel")
+                dialect.delimiter = "\t"
+            elif "|" in sample:
+                dialect = csv.get_dialect("excel")
+                dialect.delimiter = "|"
+            else:
+                dialect = csv.get_dialect("excel")
+                dialect.delimiter = ","
+
+        delim = dialect.delimiter if dialect else ","
+        df = pd.read_csv(io.StringIO(vt), sep=delim)
+        if not df.empty:
+            return df
+    except Exception:
+        pass
+
+    # 4) try fixed-width
+    try:
+        df = pd.read_fwf(io.StringIO(vt))
+        if not df.empty:
+            return df
+    except Exception:
+        pass
+
+    return None
 
 def render_table_value_text(value_text: str, detailed: bool):
     """
     Show table in a readable way.
-    - If it looks like a markdown pipe table -> render as markdown
+    - Try to parse into DataFrame and render via st.dataframe/st.table
+    - Else if it looks like a markdown pipe table -> render as markdown
     - Else -> show as wrapped text, and optionally raw block
     """
     vt = value_text or ""
@@ -79,32 +205,52 @@ def render_table_value_text(value_text: str, detailed: bool):
         st.info("No table content found in database for this table.")
         return
 
+    # Attempt to parse to DataFrame first
+    df = parse_table_text(vt)
+    if df is not None and not df.empty:
+        # Render dataframe: dataframes keep column order and types
+        st.dataframe(df, use_container_width=True)
+        # Provide CSV download
+        try:
+            csv_bytes = df.to_csv(index=False).encode("utf-8")
+            st.download_button("Download CSV", data=csv_bytes, file_name="table.csv", mime="text/csv")
+        except Exception:
+            pass
+        if detailed:
+            with st.expander("Show raw table text"):
+                st.code(vt)
+        return
+
+    # If parsing failed but looks like a pipe table, render as markdown (best-effort)
     if looks_like_pipe_table(vt):
-        # Streamlit renders markdown tables well
         st.markdown(vt)
         if detailed:
             with st.expander("Show raw table text"):
                 st.code(vt)
+        return
+
+    # Not a clean table – still show nicely
+    if detailed:
+        st.write(vt)
+        with st.expander("Show raw OCR/text"):
+            st.code(vt)
     else:
-        # Not a clean pipe table – still show nicely
-        if detailed:
+        # simple view: preview first ~600 chars
+        preview = vt[:600] + ("…" if len(vt) > 600 else "")
+        st.write(preview)
+        with st.expander("Show full text"):
             st.write(vt)
-            with st.expander("Show raw OCR/text"):
-                st.code(vt)
-        else:
-            # simple view: preview first ~600 chars
-            preview = vt[:600] + ("…" if len(vt) > 600 else "")
-            st.write(preview)
-            with st.expander("Show full text"):
-                st.write(vt)
 
 @st.cache_resource(show_spinner=False)
 def get_conn():
+    # cached long-lived connection for the Streamlit app lifetime
     return sqlite3.connect(DB_PATH, check_same_thread=False)
 
 @st.cache_data(show_spinner=False)
 def get_mrts_list() -> List[str]:
-    conn = get_conn()
+    # Use a fresh connection here so we can safely close it,
+    # without touching the cached connection returned by get_conn().
+    conn = sqlite3.connect(DB_PATH)
     try:
         mrts = set()
         if has_table(conn, "clauses"):
@@ -236,12 +382,10 @@ if not query.strip():
     st.info("Type a search to see results. Tip: include MRTS table numbers like 'Table 9.2.1' or key words like 'air voids'.")
     st.stop()
 
+# Use the cached connection but do NOT close it manually.
 conn = get_conn()
-try:
-    clauses_df = search_clauses(conn, selected_mrts, query, require_all, limit=max_results)
-    tables_df = search_tables(conn, selected_mrts, query, require_all, limit=max_results * 2)
-finally:
-    conn.close()
+clauses_df = search_clauses(conn, selected_mrts, query, require_all, limit=max_results)
+tables_df = search_tables(conn, selected_mrts, query, require_all, limit=max_results * 2)
 
 tables_grouped = group_tables(tables_df)
 
